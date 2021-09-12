@@ -24,6 +24,45 @@
             border-bottom-left-radius: 20px;
             border-bottom-right-radius: 20px;
         }
+
+        @media only screen {
+            .card {
+                width: 70%;
+                margin: auto;
+            }
+        }
+
+        video {
+            opacity: 0.5;
+        }
+
+        .card-img-overlay h2 {
+            font-size: 6vw;
+            color: #ffffff;
+            text-transform: capitalize;
+            line-height: 73px;
+        }
+
+        .card-img-overlay {
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            content: "";
+            text-align: center;
+            top: 40%;
+            transform: translateY(-55%);
+            z-index: 9;
+        }
+
+        .card-img-overlay p {
+            color: #ffffff;
+            max-width: 710px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 25px 0 33px;
+            font-size: 1em;
+        }
     </style>
 </head>
 <body>
@@ -51,6 +90,20 @@
                 </span>
     </div>
 </nav>
+
+<div class="card bg-dark text-white">
+    <video src="assets/AboutUs.mp4" muted autoplay loop></video>
+    <div class="card-img-overlay">
+        <h2><b>About Us</b></h2>
+        <p>Nekoya is your place for sneakers for the entire family from many name brands. You’ll discover styles for
+            ladies, men and children from brands like Nike, Converse, Vans, Sperry, Madden Girl, Skechers, ASICS and
+            then some! Nekoya is a main family footwear goal for the popular brands you know and love.</p>
+        <br>
+        <h2><b>Contact Us</b></h2>
+        <br>
+        <h3><i class="bi bi-envelope"></i> Info@Nekoya.com</h3>
+    </div>
+</div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
