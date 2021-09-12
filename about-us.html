@@ -1,17 +1,16 @@
 <!doctype html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="shortcut icon" type="image/png" href="assets/favicon.png" />
+    <link rel="shortcut icon" type="image/png" href="assets/favicon.png"/>
     <title>About Us</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
-        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+          integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 
     <style>
         body {
@@ -28,10 +27,148 @@
             border-bottom-right-radius: 20px;
         }
 
-        @media only screen {
-            .card {
-                width: 70%;
-                margin: auto;
+        @media only screen and (max-width: 600px) {
+            .card-img-overlay {
+                position: absolute;
+                text-align: center;
+                top: 3%;
+            }
+
+            br {
+                display: block;
+                margin: 1px 0;
+                line-height: 1px;
+                content: " ";
+            }
+
+            .card-img-overlay {
+                position: absolute;
+                text-align: center;
+            }
+
+            .card-img-overlay h1 {
+                font-size: 12pt;
+            }
+
+            .card-img-overlay h3 {
+                font-size: 13pt;
+            }
+
+            .card-img-overlay p {
+                font-size: 6pt;
+            }
+        }
+
+        @media only screen and (min-width: 600px) {
+            .card-img-overlay {
+                position: absolute;
+                text-align: center;
+                top: 10%;
+            }
+
+            br {
+                display: block;
+                margin: 10px 0;
+                line-height: 10px;
+                content: " ";
+            }
+
+            .card-img-overlay {
+                position: absolute;
+                text-align: center;
+            }
+
+            .card-img-overlay h1 {
+                font-size: 15pt;
+            }
+
+            .card-img-overlay h3 {
+                font-size: 16pt;
+            }
+
+            .card-img-overlay p {
+                font-size: 9pt;
+            }
+        }
+
+        @media only screen and (min-width: 768px) {
+            .card-img-overlay {
+                position: absolute;
+                text-align: center;
+                top: 5%;
+            }
+
+            br {
+                display: block;
+                margin: 20px 0;
+                line-height: 20px;
+                content: " ";
+            }
+
+            .card-img-overlay h1 {
+                font-size: 18pt;
+            }
+
+            .card-img-overlay h3 {
+                font-size: 19pt;
+            }
+
+            .card-img-overlay p {
+                font-size: 13pt;
+            }
+        }
+
+        @media only screen and (min-width: 992px) {
+            .card-img-overlay {
+                position: absolute;
+                text-align: center;
+                top: 5%;
+            }
+
+            br {
+                display: block;
+                margin: 30px 0;
+                line-height: 30px;
+                content: " ";
+            }
+
+            .card-img-overlay h1 {
+                font-size: 22pt;
+            }
+
+            .card-img-overlay h3 {
+                font-size: 23pt;
+            }
+
+            .card-img-overlay p {
+                font-size: 15pt;
+            }
+        }
+
+        @media only screen and (min-width: 1200px) {
+            .card-img-overlay {
+                position: absolute;
+                text-align: center;
+                top: 10%;
+            }
+
+            br {
+                display: block;
+                margin: 50px 0;
+                line-height: 50px;
+                content: " ";
+            }
+
+            .card-img-overlay h1 {
+                font-size: 25pt;
+            }
+
+            .card-img-overlay h3 {
+                font-size: 26pt;
+            }
+
+            .card-img-overlay p {
+                font-size: 17pt;
             }
         }
 
@@ -39,86 +176,62 @@
             opacity: 0.5;
         }
 
-        .card-img-overlay h2 {
-            font-size: 6vw;
-            color: #ffffff;
-            text-transform: capitalize;
-            line-height: 73px;
-        }
-
-        .card-img-overlay {
-            position: absolute;
-            left: 0;
-            right: 0;
-            margin: 0 auto;
-            content: "";
-            text-align: center;
-            top: 40%;
-            transform: translateY(-55%);
-            z-index: 9;
-        }
-
-        .card-img-overlay p {
-            color: #ffffff;
-            max-width: 710px;
-            width: 100%;
-            margin: 0 auto;
-            padding: 25px 0 33px;
-            font-size: 1em;
+        @media {
+            .card {
+                width: 70%;
+                margin: auto;
+            }
         }
     </style>
 </head>
-
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark comp-color ml-5 mr-5 nav-radius">
-        <a class="navbar-brand" href="#">About Us</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+<nav class="navbar navbar-expand-lg navbar-dark comp-color ml-5 mr-5 nav-radius">
+    <a class="navbar-brand" href="#">About Us</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
             aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-            <ul class="navbar-nav mx-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="/">Home</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="product-list.html">Products</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="about-us.html" aria-disabled="true">About Us</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="faq.html">FAQ</a>
-                </li>
-            </ul>
-            <span class="navbar-nav my-2 my-lg-0 text-white">
-                <a href="login-page.html"><button type="button"
-                        class="btn btn-outline-success mt-auto mb-auto mr-3">Login</button></a>
-                <i class="fas fa-shopping-cart mt-auto mb-auto"><span class="ml-2 mt-auto mb-auto">$999</span></i>
-            </span>
-        </div>
-    </nav>
-
-    <div class="card bg-dark text-white">
-        <video src="assets/AboutUs.mp4" muted autoplay loop></video>
-        <div class="card-img-overlay">
-            <h2><b>About Us</b></h2>
-            <p>Nekoya is your place for sneakers for the entire family from many name brands. You’ll discover styles for
-                ladies, men and children from brands like Nike, Converse, Vans, Sperry, Madden Girl, Skechers, ASICS and
-                then some! Nekoya is a main family footwear goal for the popular brands you know and love.</p>
-            <br>
-            <h2><b>Contact Us</b></h2>
-            <br>
-            <h3><i class="bi bi-envelope"></i> Info@Nekoya.com</h3>
-        </div>
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        <ul class="navbar-nav mx-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/product-list.html">Products</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="/about-us.html" aria-disabled="true">About Us</a>
+            </li>
+        </ul>
+        <span class="navbar-nav my-2 my-lg-0 text-white">
+                    <a href="/LoginPage.html"><button type="button"
+                                                      class="btn btn-outline-success mt-auto mb-auto mr-3">Login</button></a>
+                    <i class="fas fa-shopping-cart mt-auto mb-auto"><span class="ml-2 mt-auto mb-auto">$999</span></i>
+                </span>
     </div>
+</nav>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous">
-    </script>
+<div class="card bg-dark text-white">
+    <video src="assets/AboutUs.mp4" muted autoplay loop class="card-img"></video>
+    <div class="card-img-overlay">
+        <h1 class="card-title"><b>About Us</b></h1>
+        <p class="card-text">Nekoya is your place for sneakers for the entire family from many name brands. You’ll
+            discover styles for
+            ladies, men and children from brands like Nike, Converse, Vans, Sperry, Madden Girl, Skechers, ASICS and
+            then some! Nekoya is a main family footwear goal for the popular brands you know and love.</p>
+        <br>
+        <br>
+        <h1 class="card-title"><b>Contact Us</b></h1>
+        <br>
+        <h3 class="card-text"><i class="bi bi-envelope"></i> Info@Nekoya.com</h3>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
 </body>
-
 </html>
