@@ -22,15 +22,6 @@
     background-color: 1b1c1e;
 }
 
-.bag-body{
-    background-color: 1b1c1e;
-    color: white;
-    font-family: 'Poppins', sans-serif;
-    display: flex;
-    justify-content: left;
-    text-align: left;
-}
-
 .bag-list{
     display: flex;
     color: white;
@@ -60,12 +51,13 @@
   margin-top: 15px;
 }
 
-@media only screen and (max-width: 1040px){
-  .full-body{
-    display: inline;
-  }
-}
-
 .full-body{
   display: flex;
 }
+
+@media only screen and (max-width: 1000px){
+  .full-body{
+    display: grid !important;
+  }
+}
+
