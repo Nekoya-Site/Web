@@ -27,23 +27,35 @@
             border-bottom-right-radius: 20px;
         }
 
+        video {
+            opacity: 0.5;
+        }
+
+        @media {
+            .card {
+                width: 70%;
+                margin: auto;
+            }
+        }
+
+        .card-img-overlay {
+            position: absolute;
+            text-align: center;
+        }
+
+        br {
+            display: block;
+            content: " ";
+        }
+
         @media only screen and (max-width: 600px) {
             .card-img-overlay {
-                position: absolute;
-                text-align: center;
                 top: 3%;
             }
 
             br {
-                display: block;
                 margin: 1px 0;
                 line-height: 1px;
-                content: " ";
-            }
-
-            .card-img-overlay {
-                position: absolute;
-                text-align: center;
             }
 
             .card-img-overlay h1 {
@@ -61,21 +73,12 @@
 
         @media only screen and (min-width: 600px) {
             .card-img-overlay {
-                position: absolute;
-                text-align: center;
                 top: 10%;
             }
 
             br {
-                display: block;
                 margin: 10px 0;
                 line-height: 10px;
-                content: " ";
-            }
-
-            .card-img-overlay {
-                position: absolute;
-                text-align: center;
             }
 
             .card-img-overlay h1 {
@@ -93,16 +96,12 @@
 
         @media only screen and (min-width: 768px) {
             .card-img-overlay {
-                position: absolute;
-                text-align: center;
                 top: 5%;
             }
 
             br {
-                display: block;
                 margin: 20px 0;
                 line-height: 20px;
-                content: " ";
             }
 
             .card-img-overlay h1 {
@@ -120,16 +119,12 @@
 
         @media only screen and (min-width: 992px) {
             .card-img-overlay {
-                position: absolute;
-                text-align: center;
                 top: 5%;
             }
 
             br {
-                display: block;
                 margin: 30px 0;
                 line-height: 30px;
-                content: " ";
             }
 
             .card-img-overlay h1 {
@@ -147,16 +142,12 @@
 
         @media only screen and (min-width: 1200px) {
             .card-img-overlay {
-                position: absolute;
-                text-align: center;
                 top: 10%;
             }
 
             br {
-                display: block;
                 margin: 50px 0;
                 line-height: 50px;
-                content: " ";
             }
 
             .card-img-overlay h1 {
@@ -169,17 +160,6 @@
 
             .card-img-overlay p {
                 font-size: 17pt;
-            }
-        }
-
-        video {
-            opacity: 0.5;
-        }
-
-        @media {
-            .card {
-                width: 70%;
-                margin: auto;
             }
         }
     </style>
