@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bag</title>
+    <link rel="stylesheet" href="styleBag.css">
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="shortcut icon" type="image/png" href="assets/favicon.png"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body class="bg-color">
+    <nav class="navbar navbar-expand-lg navbar-dark comp-color ml-5 mr-5 nav-radius">
+        <a class="navbar-brand" href="#">Details Products</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+            aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="/products-page.html" aria-disabled="true">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/aboutus.html">About Us</a>
+                </li>
+            </ul>
+            <span class="navbar-nav my-2 my-lg-0 text-white">
+                <a href="/loginPage.html"><button type="button" class="btn btn-outline-success mt-auto mb-auto mr-3">Login</button></a>
+                <i class="fas fa-shopping-cart mt-auto mb-auto"><span class="ml-2 mt-auto mb-auto">$999</span></i>
+            </span>
+        </div>
+    </nav>
+
+    <div class="title">
+        <h3>Shopping Bag</h3>   
+    </div>
+    
+    <div style="display: flex; margin-left: 3%;">
+        <div class="body-left">
+
+            <div class="bag-body">
+                <div class="bag-list">
+                    <h5 style="margin-right: 300px;"><b>Item</b></h5>
+                    <h5 style="margin-right: 100px;"><b>Qty</b></h5>
+                    <h5 style="margin-right: 150px;"><b>Item Price</b></h5>
+                    <h5><b>Sub Total</b></h5>
+                </div>
+    
+            </div>
+    
+            <div class="bag-list">
+                <div style="margin-right: 115px; display: flex;">
+                    <img src="assets/sepatu.png" alt="" height="80px" width="80px">
+                    <div style="margin-left: 30px;">
+                        <p>Fashione Shoes</p>
+                        <p>Size : 8</p>
+                        <p>Qty : 1</p>
+                    </div>
+                </div>
+                <p style="margin-right: 100px;">Qty</p>
+                <p style="margin-right: 130px;">Rp 1.999.999,00</p>
+                <p>Rp 1.999.999,00</p>
+            </div>
+    
+            <div class="bag-list">
+                <div style="margin-right: 115px; display: flex;">
+                    <img src="assets/sepatu.png" alt="" height="80px" width="80px">
+                    <div style="margin-left: 30px;">
+                        <p>Fashione Shoes</p>
+                        <p>Size : 8</p>
+                        <p>Qty : 1</p>
+                    </div>
+                </div>
+                <p style="margin-right: 100px;">Qty</p>
+                <p style="margin-right: 130px;">Rp 1.999.999,00</p>
+                <p>Rp 1.999.999,00</p>
+            </div>
+        </div>
+
+        <div class="body-right">
+            <div class="border">
+                <h5 style="text-align: center; border-bottom: 1px solid white; margin: 10px;"><b>Order Summary</b></h5>
+                <div class="container">
+                    <div class="row justify-content-between" style="display: flex; margin: 10px">
+                    <p>Sub Total</p>
+                    <p>1.999.999,00</p>
+                    </div>
+                </div>
+                
+                <div class="container">
+                    <div class="row justify-content-between" style="display: flex; border-bottom: 1px solid white; margin: 10px">
+                    <p>Shipping</p>
+                    <p>-</p>
+                    </div>
+                </div>
+                
+                <div class="container">
+                    <div class="row justify-content-between" style="display: flex; margin: 10px">
+                    <p>Estimate</p>
+                    <p>1.999.999,00</p>
+                    </div>
+                </div>
+            </div>
+
+            <a href="checkout.html"> <button class="button">Checkout</button></a>
+
+        </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+.bg-color {
+    background-color: #1b1c1e;
+}
+
+.comp-color {
+    background-color: #212226;
+}
+
+.nav-radius {
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.title{
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    margin: 2% 3%;
+    justify-content: left;
+    text-align: left;
+    background-color: 1b1c1e;
+}
+
+.bag-body{
+    background-color: 1b1c1e;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: left;
+    text-align: left;
+}
+
+.bag-list{
+    display: flex;
+    color: white;
+    border-bottom: 1px solid white;
+    background-color: 1b1c1e;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 1%;
+    justify-content: left;
+    text-align: left;
+}
+
+
+.body-right{
+  margin-left: 30px;
+  color: white;
+  width: 30%;
+  height: 100%;
+
+}
+
+.button{
+  color: white;
+  background-color: green;
+  margin-top: 15px;
+}
