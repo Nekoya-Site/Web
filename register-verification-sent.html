@@ -55,6 +55,50 @@
             width: 70%;
             height: 70%;
         }
+
+        @media screen and (max-width: 766px) {
+            .card h2 {
+                font-size: 7vw;
+            }
+
+            .card h5 {
+                font-size: 5vw;
+            }
+
+        }
+
+        @media screen and (min-width: 767px) {
+            .card h2 {
+                font-size: 4vw;
+            }
+
+            .card h5 {
+                font-size: 2vw;
+            }
+
+        }
+
+        @media screen and (min-width: 993px) {
+            .card h2 {
+                font-size: 3vw;
+            }
+
+            .card h5 {
+                font-size: 1.3vw;
+            }
+
+        }
+
+        @media screen and (min-width: 1400px) {
+            .card h2 {
+                font-size: 4vw;
+            }
+
+            .card h5 {
+                font-size: 2vw;
+            }
+
+        }
     </style>
 </head>
 <body>
@@ -70,16 +114,23 @@
 
 <br>
 
-<div class="card w-50">
-    <div class="card-header" style="color: white;">
-        <h2 style="font-size:3vw;">Verify Your Email Address</h2>
-    </div>
-    <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_IUWMcw.json" class="icon" background="transparent"
-                   speed="1" loop autoplay></lottie-player>
-    <div class="card-body">
-        <h5 class="card-text" style="color: #dedede;font-size:1.5vw">Before proceeding, please check your email for a
-            verification link
-            to verify your email address.</h5>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="card col-md-6 col-lg-6 col-xl-8">
+                <div class="card-header" style="color: white;">
+                    <h2>Verify Your Email Address</h2>
+                </div>
+                <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_IUWMcw.json" class="icon"
+                               background="transparent"
+                               speed="1" loop autoplay></lottie-player>
+                <div class="card-body">
+                    <h5 class="card-text" style="color: #dedede;">Before proceeding, please check your email for a
+                        verification link
+                        to verify your email address.</h5>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
