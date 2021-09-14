@@ -12,6 +12,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
     <style>
         .bg-color {
             background-color: #1b1c1e;
@@ -48,6 +50,118 @@
             padding-left: 50px;
             padding-bottom: 10px;
             padding-top: 10px;
+        }
+
+        .New-arrival {
+            font-size: 24pt;
+            text-align: center;
+            color: white;
+            margin-top: 1%
+        }
+
+        .form-control {
+            width: 100%;
+            display: block;
+            height: 40px;
+            border: 1px solid blue;
+            padding: .4px 1px;
+            outline: none;
+        }
+
+        .btn {
+            height: 40px;
+            padding: 0px 25px;
+            text-align: center;
+        }
+
+        .btn-block {
+            display: block;
+            width: 100%;
+        }
+
+        .btn-main {
+            background: #212226 ;
+            color: white;
+            border: 1px solid ;
+        }
+
+        .hero-search {
+            margin-left: 70px;
+            margin-right: 70px;
+            padding: 14px 0px;
+            background: #1b1c1e;
+            color: white;
+        }
+
+        .search-grid {  
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-column-gap: 20px;
+        }
+
+        .arrival-section {
+            padding-left: 0px
+        }
+
+        .section-header {
+            text-align: center;
+        }
+
+        .section-header h2{
+            font-size: 23px;
+        }
+
+        .section-header span {
+            border-bottom: 3px solid orangered;
+            padding-bottom: .6px;
+        }
+        
+        .slide-wrapper {
+            margin-top: 5px;
+        }
+
+        .slider-container {
+           margin-top: 50px;
+        }
+
+        .slide {
+            border: 1px solid #1b1c1e ;
+            margin: 0px 15px;
+        }
+
+        .slide-img {
+            height: 200px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            position: relative;
+        }
+
+        .slide-info {
+            padding: 1rem;
+            text-align: left;
+        }
+
+        .slide-btn {
+            margin-left: 15%;
+        }
+
+        .slide-info h3 {
+            margin-left: 45px;
+            font-size: 12pt;
+            color: white;
+            margin-bottom: .6px;
+        }
+
+        .price {
+            margin-bottom: 12px;
+        }
+        
+        .price span {
+            margin-left: 15%;
+            font-weight: 700px;
+            color: orangered;
+            border: none !important;
         }
     </style>
 </head>
@@ -113,19 +227,181 @@
             </a>
         </div>
     </header>
+        
+        <div class="hero-search">
+            <div class="wrapper">
+                <div class="search-grid">
+                    <div>
+                        <select name=""class="form-control" id="">
+                            <option value="">Category</option>
+                        </select>
+                    </div>
+                    <div>
+                        <select name="" class="form-control" id="">
+                            <option value="">Select</option>
+                        </select>
+                    </div>
+                    <div>
+                        <select name="" class="form-control" id="">
+                            <option value="">Select</option>
+                        </select>
+                    </div>
+                        <button class="btn btn-main btn-block">Search</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-        </script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-        </script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-        </script>
-        <script>
-            feather.replace()
-        </script>
+    <main>
+        <div class="arrival-section">
+            <div class="wrapper">
+                <div class="section-header">
+                    <h2 style="color: white;"><span class="text-main">New</span> Arrivals</h2>
+                    <div class="slider-wrapper">
+                        <div class="slider-container" style="color: white;">
+                            <div class="slide">
+                                <div class="slide-img" style="background-image: url(assets/sepatu.png);">
+                                    <div class="slide-badge"></div>
+                                 </div>
+                                 <div class="slide-info">
+                                    <h3>Sneakers Nike</h3>
+                                    <div class="price">
+                                        <span>$100</span>
+                                    </div>
+                                    <div class="slide-btn">
+                                        <button class="btn btn-main"><a href="#" data-feather="shopping-cart"></a> Add to Cart</button>
+                                    </div>
+                                 </div>
+                            </div>
+                            <div class="slide">
+                                <div class="slide-img" style="background-image: url(assets/sepatu.png);">
+                                    <div class="slide-badge"></div>
+                                 </div>
+                                 <div class="slide-info">
+                                    <h3>Sneakers Nike</h3>
+                                    <div class="price">
+                                        <span>$100</span>
+                                    </div>
+                                    <div class="slide-btn">
+                                        <button class="btn btn-main"><a href="#" data-feather="shopping-cart"></a> Add to Cart</button>
+                                    </div>
+                                 </div>
+                            </div>
+                            <div class="slide">
+                                <div class="slide-img" style="background-image: url(assets/sepatu.png);">
+                                    <div class="slide-badge"></div>
+                                 </div>
+                                 <div class="slide-info">
+                                    <h3>Sneakers Nike</h3>
+                                    <div class="price">
+                                        <span>$100</span>
+                                    </div>
+                                    <div class="slide-btn">
+                                        <button class="btn btn-main"><a href="#" data-feather="shopping-cart"></a> Add to Cart</button>
+                                    </div>
+                                 </div>
+                            </div>
+                            <div class="slide">
+                                <div class="slide-img" style="background-image: url(assets/sepatu.png);">
+                                    <div class="slide-badge"></div>
+                                 </div>
+                                 <div class="slide-info">
+                                    <h3>Sneakers Nike</h3>
+                                    <div class="price">
+                                        <span>$100</span>
+                                    </div>
+                                    <div class="slide-btn">
+                                        <button class="btn btn-main"><a href="#" data-feather="shopping-cart"></a> Add to Cart</button>
+                                    </div>
+                                 </div>
+                            </div>
+                            <div class="slide">
+                                <div class="slide-img" style="background-image: url(assets/sepatu.png);">
+                                    <div class="slide-badge"></div>
+                                 </div>
+                                 <div class="slide-info">
+                                    <h3>Sneakers Nike</h3>
+                                    <div class="price">
+                                        <span>$100</span>
+                                    </div>
+                                    <div class="slide-btn">
+                                        <button class="btn btn-main"><a href="#" data-feather="shopping-cart"></a> Add to Cart</button>
+                                    </div>
+                                 </div>
+                            </div>
+                            <div class="slide">
+                                <div class="slide-img" style="background-image: url(assets/sepatu.png);">
+                                    <div class="slide-badge"></div>
+                                 </div>
+                                 <div class="slide-info">
+                                    <h3>Sneakers Nike</h3>
+                                    <div class="price">
+                                        <span>$100</span>
+                                    </div>
+                                    <div class="slide-btn">
+                                        <button class="btn btn-main"><a href="#" data-feather="`shopping-cart"></a> Add to Cart</button>
+                                    </div>
+                                 </div>
+                            </div>
+                            <div class="slide">
+                                <div class="slide-img" style="background-image: url(assets/sepatu.png);">
+                                    <div class="slide-badge"></div>
+                                 </div>
+                                 <div class="slide-info">
+                                    <h3>Sneakers Nike</h3>
+                                    <div class="price">
+                                        <span>$100</span>
+                                    </div>
+                                    <div class="slide-btn">
+                                        <button class="btn btn-main"><a href="#" data-feather="shopping-cart"></a> Add to Cart</button>
+                                    </div>
+                                 </div>
+                            </div>
+                            <div class="slide">
+                                <div class="slide-img" style="background-image: url(assets/sepatu.png);">
+                                    <div class="slide-badge"></div>
+                                 </div>
+                                 <div class="slide-info">
+                                    <h3>Sneakers Nike</h3>
+                                    <div class="price">
+                                        <span>$100</span>
+                                    </div>
+                                    <div class="slide-btn">
+                                        <button class="btn btn-main"><a href="#" data-feather="shopping-cart"></a> Add to Cart</button>
+                                    </div>
+                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script>
+        feather.replace()
+    </script>
+       <script>
+        $('.slider-container').slick({
+            infinite: true,
+            slidesToShow: 4,
+            slidesToScroll: 4,
+            autoplay: true,
+        });
+    </script>
+
 </body>
 
 </html>
