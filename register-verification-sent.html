@@ -27,7 +27,17 @@
         }
 
         .card {
-            width: 70%;
+            position: center;
+            margin: auto;
+            text-align: center;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            background-color: #212226;
+        }
+
+        .card, .card-img-top {
             position: center;
             margin: auto;
             text-align: center;
@@ -52,10 +62,12 @@
 
 <br>
 
-<div class="card" style="width: 18rem;">
-    <img src="assets/logo_transparent.png" class="card-img-top" alt="Logo">
+<div class="card w-50">
+    <div class="card-header" style="color: white;">
+        <h2>Verify Your Email Address</h2>
+    </div>
+    <img src="assets/logo_transparent.png" class="card-img-top w-50" alt="Logo">
     <div class="card-body">
-        <h1 class="card-text" style="color: white;">Verify Your Email Address</h1>
         <p class="card-text" style="color: #dedede;">Before proceeding, please check your email for a verification link to verify your email address.</p>
     </div>
 </div>
