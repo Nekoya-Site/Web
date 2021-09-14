@@ -44,6 +44,62 @@
             width: 70%;
             height: 70%;
         }
+
+        @media screen and (max-width: 766px) {
+            .card h2 {
+                font-size: 7vw;
+            }
+
+            .card h6 {
+                font-size: 5vw;
+            }
+
+            .card a {
+                font-size: 5vw;
+            }
+        }
+
+        @media screen and (min-width: 767px) {
+            .card h2 {
+                font-size: 4vw;
+            }
+
+            .card h6 {
+                font-size: 2vw;
+            }
+
+            .card a {
+                font-size: 2.5vw;
+            }
+        }
+
+        @media screen and (min-width: 993px) {
+            .card h2 {
+                font-size: 3vw;
+            }
+
+            .card h6 {
+                font-size: 1.3vw;
+            }
+
+            .card a {
+                font-size: 1.5vw;
+            }
+        }
+
+        @media screen and (min-width: 1400px) {
+            .card h2 {
+                font-size: 4vw;
+            }
+
+            .card h6 {
+                font-size: 2vw;
+            }
+
+            .card a {
+                font-size: 3vw;
+            }
+        }
     </style>
 </head>
 <body>
@@ -59,21 +115,29 @@
 
 <br>
 
-<div class="card w-50">
-    <div class="card-header" style="color: white;">
-        <h2 style="font-size:3vw;">Verification Completed !!</h2>
-    </div>
-    <lottie-player src="https://assets10.lottiefiles.com/private_files/lf30_hlzxxlfs.json" class="icon"
-                   background="transparent"
-                   speed="1" loop autoplay></lottie-player>
-    <div class="card-body">
-        <h6 class="card-text" style="color: #dedede;font-size:1.3vw">Your Email Has Been Verified !! Please Sign in
-            Using the button
-            below..</h6>
-        <br style="display: block;content: ' ';margin: 1vw 0;line-height: 1vw;">
-        <a href="login.html" style="font-size: 1.5vw" class="btn btn-primary w-50">Sign in</a>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="card col-md-6 col-lg-6 col-xl-8">
+                <div class="card-header" style="color: white;">
+                    <h2>Verification Completed !!</h2>
+                </div>
+                <lottie-player src="https://assets10.lottiefiles.com/private_files/lf30_hlzxxlfs.json" class="icon"
+                               background="transparent"
+                               speed="1" loop autoplay></lottie-player>
+                <div class="card-body">
+                    <h6 class="card-text" style="color: #dedede;">Your Email Has Been Verified !! Please Sign in
+                        Using the button
+                        below..</h6>
+                    <br style="display: block;content: ' ';margin: 1vw 0;line-height: 1vw;">
+                    <a href="login.html" class="btn btn-primary">Sign in</a>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
+
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
