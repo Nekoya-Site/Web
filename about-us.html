@@ -55,10 +55,6 @@
             line-height: 4vw;
         }
 
-        .card-img-overlay {
-            top: 2.7vw;
-        }
-
         .card-img-overlay h1 {
             font-size: 5vw;
         }
@@ -69,6 +65,18 @@
 
         .card-img-overlay p {
             font-size: 1.4vw;
+        }
+
+        @media screen and (max-width: 500px) {
+            .card-img-overlay {
+                top: -2.7vw;
+            }
+        }
+
+        @media screen and (min-width: 501px) {
+            .card-img-overlay {
+                top: 2.7vw;
+            }
         }
     </style>
 </head>
