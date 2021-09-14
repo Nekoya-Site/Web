@@ -26,8 +26,7 @@
             border-bottom-right-radius: 20px;
         }
 
-        .card {
-            width: 70%;
+        .card, .btn, .card-img-top {
             position: center;
             margin: auto;
             text-align: center;
@@ -52,11 +51,14 @@
 
 <br>
 
-<div class="card" style="width: 18rem;">
-    <img src="assets/logo_transparent.png" class="card-img-top" alt="Logo">
+<div class="card w-50">
+    <div class="card-header" style="color: white;">
+        <h2>Verification Completed !!</h2>
+    </div>
+    <img src="assets/logo_transparent.png" class="card-img-top w-50" alt="Logo">
     <div class="card-body">
-        <h1 class="card-text" style="color: white;">Verification Completed !!</h1>
-        <p class="card-text" style="color: #dedede;">Please click here to sign in.</p>
+        <p class="card-text" style="color: #dedede;">Your Email Has Been Verified !! Please Sign in Using the button below..</p>
+        <a href="login.html" class="btn btn-primary w-50">Sign in</a>
     </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
