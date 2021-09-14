@@ -66,5 +66,17 @@
   .body-right{
     margin-left: 48px;
   }
+
 }
+
+@media (max-width: 450px){
+  .full-body{
+    font-size: x-small ;
+  }
+  .img{
+    width: 40px;
+    height: 40px;
+  }
+}
+
 
