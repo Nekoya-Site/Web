@@ -35,14 +35,17 @@
 
 
 .body-right{
-  margin-left: 20px;
+  margin-right: 48px;
   color: white;
   width: 30%;
   height: 100%;
 
 }
+
+
 .body-left{
   margin-left: 48px;
+  margin-right: 48px;
 }
 
 .button{
@@ -58,6 +61,10 @@
 @media only screen and (max-width: 1000px){
   .full-body{
     display: grid !important;
+  }
+
+  .body-right{
+    margin-left: 48px;
   }
 }
 

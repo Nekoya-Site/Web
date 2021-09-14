@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>individualProductPage</title>
-    <link rel="stylesheet" href="styleIndividualProduct.css">
+    <title>product</title>
+    <link rel="stylesheet" href="styleproduct.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,70 +39,71 @@
         </div>
     </nav>
 
-    <div class="product">
-        <div class="img">
-            <img src="assets/sepatu.png" style="width: 350px; height: auto">
-        </div>
-        <div class="description">
-            <div>
-                <h1>Fashione Shoes White</h1>
-            </div>
-            <div>
-                <p>
-                    Bahan MeshReady Size 39-43 Silahkan order Sesuai dengan variasi yang diinginkan! Tidak menerima perubahan Warna dan size 
-                    lewat Chat!!! Toko Pandu Store menjual Berbagai Macam Perlengkapan dan Keperluan Anda sehari-hari! Silahkan Kunjungi Toko 
-                    kami Pandu Store untuk mengetahui apa saja barang yang kami Jual. Kebanyakan Barang yang Kami jual adalah Barang hasil Produksi 
-                    sendiri dengan mengutamakan Kualitas dan kenyamanan saat digunakan Pembeli! Kesesuaian Foto 90% Membeli = Sudah Membaca informasi 
-                    ini Happy Shoping!!!
-                </p>
-            </div>
-            <div class="sizeSepatu">
-                <form>
-                    SIZE
-                    <br>
-                        <input type="radio" name="size"> 7 &emsp; &emsp;
-                        <input type="radio" name="size"> 8 &emsp; &emsp;
-                        <input type="radio" name="size"> 9 &emsp; &emsp;
-                </form>
-            </div>
-
-            <div style="display: flex; color: black;">
-                <button id="myBtn" class="button">Add to Cart</button>
-
-                <div id="myModal" class="modal">
-
-                    <div class="modal-content">
-                        <span class="close">&times;</span>
-                        <h2><b>SUCCESSFULLY ADDED TO BAG</b></h2>
-                        <div style="display: flex; padding-top: 10px;">
-                            <img src="assets/sepatu.png" alt="" width="200px" height="200px">
-                            <div style="padding-left: 50px; padding-right: 50px;">
-                                <h3>Fashione Shoes White</h3>
-                                <br>
-                                <h5><b>Rp 1.999.999,00</b></h5>
-                                <P>Total : 1</P>
-                            </div>
- 
-                            <div style="padding-left: 50px; border-left: 1px solid black; padding-right: 50px;">
-                                <h5><b>Your Bag</b></h5>
-                                <br>
-                                <p style="border-bottom: 1px solid black ;">Product Cost : Rp 1.999.999,00</p>
-                                <p>Total Product Cost : Rp 1.999.999,00</p>
-                            </div>
-
-                            <div style="padding-left: 50px; border-left: 1px solid black;">
-                                <a href="bag.html"> <button class="button" style="background-color: aqua;">Bag</button></a>
-                                <a href="checkout.html"> <button class="button" style="background-color: green; color: white" >Checkout</button></a>
-                            </div>
-                            
-                        </div>
-                    </div>
-                
+    <div class="card" style="background-color: #212226 ; border-radius: 20px; margin-top: 20px; ">
+        <div class="product">
+            <img src="assets/sepatu.png" alt="placeholder image" class="img-fluid" />
+            <div class="description">
+                <div style="margin-left: 20px;">
+                    <h1>Fashione Shoes White</h1>
                 </div>
+                <div>
+                    <p class="card-body" >
+                        Bahan MeshReady Size 39-43 Silahkan order Sesuai dengan variasi yang diinginkan! Tidak menerima perubahan Warna dan size 
+                        lewat Chat!!! Toko Pandu Store menjual Berbagai Macam Perlengkapan dan Keperluan Anda sehari-hari! Silahkan Kunjungi Toko 
+                        kami Pandu Store untuk mengetahui apa saja barang yang kami Jual. Kebanyakan Barang yang Kami jual adalah Barang hasil Produksi 
+                        sendiri dengan mengutamakan Kualitas dan kenyamanan saat digunakan Pembeli! Kesesuaian Foto 90% Membeli = Sudah Membaca informasi 
+                        ini Happy Shoping!!!
+                    </p>
+                </div>
+                <div class="sizeSepatu">
+                    <form>
+                        SIZE
+                        <br>
+                            <input type="radio" name="size"> 7 &emsp; &emsp;
+                            <input type="radio" name="size"> 8 &emsp; &emsp;
+                            <input type="radio" name="size"> 9 &emsp; &emsp;
+                    </form>
+                </div>
+    
+                <div style="display: flex; color: black;">
+                    <button id="myBtn" class="button">Add to Cart</button>
+    
+                    <div id="myModal" class="modal">
+    
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <h2><b>SUCCESSFULLY ADDED TO BAG</b></h2>
+                            <div class="konten" >
+                                <img src="assets/sepatu.png" alt="placeholder image" class="img-fluid"  width="200px" height="200px">
+                                <div style="padding-left: 20px; padding-right: 20px;">
+                                    <h3>Fashione Shoes White</h3>
+                                    <br>
+                                    <h5><b>Rp 1.999.999,00</b></h5>
+                                    <P>Total : 1</P>
+                                </div>
+     
+                                <div style="padding-left: 20px; border-left: 1px solid black; padding-right: 20px;">
+                                    <h5><b>Your Bag</b></h5>
+                                    <br>
+                                    <p style="border-bottom: 1px solid black ;">Product Cost : Rp 1.999.999,00</p>
+                                    <p>Total Product Cost : Rp 1.999.999,00</p>
+                                </div>
+    
+                                <div style="padding-left: 20px; border-left: 1px solid black;">
+                                    <a href="bag.html"> <button class="button" style="background-color: aqua;">Bag</button></a>
+                                    <a href="checkout.html"> <button class="button" style="background-color: green; color: white" >Checkout</button></a>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    
+                    </div>
+                </div>
+                <br>
+                <br>
             </div>
-            <br>
-            <br>
-        </div>
+    </div>
+    
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>

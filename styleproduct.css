@@ -16,7 +16,6 @@
     background-color: 1b1c1e;
     font-family: 'Poppins', sans-serif;
     display: flex;
-    margin-left: 48px;
     justify-content: left;
     text-align: left;
 }
@@ -25,7 +24,7 @@
     color: #ffffff;
     font-family: 'Poppins', sans-serif;
     margin-top: 20px;
-    margin-left: 40px;
+    margin-left: 48px;
     justify-content: center;
     text-align: left;
 }
@@ -39,6 +38,7 @@
     text-decoration: none;
     display: inline-block;
     margin: 4px 2px;
+    margin-left: 20px;
     cursor: pointer;
     border-radius: 16px;
   }
@@ -79,21 +79,38 @@
     cursor: pointer;
   }
 
-  .img{
-    margin-top: 20px;
+  .card{
+    background-color: 1b1c1e;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    margin-left: 48px;
+    margin-right: 48px;
+    justify-content: left;
+    text-align: left;
   }
+
+  .sizeSepatu{
+    margin-left: 20px;
+  }
+   .konten{
+    display: flex;
+    padding-top: 10px;
+   }
 
 @media only screen and (max-width: 1000px){
     .product{
       display: grid;
     }
 
-    .img{
-      width: 500px;
-      height: auto;
-    }
     .description{
       margin-left: 0px;
+      word-break: break-all;
+    }
+}
+
+@media (max-width: 900px){
+    .konten{
+      display: grid;
     }
 }
   
