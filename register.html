@@ -29,14 +29,6 @@
             border-bottom-right-radius: 20px;
         }
 
-        .card-1 {
-            background-color: black;
-            margin-top: 5%;
-            margin-bottom: 5%;
-            margin-right: 35%;
-            margin-left: 35%;
-        }
-
         button[type="submit"] {
             margin-bottom: 4%;
         }
@@ -48,14 +40,9 @@
         .hoversingup-1 a {
             color: white;
             background-color: transparent;
+            position: center;
+            margin: auto;
             text-align: center;
-            margin: 0;
-            padding-left: 0%;
-            padding-top: 2%;
-            padding-bottom: 2%;
-            margin-top: 0;
-            margin-left: 0%;
-            font-size: 13pt;
         }
 
         .hoversingup-1 a:hover {
@@ -64,6 +51,97 @@
             text-decoration: underline;
         }
 
+        .card {
+            position: center;
+            margin: auto;
+            text-align: center;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            background-color: #212226;
+        }
+
+        .icon {
+            position: center;
+            margin: auto;
+            width: 80%;
+            height: 80%;
+        }
+
+        @media screen and (max-width: 425px) {
+            .card a {
+                font-size: 3vw;
+            }
+
+            .card input {
+                font-size: 3vw;
+            }
+
+            .card-header {
+                font-size: 6vw;
+            }
+
+        }
+
+        @media screen and (min-width: 426px) {
+            .card a {
+                font-size: 2vw;
+            }
+
+            .card input {
+                font-size: 2vw;
+            }
+
+            .card-header {
+                font-size: 5vw;
+            }
+
+        }
+
+        @media screen and (min-width: 767px) {
+            .card a {
+                font-size: 2vw;
+            }
+
+            .card input {
+                font-size: 2vw;
+            }
+
+            .card-header {
+                font-size: 4vw;
+            }
+
+        }
+
+        @media screen and (min-width: 993px) {
+            .card a {
+                font-size: 1vw;
+            }
+
+            .card input {
+                font-size: 1vw;
+            }
+
+            .card-header {
+                font-size: 2.5vw;
+            }
+
+        }
+
+        @media screen and (min-width: 1400px) {
+            .card a {
+                font-size: 1vw;
+            }
+
+            .card input {
+                font-size: 1vw;
+            }
+
+            .card-header {
+                font-size: 2.5vw;
+            }
+        }
     </style>
 </head>
 
@@ -78,46 +156,52 @@
     <div class="collapse navbar-collapse" id="navbarTogglerDemo01"></div>
 </nav>
 
-<div class="card card-1 text-white bg-dark mb-3" style="border-radius: 30px;">
-    <div class="card-header" style="text-align: center; font-size: 20pt">Register</div>
-    <img src="assets/logo_transparent.png" alt="" width="40%" style="margin-left: 30%; margin-top: 0%;">
-    <div class="card-body">
-        <form class="px-4 py-3">
-            <div class="row">
-                <div class="col-xs-6 col-sm-6 col-md-6">
-                    <div class="form-group">
-                        <input type="text" name="first_name" id="first_name"
-                               class="form-control input-sm text-center" placeholder="First Name">
-                    </div>
-                </div>
-                <div class="col-xs-6 col-sm-6 col-md-6">
-                    <div class="form-group">
-                        <input type="text" name="last_name" id="last_name" class="form-control input-sm text-center"
-                               placeholder="Last Name">
-                    </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <input type="date" id="birthDate" class="form-control text-center">
-            </div>
-            <div class="form-group">
-                <input type="email" name="email" id="email" class="form-control input-sm text-center"
-                       placeholder="Email Address">
-            </div>
-            <div class="form-group">
-                <input type="password" name="password" id="password" class="form-control input-sm text-center"
-                       placeholder="Password">
-            </div>
-            <div class="form-group">
-                <input type="password" name="password_confirmation" id="password_confirmation"
-                       class="form-control input-sm text-center" placeholder="Confirm Password">
-            </div>
-            <button type="submit" class="btn btn-register btn-primary">Register</button>
+<br>
 
-            <div class="hoversingup-1">
-                <a class="dropdown-item" href="login.html">Already have account? Sign In</a>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="card text-white col-md-8 col-lg-6 col-xl-5">
+                <h1 class="card-header text-white">Register</h1>
+                <lottie-player src="https://assets10.lottiefiles.com/datafiles/JAmX1SNojoncImC/data.json" class="icon"
+                               background="transparent"
+                               speed="1" loop autoplay></lottie-player>
+                <div class="card-body">
+                    <form class="px-4 py-3">
+                        <div class="form-group">
+                            <input type="text" name="first_name" id="first_name"
+                                   class="form-control input-sm text-center" placeholder="First Name">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="last_name" id="last_name"
+                                   class="form-control input-sm text-center"
+                                   placeholder="Last Name">
+                        </div>
+                        <div class="form-group">
+                            <input type="date" id="birthDate" class="form-control text-center">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" id="email" class="form-control input-sm text-center"
+                                   placeholder="Email Address">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" name="password" id="password"
+                                   class="form-control input-sm text-center"
+                                   placeholder="Password">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" name="password_confirmation" id="password_confirmation"
+                                   class="form-control input-sm text-center" placeholder="Confirm Password">
+                        </div>
+                        <button type="submit" class="btn btn-register btn-primary">Register</button>
+
+                        <div class="hoversingup-1 text-center">
+                            <a href="login.html">Already have account? Sign In</a>
+                        </div>
+                    </form>
+                </div>
             </div>
-        </form>
+        </div>
     </div>
 </div>
 
@@ -130,6 +214,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous">
 </script>
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </body>
 
 </html>
