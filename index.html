@@ -14,6 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         .bg-color {
             background-color: #1b1c1e;
@@ -64,7 +65,7 @@
             display: block;
             height: 40px;
             border: 1px solid blue;
-            padding: .4px 1px;
+            padding: .10px 1px;
             outline: none;
         }
 
@@ -97,6 +98,8 @@
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             grid-column-gap: 20px;
+            padding-left: 6%;
+            padding-right: 6%;
         }
 
         .arrival-section {
@@ -121,7 +124,9 @@
         }
 
         .slider-container {
-           margin-top: 50px;
+           margin-top: 60px;
+           padding-left: 8%;
+           padding-right: 8%;
         }
 
         .slide {
@@ -137,8 +142,23 @@
             position: relative;
         }
 
+        .slide-badge {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background: #1b1c1e;
+            padding: .50px;
+            font-size: 10pt;
+            font-weight: 600;
+            border-bottom: transparent;
+        }
+
         .slide-info {
-            padding: 1rem;
+            padding: 10px;
             text-align: left;
         }
 
@@ -162,6 +182,54 @@
             font-weight: 700px;
             color: orangered;
             border: none !important;
+        }
+
+        .banner-section {
+            background-image: url(https://images.unsplash.com/photo-1455849318743-b2233052fcff?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjV8fGJhbm5lciUyMG1vZGVsfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60);
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 90vh;
+            background-position: center;
+            margin-left: 5%;
+            margin-right: 5%;
+        }
+
+        .banner-section .wrapper {
+            display: flex;
+            justify-content: flex-end;
+            width: 30%;
+            padding: 30px 0px;
+        }
+
+        .banner-text {
+            display: flex;
+            height: 80%;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .banner-text h1{
+            font-size:30pt;
+            color: black;
+        }
+
+        .banner-text p {
+            font-size: 20pt;
+            color: #1b1c1e;
+            margin-bottom: 10px;
+        }
+        
+        .col-4 {
+            flex-basis: 25%;
+            padding: 0px;
+            min-width: 200px;
+            margin-bottom: 50px;
+        }
+
+        .col-4 img {
+            width: 150%;
+            padding-left: 30%;
+            padding-right: 63%;
         }
     </style>
 </head>
@@ -254,11 +322,10 @@
     </div>
 
     <main>
-        <div class="arrival-section">
             <div class="wrapper">
                 <div class="section-header">
                     <h2 style="color: white;"><span class="text-main">New</span> Arrivals</h2>
-                    <div class="slider-wrapper">
+                    <div class="slider-wrapper" style="color: transparent;">
                         <div class="slider-container" style="color: white;">
                             <div class="slide">
                                 <div class="slide-img" style="background-image: url(assets/sepatu.png);">
@@ -377,6 +444,73 @@
                 </div>
             </div>
         </div>
+
+        <div class="arrival-section"></div>
+        <div class="banner-section">
+            <div class="wrapper">
+                <div class="banner-text">
+                    <h1>Spring Sale</h1>
+                    <p>30% off all denim</p>
+                    <button class="btn btn-main">Shop the sale</button>
+                </div>
+            </div>
+        </div>
+    
+
+    <div class="small-container" style="color: white;">
+        <h2>Featured Products</h2>
+        <div class="row">
+            <div class="col-4">
+                <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c25lYWtlcnN8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="">
+                <h4>Nike AIR</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <span>$100</span>
+            </div>
+            <div class="col-4">
+                <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c25lYWtlcnN8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="">
+                <h4>Nike AIR</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <span>$100</span>
+            </div>
+            <div class="col-4">
+                <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c25lYWtlcnN8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="">
+                <h4>Nike AIR</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <span>$100</span>
+            </div>
+            <div class="col-4">
+                <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c25lYWtlcnN8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="">
+                <h4>Nike AIR</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <span>$100</span>
+            </div>
+        </div>
+    </div>
+
     </main>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -395,10 +529,10 @@
     </script>
        <script>
         $('.slider-container').slick({
-            infinite: true,
             slidesToShow: 4,
             slidesToScroll: 4,
             autoplay: true,
+            dots: true,
         });
     </script>
 
