@@ -112,9 +112,73 @@
     .konten{
       display: grid;
     }
+    .bodymodal{
+      border-top: 1px solid black;
+      border-left: none !important;
+    }
 }
   
-  
+@media (max-width: 601px){
+  .konten{
+    display: grid;
+  }
+  .titledes{
+    font-size: 25px ;
+  }
+  .card-body{
+    font-size: 12px;
+  }
+}
+
+
+@media (max-width: 361px){
+  .konten{
+    display: grid;
+  }
+  .titledes{
+    font-size: 20px ;
+  }
+  .card-body{
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 321px){
+  .konten{
+    display: grid;
+  }
+  .titledes{
+    font-size: 17px ;
+  }
+  .card-body{
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 376px){
+  .konten{
+    display: grid;
+  }
+  .titledes{
+    font-size: 22px ;
+  }
+  .card-body{
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 511px){
+  .titlemodal{
+    font-size: 15px;
+  }
+  .modall{
+    font-size: 10px;
+  }
+  .titlee{
+    font-size: 20px;
+  }
+}
+
   
 
 
