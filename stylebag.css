@@ -81,7 +81,7 @@
 @media (max-width: 600px){
   
   .full-body{
-    font-size: 5px ;
+    font-size: 6px ;
   }
   .img{
     width: 30px;
@@ -97,7 +97,7 @@
     word-break: break-all;
   }
   .titlesummary{
-    font-size: 8px;
+    font-size: 10px;
 
   }
 }
