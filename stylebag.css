@@ -58,6 +58,15 @@
   display: flex;
 }
 
+.info{
+  margin-left: 30px;
+}
+.titlesummary{
+  text-align: center;
+  border-bottom: 1px solid white;
+  margin: 10px;
+}
+
 @media only screen and (max-width: 1000px){
   .full-body{
     display: grid !important;
@@ -69,14 +78,27 @@
 
 }
 
-@media (max-width: 450px){
+@media (max-width: 600px){
   
   .full-body{
-    font-size: x-small ;
+    font-size: 5px ;
   }
   .img{
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
+  }
+  .info{
+    margin-left: 5px;
+  }
+  .titletr{
+    word-break: keep-all;
+  }
+  .titletrdes{
+    word-break: break-all;
+  }
+  .titlesummary{
+    font-size: 8px;
+
   }
 }
 
