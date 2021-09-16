@@ -1,141 +1,236 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-    <script src="https://unpkg.com/feather-icons"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="assets/favicon.png"/>
+    <title>Register</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+          integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/feather-icons"></script>
+
     <style>
-
-        body{
-            --base-color: rgb(56,60,68);
+        body {
             font-family: 'Poppins', sans-serif;
-        }
-
-        .bg-color {
-            background-color: #212226;
+            background-color: #1b1c1e;
         }
 
         .nav-color {
-            background-color: #1b1c1e;
+            background-color: #212226;
         }
 
-        .card-1 {
-            background-color: #1b1c1e;
-            margin-top: 1%;
-            margin-bottom: 1%;
-            margin-right: 35%;
-            margin-left: 35%;
+        .nav-radius {
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
         }
 
-        .hoversingup-1 a {
+        button[type="submit"] {
+            margin-bottom: 4%;
+        }
+
+        .btn-register {
+            width: 100%;
+        }
+
+        .hoverlogin-1 a {
             color: white;
             background-color: transparent;
+            position: center;
+            margin: auto;
             text-align: center;
-            margin:0;
-            padding-left: 0%;
-            padding-top: 2%;
-            padding-bottom: 2%;
-            margin-top: 0;
-            margin-left: 0%;
-            font-size: 13pt;
         }
 
-        .hoversingup-1 a:hover {
+        .hoverlogin-1 a:hover {
             background-color: transparent;
             color: white;
             text-decoration: underline;
         }
 
-        button[type="submit"] {
-            margin-bottom: 4%;
-        } 
+        .card {
+            position: center;
+            margin: auto;
+            text-align: center;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            background-color: #212226;
+        }
 
-        .btn-login{
-            width: 100%;
+        .icon {
+            position: center;
+            margin: auto;
+            width: 70%;
+            height: 70%;
+            padding-bottom: 0%;
         }
 
         .form-check {
             float: left;
         }
 
-        .forgot-password {
-            margin-left: 20%;
-            padding-left: 150px;
-            color: white;
+        .form .options-01{
+            margin-bottom: 50px;
         }
 
-        .forgot-password a {
-            color: white;
+        .form .options-01 input{
+            width: 15px;
+            height: 15px;
+            margin-right: 5px;
         }
 
-        .forgot-password a:hover {
-            color: white;
+        .form .options-01 .remember-me{
+            color: #bbb;
+            font-size: 6pt;
+            display: flex;
+            align-items: center;
+            float: left;
+            cursor: pointer;
+            word-break: keep-all;
+
         }
 
-        .nav-radius {
-                border-bottom-left-radius: 20px;
-                border-bottom-right-radius: 20px;
+        .form .options-01 a{
+            color: #888;
+            font-size: 14px;
+            font-style: italic;
+            float: right;
+            text-align: right;
+            text-decoration: underline;
         }
+
+        @media screen and (max-width: 425px) {
+            .card a, input {
+                font-size: 3vw;
+            }
+
+            .card-header {
+                font-size: 6vw;
+            }
+        }
+
+        @media screen and (min-width: 426px) {
+            .card a, input {
+                font-size: 2vw;
+            }
+
+            .card-header {
+                font-size: 5vw;
+            }
+        }
+
+        @media screen and (min-width: 767px) {
+            .card a, input {
+                font-size: 2vw;
+            }
+
+            .card-header {
+                font-size: 4vw;
+            }
+        }
+
+        @media screen and (min-width: 993px) {
+            .card a, input {
+                font-size: 1vw;
+            }
+
+            .card-header {
+                font-size: 2.5vw;
+            }
+        }
+
+        @media screen and (min-width: 1400px) {
+            .card a, input {
+                font-size: 1vw;
+            }
+
+            .card-header {
+                font-size: 2.5vw;
+            }
+        }
+
+        @media screen and (max-width: 500px){
+        .form{
+            width: 95%;
+        }
+
+        .form .user-input{
+            width: 100%
+        }
+
+        .form .btn{
+            width: 100%;
+        }
+    }
     </style>
 </head>
-<body class="bg-color">
-  
-    <nav class="navbar navbar-dark nav-color ml-5 mr-5 nav-radius">
-        <img class="navbar-brand" src="assets/logo_transparent.png" alt="Banner" width="5%" style="margin-top: 0%;">
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a style="color: white; font-size: 16pt;">Login Page</a>
-            </li>
-        </ul>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo01"></div>
-    </nav>
 
-    <div class="card card-1 text-white bg-dark mb-3 login-color" style="border-radius: 30px;">
-        <div class="card-header" style="text-align: center; font-size: 24pt">Login</div>
-        <img src="assets/logo_transparent.png" alt="" width="40%" style="margin-left: 30%; margin-top: 0%;">
-        <div class="card-body">
-            <form class="px-4 py-3">
-                <div class="form-group">
-                    <a href="" data-feather="mail" style="font-size: 40px;"></a>
-                    <label for="exampleDropdownFormEmail1">Email</label>
-                    <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="Email">
-                </div>
-                <div class="form-group">
-                    <a href="" data-feather="lock" style="font-size: 40px;"></a>
-                    <label for="exampleDropdownFormPassword1">Password</label>
-                    <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password">
-                </div>
-                <div class="form-group">
-                  <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="dropdownCheck">
-                    <label class="form-check-label" for="dropdownCheck">
-                      Remember me
-                    </label>
-                  </div>
-                  <div class="forgot-password">
-                    <a class="forget" href="forgot-password.html">Forgot Password?</a>
-                  </div>
-                </div>
-                <button type="submit" class="btn btn-login btn-primary">Login</button>
+<body>
+<nav class="navbar navbar-dark nav-color ml-5 mr-5 nav-radius">
+    <img class="navbar-brand" src="assets/logo_transparent.png" alt="Banner" width="5%" style="margin-top: 0%;">
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a style="color: white; font-size: 16pt;">Login Page</a>
+        </li>
+    </ul>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01"></div>
+</nav>
 
-                <div class="hoversingup-1">
-                    <a class="dropdown-item" href="register.html">Not Have Account? Sign up</a>
+<br>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="card text-white col-md-8 col-lg-6 col-xl-5">
+                <h1 class="card-header text-white">Login</h1>
+                <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_myor1trh.json" class="icon"
+                               background="transparent"
+                               speed="1" loop autoplay></lottie-player>
+                <div class="card-body">
+                    <form class="px-4 py-3">
+                        <div class="form-group" style="text-align: left;">
+                            <a href="" data-feather="mail" style="font-size: 40px;"></a>
+                            <label for="exampleDropdownFormEmail1">Email</label>
+                            <input type="email" id="exampleDropdownFormEmail1"
+                                   class="form-control input-sm text-center" placeholder="Email">
+                        </div>
+                        <div class="form-group" style="text-align: left;">
+                            <a href="" data-feather="lock" style="font-size: 40px;"></a>
+                            <label for="exampleDropdownFormPassword1">Password</label>
+                            <input type="password" id="exampleDropdownFormPassword1"
+                                   class="form-control input-sm text-center" placeholder="Password">
+                        <div class="options-01 hoverlogin-1" style="word-break: keep-all;">
+                            <label class="remember-me text-left"><input type="checkbox" name="">Remember me</label>
+                            <a href="forgot-password.html" style="margin-left: 14%; font-size: 10pt;">Forgot your password?</a>
+                        </div>                        
+                        <button type="submit" class="btn btn-register btn-primary">Login</button>
+
+                        <div class="hoverlogin-1 text-center">
+                            <a href="register.html">Not Have Account? Sign up</a>
+                        </div>
+                        </div>
+                    </form>
                 </div>
-              </form>  
+            </div>
         </div>
-      </div>
-    
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script>
-        feather.replace()
-      </script>
+    </div>
+</div>
+
+<script>
+    feather.replace()
+</script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous">
+</script>
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </body>
+
 </html>
