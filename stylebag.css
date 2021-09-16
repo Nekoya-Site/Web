@@ -67,6 +67,18 @@
   margin: 10px;
 }
 
+.container{
+  margin-left: 0px;
+  align-items: left;
+  justify-content: left;
+}
+
+.container input{
+  align-items: left;
+  justify-content: left;
+  width: 40px;
+}
+
 @media only screen and (max-width: 1000px){
   .full-body{
     display: grid !important;
