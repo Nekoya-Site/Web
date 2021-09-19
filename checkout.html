@@ -229,9 +229,20 @@
                     </select>
                 </div>
             </form>
-            <a href="payment.html">
-                <button class="button" style="background-color: green; color: white">Pay</button>
-            </a>
+            <div style="display: flex; color: black;">
+                <button class="button" id="myBtn">Pay</button>
+                <div class="modal" id="myModal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <div class="konten">
+                            <h4><b>YOUR ORDER SUCCESSFULLY</b></h4>
+                            <a href="payment.html">
+                                <button class="button" style="background-color: yellow; color: black;">How to Pay</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -243,6 +254,26 @@
 <script crossorigin="anonymous"
         integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
         src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
-
+<script>
+    var modal = document.getElementById("myModal");
+        
+    var btn = document.getElementById("myBtn");
+        
+    var span = document.getElementsByClassName("close")[0];
+        
+    btn.onclick = function () {
+        modal.style.display = "block";
+    }
+        
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+        
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
 </body>
 </html>
