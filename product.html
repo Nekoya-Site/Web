@@ -2,23 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>product</title>
-    <link rel="stylesheet" href="styleproduct.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
-          integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="styleproduct.css" rel="stylesheet">
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+          integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 
 </head>
 <body class="bg-color">
 <nav class="navbar navbar-expand-lg navbar-dark comp-color ml-5 mr-5 nav-radius">
     <a class="navbar-brand" href="#">Details Products</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
-            aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+    <button aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"
+            data-target="#navbarTogglerDemo01" data-toggle="collapse" type="button">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
@@ -27,7 +27,7 @@
                 <a class="nav-link" href="/">Home</a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link disabled" href="product-list.html" aria-disabled="true">Products</a>
+                <a aria-disabled="true" class="nav-link disabled" href="product-list.html">Products</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="about-us.html">About Us</a>
@@ -38,7 +38,7 @@
         </ul>
         <span class="navbar-nav my-2 my-lg-0 text-white">
                 <div class="my-4">
-                    <a href="login.html"><button type="button" class="btn btn-outline-success mt-auto mb-auto mr-3">Login</button></a>
+                    <a href="login.html"><button class="btn btn-outline-success mt-auto mb-auto mr-3" type="button">Login</button></a>
                 </div>
                 <i class="fas fa-shopping-cart mt-auto mb-auto"><span class="ml-2 mt-auto mb-auto">$999</span></i>
             </span>
@@ -47,7 +47,7 @@
 
 <div class="card" style="background-color: #212226 ; border-radius: 20px; margin-top: 20px; ">
     <div class="product">
-        <img src="assets/sepatu.png" alt="placeholder image" class="img-fluid"/>
+        <img alt="placeholder image" class="img-fluid" src="assets/sepatu.png"/>
         <div class="description">
             <div style="margin-left: 20px;">
                 <h1 class="titledes">Fashione Shoes White</h1>
@@ -69,23 +69,23 @@
                 <form>
                     SIZE
                     <br>
-                    <input type="radio" name="size"> 7 &emsp; &emsp;
-                    <input type="radio" name="size"> 8 &emsp; &emsp;
-                    <input type="radio" name="size"> 9 &emsp; &emsp;
+                    <input name="size" type="radio"> 7 &emsp; &emsp;
+                    <input name="size" type="radio"> 8 &emsp; &emsp;
+                    <input name="size" type="radio"> 9 &emsp; &emsp;
                 </form>
             </div>
 
             <div style="display: flex; color: black;">
-                <button id="myBtn" class="button">Add to Cart</button>
+                <button class="button" id="myBtn">Add to Cart</button>
 
-                <div id="myModal" class="modal">
+                <div class="modal" id="myModal">
 
                     <div class="modal-content">
                         <span class="close">&times;</span>
                         <h2 class="titlee"><b>SUCCESSFULLY ADDED TO BAG</b></h2>
                         <div class="konten">
-                            <img src="assets/sepatu.png" alt="placeholder image" class="img-fluid" width="200px"
-                                 height="200px">
+                            <img alt="placeholder image" class="img-fluid" height="200px" src="assets/sepatu.png"
+                                 width="200px">
                             <div class="bodymodal" style="padding-left: 20px; padding-right: 20px;">
                                 <h3 class="titlemodal">Fashione Shoes White</h3>
                                 <br>
@@ -123,12 +123,12 @@
     </div>
 
 </div>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+<script crossorigin="anonymous"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script crossorigin="anonymous"
         integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
-        crossorigin="anonymous"></script>
+        src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
     var modal = document.getElementById("myModal");
 

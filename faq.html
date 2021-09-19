@@ -3,12 +3,12 @@
 <head>
     <title>Frequently Ask Question</title>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" type="image/png" href="assets/favicon.png"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
-          integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="assets/favicon.png" rel="shortcut icon" type="image/png"/>
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+          integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <style>
         .bg-color {
             background-color: #1b1c1e;
@@ -39,10 +39,10 @@
 
 <body class="bg-color">
 <nav class="navbar navbar-expand-lg navbar-dark comp-color ml-5 mr-5 nav-radius">
-    <a href="/"><img class="navbar-brand" src="assets/logo_transparent.png" alt="Banner" style="margin-top: 0%;"
-                     width="80" height="80"></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
-            aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+    <a href="/"><img alt="Banner" class="navbar-brand" height="80" src="assets/logo_transparent.png"
+                     style="margin-top: 0%;" width="80"></a>
+    <button aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"
+            data-target="#navbarTogglerDemo01" data-toggle="collapse" type="button">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
@@ -51,7 +51,7 @@
                 <a class="nav-link" href="/">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="product-list.html" aria-disabled="true">Products</a>
+                <a aria-disabled="true" class="nav-link" href="product-list.html">Products</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="about-us.html">About Us</a>
@@ -62,7 +62,7 @@
         </ul>
         <span class="navbar-nav my-2 my-lg-0 text-white">
                     <div class="my-4">
-                        <a href="login.html"><button type="button" class="btn btn-outline-success mt-auto mb-auto mr-3">Login</button></a>
+                        <a href="login.html"><button class="btn btn-outline-success mt-auto mb-auto mr-3" type="button">Login</button></a>
                     </div>
                     <i class="fas fa-shopping-cart mt-auto mb-auto"><span class="ml-2 mt-auto mb-auto">$999</span></i>
                 </span>
@@ -74,17 +74,17 @@
         <div class="card bg-dark">
             <div class="card-header" id="headingOne">
                 <h2 class="mb-0">
-                    <button class="btn btn-link btn-block text-left collapsed text-decoration-none text-white"
-                            type="button"
-                            data-toggle="collapse"
-                            data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                    <button aria-controls="collapseOne"
+                            aria-expanded="false"
+                            class="btn btn-link btn-block text-left collapsed text-decoration-none text-white"
+                            data-target="#collapseOne" data-toggle="collapse" type="button">
                         How to order ?
                     </button>
                 </h2>
             </div>
 
-            <div id="collapseOne" class="collapse" aria-labelledby="headingOne"
-                 data-parent="#accordionExample">
+            <div aria-labelledby="headingOne" class="collapse" data-parent="#accordionExample"
+                 id="collapseOne">
                 <div class="card-body text-white">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tortor tortor, imperdiet quis
                     mollis et, malesuada eu eros. Quisque nibh elit, vulputate ac consectetur eget, convallis sed
@@ -96,14 +96,14 @@
         <div class="card bg-dark">
             <div class="card-header" id="headingTwo">
                 <h2 class="mb-0">
-                    <button class="btn btn-link btn-block text-left collapsed text-decoration-none text-white"
-                            type="button" data-toggle="collapse"
-                            data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    <button aria-controls="collapseTwo"
+                            aria-expanded="false" class="btn btn-link btn-block text-left collapsed text-decoration-none text-white"
+                            data-target="#collapseTwo" data-toggle="collapse" type="button">
                         How to check order status ?
                     </button>
                 </h2>
             </div>
-            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+            <div aria-labelledby="headingTwo" class="collapse" data-parent="#accordionExample" id="collapseTwo">
                 <div class="card-body text-white">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tortor tortor, imperdiet quis
                     mollis et, malesuada eu eros. Quisque nibh elit, vulputate ac consectetur eget, convallis sed
@@ -115,14 +115,14 @@
         <div class="card bg-dark">
             <div class="card-header" id="headingThree">
                 <h2 class="mb-0">
-                    <button class="btn btn-link btn-block text-left collapsed text-decoration-none text-white"
-                            type="button" data-toggle="collapse"
-                            data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    <button aria-controls="collapseThree"
+                            aria-expanded="false" class="btn btn-link btn-block text-left collapsed text-decoration-none text-white"
+                            data-target="#collapseThree" data-toggle="collapse" type="button">
                         How to cancel order ?
                     </button>
                 </h2>
             </div>
-            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+            <div aria-labelledby="headingThree" class="collapse" data-parent="#accordionExample" id="collapseThree">
                 <div class="card-body text-white">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tortor tortor, imperdiet quis
                     mollis et, malesuada eu eros. Quisque nibh elit, vulputate ac consectetur eget, convallis sed
@@ -134,11 +134,11 @@
     </div>
 </div>
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+<script crossorigin="anonymous"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" src="https://code.jquery.com/jquery-3.5.1.slim.min.js">
 </script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous">
+<script crossorigin="anonymous"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js">
 </script>
 </body>
 

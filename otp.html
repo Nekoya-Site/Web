@@ -3,14 +3,14 @@
 
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" type="image/png" href="assets/favicon.png"/>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="assets/favicon.png" rel="shortcut icon" type="image/png"/>
     <title>OTP Page</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
-          integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+          integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" rel="stylesheet">
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/feather-icons"></script>
 
@@ -55,7 +55,7 @@
             margin-bottom: -6%;
         }
 
-        .text-resend{
+        .text-resend {
             color: white;
             text-align: center;
         }
@@ -64,7 +64,7 @@
             color: white;
         }
 
-        .btn-success:hover{
+        .btn-success:hover {
             margin-left: 0%;
         }
 
@@ -123,16 +123,16 @@
             }
         }
 
-        @media screen and (max-width: 500px){
-            .form{
+        @media screen and (max-width: 500px) {
+            .form {
                 width: 95%;
             }
 
-            .form .user-input{
+            .form .user-input {
                 width: 100%
             }
 
-            .form .btn{
+            .form .btn {
                 width: 100%;
             }
         }
@@ -141,7 +141,7 @@
 
 <body>
 <nav class="navbar navbar-dark nav-color ml-5 mr-5 nav-radius">
-    <img class="navbar-brand" src="assets/logo_transparent.png" alt="Banner" width="5%" style="margin-top: 0%;">
+    <img alt="Banner" class="navbar-brand" src="assets/logo_transparent.png" style="margin-top: 0%;" width="5%">
     <ul class="navbar-nav">
         <li class="nav-item">
             <a style="color: white; font-size: 16pt;">OTP Page</a>
@@ -157,42 +157,47 @@
         <div class="col">
             <div class="card text-white col-md-9 col-lg-6 col-xl-5">
                 <h1 class="card-header text-white">OTP VERIFICATION</h1>
-                <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_zztlhuue.json" class="icon"
-                               background="transparent"
-                               speed="1" loop autoplay></lottie-player>
-                <div class="py-3 text"  style="padding: 0% 5%; text-align: center;">
+                <lottie-player autoplay background="transparent"
+                               class="icon"
+                               loop speed="1" src="https://assets2.lottiefiles.com/packages/lf20_zztlhuue.json"></lottie-player>
+                <div class="py-3 text" style="padding: 0% 5%; text-align: center;">
                     <a>code has been send to kel*****@gmail.com</a>
                 </div>
                 <br>
                 <div class="input-container d-flex flex-row justify-content-center mt-2">
-                    <input type="text" id='ist' class="m-1 text-center form-control rounded" maxlength="1" onkeyup="clickEvent(this,'sec')">
-                    <input type="text" id="sec" class="m-1 text-center form-control rounded" maxlength="1" onkeyup="clickEvent(this,'third')">
-                    <input type="text" id="third" class="m-1 text-center form-control rounded" maxlength="1" onkeyup="clickEvent(this,'fourth')">
-                    <input type="text" id="fourth" class="m-1 text-center form-control rounded" maxlength="1" onkeyup="clickEvent(this,'fifth')">
-                    <input type="text" id="fifth" class="m-1 text-center form-control rounded" maxlength="1" onkeyup="clickEvent(this,'sixth')">
-                    <input type="text" id="sixth" class="m-1 text-center form-control rounded" maxlength="1">
+                    <input class="m-1 text-center form-control rounded" id='ist' maxlength="1" onkeyup="clickEvent(this,'sec')"
+                           type="text">
+                    <input class="m-1 text-center form-control rounded" id="sec" maxlength="1" onkeyup="clickEvent(this,'third')"
+                           type="text">
+                    <input class="m-1 text-center form-control rounded" id="third" maxlength="1" onkeyup="clickEvent(this,'fourth')"
+                           type="text">
+                    <input class="m-1 text-center form-control rounded" id="fourth" maxlength="1" onkeyup="clickEvent(this,'fifth')"
+                           type="text">
+                    <input class="m-1 text-center form-control rounded" id="fifth" maxlength="1" onkeyup="clickEvent(this,'sixth')"
+                           type="text">
+                    <input class="m-1 text-center form-control rounded" id="sixth" maxlength="1" type="text">
                 </div>
                 <div class="text-resend">
                     <small>
                         didn't get the otp? &nbsp;
-                        <a href="forgot-password.html" class="text-decoration-none">Resend Code</a>
+                        <a class="text-decoration-none" href="forgot-password.html">Resend Code</a>
                     </small>
                 </div>
-            
+
                 <div class="mt-3 mb-5">
                     <button class="btn btn-success px-4 verify-btn" style="width: 65%;">Verify</button>
                 </div>
             </div>
         </div>
-            </div>
-        </div>
     </div>
+</div>
+</div>
 </div>
 
 
 <script>
-    function clickEvent(first,last){
-        if(first.value.length){
+    function clickEvent(first, last) {
+        if (first.value.length) {
             document.getElementById(last).focus();
         }
     }
@@ -200,11 +205,11 @@
 <script>
     feather.replace()
 </script>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+<script crossorigin="anonymous"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" src="https://code.jquery.com/jquery-3.5.1.slim.min.js">
 </script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous">
+<script crossorigin="anonymous"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js">
 </script>
 <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </body>
