@@ -110,12 +110,10 @@
 
 .container {
     margin-left: 0px;
-    align-items: left;
     justify-content: left;
 }
 
 .container input {
-    align-items: left;
     justify-content: left;
     width: 40px;
 }
