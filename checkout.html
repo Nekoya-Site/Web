@@ -5,7 +5,6 @@
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>checkout</title>
-    <link href="stylecheckout.css" rel="stylesheet">
     <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
           integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" rel="stylesheet">
     <link href="assets/favicon.png" rel="shortcut icon" type="image/png"/>
@@ -13,239 +12,467 @@
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <style>
+        .bg-color {
+            background-color: #1b1c1e;
+        }
+
+        .comp-color {
+            background-color: #212226;
+        }
+
+        .nav-radius {
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+
+        .title {
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            margin-top: 15px;
+            margin-left: 48px;
+            justify-content: left;
+            text-align: left;
+            background-color: #1b1c1e;
+        }
+
+        .bag-list {
+            display: flex;
+            color: white;
+            border-bottom: 1px solid white;
+            background-color: #1b1c1e;
+            font-family: 'Poppins', sans-serif;
+            margin-bottom: 1%;
+            justify-content: left;
+            text-align: left;
+        }
+
+
+        .body-right {
+            margin-right: 48px;
+            color: white;
+            width: 30%;
+            height: 100%;
+
+        }
+
+
+        .body-left {
+            margin-left: 48px;
+            margin-right: 48px;
+        }
+
+        .button {
+            color: white;
+            background-color: green;
+            margin-top: 15px;
+        }
+
+        .full-body {
+            display: flex;
+        }
+
+        .info {
+            margin-left: 30px;
+        }
+
+        .titlesummary {
+            text-align: center;
+            border-bottom: 1px solid white;
+            margin: 10px;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        .close {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        @media only screen and (max-width: 1000px) {
+            .full-body {
+                display: grid !important;
+            }
+
+            .body-right {
+                margin-left: 48px;
+                width: 500px;
+            }
+
+        }
+
+        @media (max-width: 600px) {
+
+            .full-body {
+                font-size: 7px;
+            }
+
+            .img {
+                width: 30px;
+                height: 30px;
+            }
+
+            .info {
+                margin-left: 5px;
+            }
+
+            .titletr {
+                word-break: keep-all;
+            }
+
+            .titletrdes {
+                word-break: break-all;
+            }
+
+            .titlesummary {
+                font-size: 10px;
+            }
+
+            .body-right {
+                width: 504px;
+            }
+
+            .body-left {
+                width: 504px;
+            }
+        }
+
+        @media (max-width: 541px) {
+            .body-right {
+                width: 444px;
+            }
+
+            .body-left {
+                width: 444px;
+            }
+        }
+
+        @media (max-width: 412px) {
+            .body-right {
+                width: 315px;
+            }
+
+            .body-left {
+                width: 315px;
+            }
+        }
+
+        @media (max-width: 415px) {
+            .body-right {
+                width: 318px;
+            }
+
+            .body-left {
+                width: 318px;
+            }
+        }
+
+        @media (max-width: 376px) {
+            .body-right {
+                width: 280px;
+            }
+
+            .body-left {
+                width: 280px;
+            }
+        }
+
+        @media (max-width: 361px) {
+            .body-right {
+                width: 264px;
+            }
+
+            .body-left {
+                width: 264px;
+            }
+        }
+
+        @media (max-width: 321px) {
+            .body-right {
+                width: 224px;
+            }
+
+            .body-left {
+                width: 224px;
+            }
+        }
+
+        @media (max-width: 281px) {
+            .body-right {
+                width: 184px;
+            }
+
+            .body-left {
+                width: 184px;
+            }
+        }
+    </style>
 </head>
 
 <body class="bg-color">
-<nav class="navbar navbar-expand-lg navbar-dark comp-color ml-5 mr-5 nav-radius">
-    <a class="navbar-brand" href="#">Checkout</a>
-    <button aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"
+    <nav class="navbar navbar-expand-lg navbar-dark comp-color ml-5 mr-5 nav-radius">
+        <a class="navbar-brand" href="#">Shopping Cart</a>
+        <button aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"
             data-target="#navbarTogglerDemo01" data-toggle="collapse" type="button">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-        <ul class="navbar-nav mx-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="/">Home</a>
-            </li>
-            <li class="nav-item">
-                <a aria-disabled="true" class="nav-link disabled" href="/products-page.html">Products</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/aboutus.html">About Us</a>
-            </li>
-        </ul>
-        <span class="navbar-nav my-2 my-lg-0 text-white">
-                <div class="my-4">
-                    <a href="login.html"><button class="btn btn-outline-success mt-auto mb-auto mr-3" type="button">Login</button></a>
-                </div>
-                <i class="fas fa-shopping-cart mt-auto mb-auto"><span class="ml-2 mt-auto mb-auto">$999</span></i>
-            </span>
-    </div>
-</nav>
-
-<div class="title">
-    <h3>Shopping Cart</h3>
-</div>
-
-
-<div class="full-body">
-    <div class="body-left">
-        <table class="table" style="color: white; margin-right: 48px;">
-            <thead>
-            <tr class="titletr">
-                <th scope="col">Item</th>
-                <th scope="col">Qty</th>
-                <th scope="col">Item Price</th>
-                <th scope="col">Sub Total</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr class="titletrdes">
-                <th scope="row" style="display: flex;"><img alt="placeholder image" class="img" height="80px"
-                                                            src="assets/sepatu.png" width="80px">
-                    <div class="info">
-                        <p>Fashione Shoes</p>
-                        <p>Size : 8</p>
-                        <p>Qty : 1</p>
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item active">
+                    <a aria-disabled="true" class="nav-link disabled" href="product-list.html">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about-us.html">About Us</a>
+                </li>
+                   <li class="nav-item">
+                    <a class="nav-link" href="faq.html">FAQ</a>
+                </li>
+            </ul>
+            <span class="navbar-nav my-2 my-lg-0 text-white">
+                    <div class="my-4">
+                        <a href="login.html"><button class="btn btn-outline-success mt-auto mb-auto mr-3" type="button">Login</button></a>
                     </div>
-                </th>
-                <td>1</td>
-                <td>Rp 1.999.999,00</td>
-                <td>Rp 1.999.999,00</td>
-            </tr>
-            <tr>
-                <th scope="row" style="display: flex;"><img alt="placeholder image" class="img" height="80px"
-                                                            src="assets/sepatu.png" width="80px">
-                    <div class="info">
-                        <p>Fashione Shoes</p>
-                        <p>Size : 8</p>
-                        <p>Qty : 1</p>
-                    </div>
-                </th>
-                <td>1</td>
-                <td>Rp 1.999.999,00</td>
-                <td>Rp 1.999.999,00</td>
-            </tr>
-            <tr>
-                <th scope="row" style="display: flex;"><img alt="placeholder image" class="img" height="80px"
-                                                            src="assets/sepatu.png" width="80px">
-                    <div class="info">
-                        <p>Fashione Shoes</p>
-                        <p>Size : 8</p>
-                        <p>Qty : 1</p>
-                    </div>
-                </th>
-                <td>1</td>
-                <td>Rp 1.999.999,00</td>
-                <td>Rp 1.999.999,00</td>
-            </tr>
-            </tbody>
-        </table>
+                    <i class="fas fa-shopping-cart mt-auto mb-auto"><span class="ml-2 mt-auto mb-auto">$999</span></i>
+                </span>
+        </div>
+    </nav>
+
+    <div class="title">
+        <h3>Shopping Cart</h3>
     </div>
 
-    <div class="body-right" style="margin-left: 48px;">
-        <div class="card" style="background-color: #212226 ; border-radius: 20px; padding: 30px;">
-            <h3>SHIPPING DETAILS</h3>
-            <p>Please enter your delivery address</p>
-            <form style="border-top: 1px solid white;">
-                <div class="form-group">
-                    <label for="contactInformation"><b>CONTACT INFORMATION</b></label>
-                    <div style="display: flex;">
-                        <input aria-describedby="fnamehelp" class="form-control" id="exampleInputFName" placeholder="First Name"
-                               type="FName">
-                        <input aria-describedby="lnamehelp" class="form-control" id="exampleInputLName" placeholder="Last Name"
-                               type="Lname">
+
+    <div class="full-body">
+        <div class="body-left">
+            <table class="table" style="color: white; margin-right: 48px;">
+                <thead>
+                <tr class="titletr">
+                    <th scope="col">Item</th>
+                    <th scope="col">Qty</th>
+                    <th scope="col">Item Price</th>
+                    <th scope="col">Sub Total</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="titletrdes">
+                    <th scope="row" style="display: flex;"><img alt="placeholder image" class="img" height="80px"
+                                                                src="assets/sepatu.png" width="80px">
+                        <div class="info">
+                            <p>Fashione Shoes</p>
+                            <p>Size : 8</p>
+                            <p>Qty : 1</p>
+                        </div>
+                    </th>
+                    <td>1</td>
+                    <td>Rp 1.999.999,00</td>
+                    <td>Rp 1.999.999,00</td>
+                </tr>
+                <tr>
+                    <th scope="row" style="display: flex;"><img alt="placeholder image" class="img" height="80px"
+                                                                src="assets/sepatu.png" width="80px">
+                        <div class="info">
+                            <p>Fashione Shoes</p>
+                            <p>Size : 8</p>
+                            <p>Qty : 1</p>
+                        </div>
+                    </th>
+                    <td>1</td>
+                    <td>Rp 1.999.999,00</td>
+                    <td>Rp 1.999.999,00</td>
+                </tr>
+                <tr>
+                    <th scope="row" style="display: flex;"><img alt="placeholder image" class="img" height="80px"
+                                                                src="assets/sepatu.png" width="80px">
+                        <div class="info">
+                            <p>Fashione Shoes</p>
+                            <p>Size : 8</p>
+                            <p>Qty : 1</p>
+                        </div>
+                    </th>
+                    <td>1</td>
+                    <td>Rp 1.999.999,00</td>
+                    <td>Rp 1.999.999,00</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="body-right" style="margin-left: 48px;">
+            <div class="card" style="background-color: #212226 ; border-radius: 20px; padding: 30px;">
+                <h3>SHIPPING DETAILS</h3>
+                <p>Please enter your delivery address</p>
+                <form style="border-top: 1px solid white;">
+                    <div class="form-group">
+                        <label for="contactInformation"><b>CONTACT INFORMATION</b></label>
+                        <div style="display: flex;">
+                            <input aria-describedby="fnamehelp" class="form-control" id="exampleInputFName" placeholder="First Name"
+                                type="FName">
+                            <input aria-describedby="lnamehelp" class="form-control" id="exampleInputLName" placeholder="Last Name"
+                                type="Lname">
+                        </div>
+                        <input aria-describedby="PhoneNumber" class="form-control" id="exampleInputPhoneNum" placeholder="Phone Number"
+                            type="PhoneNum">
+                        <small class="form-text text-muted" id="phoneHelp">We'll never share your Phone Number with anyone
+                            else.</small>
                     </div>
-                    <input aria-describedby="PhoneNumber" class="form-control" id="exampleInputPhoneNum" placeholder="Phone Number"
-                           type="PhoneNum">
-                    <small class="form-text text-muted" id="phoneHelp">We'll never share your Phone Number with anyone
-                        else.</small>
-                </div>
 
-                <div class="form-group">
-                    <label for="contactInformation"><b>ADDRESS</b></label>
-                    <input aria-describedby="Address1" class="form-control" id="exampleInputAddress1" placeholder="Street Address "
-                           type="Address1">
-                    <input aria-describedby="Address2" class="form-control" id="exampleInputAddress2" placeholder="Street Address 2 "
-                           type="Address2">
-                </div>
-
-
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Region</label>
+                    <div class="form-group">
+                        <label for="contactInformation"><b>ADDRESS</b></label>
+                        <input aria-describedby="Address1" class="form-control" id="exampleInputAddress1" placeholder="Street Address "
+                            type="Address1">
+                        <input aria-describedby="Address2" class="form-control" id="exampleInputAddress2" placeholder="Street Address 2 "
+                            type="Address2">
                     </div>
-                    <select class="custom-select" id="inputGroupSelect01">
-                        <option selected>
-                            <Choose class=""></Choose>
-                        </option>
-                        <option value="1">Indonesia</option>
-                        <option value="2">Japan</option>
-                        <option value="3">United Kingdom</option>
-                    </select>
-                </div>
 
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect02">State/Province</label>
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">Region</label>
+                        </div>
+                        <select class="custom-select" id="inputGroupSelect01">
+                            <option selected>
+                                <Choose class=""></Choose>
+                            </option>
+                            <option value="1">Indonesia</option>
+                            <option value="2">Japan</option>
+                            <option value="3">United Kingdom</option>
+                        </select>
                     </div>
-                    <select class="custom-select" id="inputGroupSelect02">
-                        <option selected>Choose...</option>
-                        <option value="1">DKI Jakarta</option>
-                        <option value="2">Kalimantan Barat</option>
-                        <option value="3">Jawab Barat</option>
-                    </select>
-                </div>
 
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect03">City</label>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect02">State/Province</label>
+                        </div>
+                        <select class="custom-select" id="inputGroupSelect02">
+                            <option selected>Choose...</option>
+                            <option value="1">DKI Jakarta</option>
+                            <option value="2">Kalimantan Barat</option>
+                            <option value="3">Jawab Barat</option>
+                        </select>
                     </div>
-                    <select class="custom-select" id="inputGroupSelect03">
-                        <option selected>Choose...</option>
-                        <option value="1">Jakarta</option>
-                        <option value="2">Singkawang</option>
-                        <option value="3">Bogor</option>
-                    </select>
-                </div>
 
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect04">District</label>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect03">City</label>
+                        </div>
+                        <select class="custom-select" id="inputGroupSelect03">
+                            <option selected>Choose...</option>
+                            <option value="1">Jakarta</option>
+                            <option value="2">Singkawang</option>
+                            <option value="3">Bogor</option>
+                        </select>
                     </div>
-                    <select class="custom-select" id="inputGroupSelect04">
-                        <option selected>Choose...</option>
-                        <option value="1">Grogol</option>
-                        <option value="2">Sei-Wei</option>
-                        <option value="3">Puncak</option>
-                    </select>
-                </div>
 
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect05">Sub District</label>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect04">District</label>
+                        </div>
+                        <select class="custom-select" id="inputGroupSelect04">
+                            <option selected>Choose...</option>
+                            <option value="1">Grogol</option>
+                            <option value="2">Sei-Wei</option>
+                            <option value="3">Puncak</option>
+                        </select>
                     </div>
-                    <select class="custom-select" id="inputGroupSelect05">
-                        <option selected>Choose...</option>
-                        <option value="1">...</option>
-                        <option value="2">...</option>
-                        <option value="3">...</option>
-                    </select>
-                </div>
 
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect06">Portal Code</label>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect05">Sub District</label>
+                        </div>
+                        <select class="custom-select" id="inputGroupSelect05">
+                            <option selected>Choose...</option>
+                            <option value="1">...</option>
+                            <option value="2">...</option>
+                            <option value="3">...</option>
+                        </select>
                     </div>
-                    <select class="custom-select" id="inputGroupSelect06">
-                        <option selected>Choose...</option>
-                        <option value="1">11450</option>
-                        <option value="2">79115</option>
-                        <option value="3">16111</option>
-                    </select>
-                </div>
 
-                <small class="form-text text-muted" id="phoneHelp">Email : budi45@gmail.com</small>
-                <div class="form-check">
-                    <input class="form-check-input" id="defaultCheck1" type="checkbox" value="">
-                    <label class="form-check-label" for="defaultCheck1">
-                        My Billing and Shipping information are the same
-                    </label>
-                </div>
-            </form>
-
-            <h3 style="margin-top: 20px;">SHIPPING METHODS</h3>
-
-            <form style="border-top: 1px solid white;">
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect07">Shipping Methods</label>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect06">Portal Code</label>
+                        </div>
+                        <select class="custom-select" id="inputGroupSelect06">
+                            <option selected>Choose...</option>
+                            <option value="1">11450</option>
+                            <option value="2">79115</option>
+                            <option value="3">16111</option>
+                        </select>
                     </div>
-                    <select class="custom-select" id="inputGroupSelect07">
-                        <option selected>Choose...</option>
-                        <option value="1">JNT</option>
-                        <option value="2">JNE</option>
-                        <option value="3">SICEPAT</option>
-                    </select>
-                </div>
-            </form>
-            <div style="display: flex; color: black;">
-                <button class="button" id="myBtn">Pay</button>
-                <div class="modal" id="myModal">
-                    <div class="modal-content">
-                        <span class="close">&times;</span>
-                        <div class="konten">
-                            <h4><b>YOUR ORDER SUCCESSFULLY</b></h4>
-                            <a href="payment.html">
-                                <button class="button" style="background-color: yellow; color: black;">How to Pay</button>
-                            </a>
+
+                    <small class="form-text text-muted" id="phoneHelp">Email : budi45@gmail.com</small>
+                    <div class="form-check">
+                        <input class="form-check-input" id="defaultCheck1" type="checkbox" value="">
+                        <label class="form-check-label" for="defaultCheck1">
+                            My Billing and Shipping information are the same
+                        </label>
+                    </div>
+                </form>
+
+                <h3 style="margin-top: 20px;">SHIPPING METHODS</h3>
+
+                <form style="border-top: 1px solid white;">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect07">Shipping Methods</label>
+                        </div>
+                        <select class="custom-select" id="inputGroupSelect07">
+                            <option selected>Choose...</option>
+                            <option value="1">JNT</option>
+                            <option value="2">JNE</option>
+                            <option value="3">SICEPAT</option>
+                        </select>
+                    </div>
+                </form>
+                <div style="display: flex; color: black;">
+                    <button class="button" id="myBtn">Pay</button>
+                    <div class="modal" id="myModal">
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <div class="konten">
+                                <h4><b>YOUR ORDER SUCCESSFULLY</b></h4>
+                                <a href="payment.html">
+                                    <button class="button" style="background-color: yellow; color: black;">How to Pay</button>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
 
 <script crossorigin="anonymous"
