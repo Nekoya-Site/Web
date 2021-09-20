@@ -14,6 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/feather-icons"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <style>
         body {
             font-family: 'Poppins', sans-serif;
@@ -275,22 +276,28 @@
                         <div class="form-group" style="text-align: left;">
                             <a data-feather="lock" href="" style="font-size: 40px;"></a>
                             <label for="exampleDropdownFormPassword1">Password</label>
-                            <input class="form-control input-sm text-center" id="exampleDropdownFormPassword1"
-                                   placeholder="Password" type="password">
+                            <div class="input-group">
+                                <input class="form-control input-sm text-center" id="exampleDropdownFormPassword1" name="password"
+                                       placeholder="Password" type="password">
+                                <div class="input-group-append">
+                                    <span class="input-group-text">
+                                        <i class="fa fa-eye" onclick="revealhidePassword()"></i>
+                                    </span>
+                                </div>
+                            </div>
                 
                             <div class="options-01 hoverlogin-1" style="word-break: keep-all;">
                                 <label class="remember-me text-left"><input name="" type="checkbox">Remember me</label>
-                                <a href="forgot-password.html" style="margin-left: 15%; font-size: 10pt;">Forgot your
-                                    password?</a>
-                            </div>
+                                <a href="forgot-password.html" style="margin-left: 15%; font-size: 10pt;">Forgot your password?</a>
+                            </div>    
                             <button class="btn btn-login btn-primary" type="submit">Login</button>
                             <div class="login-with">Or login with
                                 <div class="links">
                                     <div class="google">
-                                       <i class="fab fa-google"><a href=""></a><img class="google-icon-svg" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"/><span></span></i>
+                                       <i><a href=""></a><img class="google-icon-svg" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"/><span></span></i>
                                     </div>
                                     <div class="facebook">
-                                        <i class="fab fa-facebook-f"><a href=""></a><img class="facebook-icon-svg" src="https://cdn-icons-png.flaticon.com/128/733/733547.png" style="height: 30px; width: 30px; margin: 0 30px; padding-top: -3px" ><span></span></i>
+                                        <i><a href=""></a><img class="facebook-icon-svg" src="https://cdn-icons-png.flaticon.com/128/733/733547.png" style="height: 30px; width: 30px; margin: 0 30px; padding-top: -3px" ><span></span></i>
                                      </div>
                                  </div>
                             </div>
@@ -307,7 +314,21 @@
 </div>
 
 <script>
+    function revealhidePassword() {
+        const x = document.getElementById("exampleDropdownFormPassword1");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+    }
+</script>
+<script>
     feather.replace()
+</script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    AOS.init();
 </script>
 <script crossorigin="anonymous"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" src="https://code.jquery.com/jquery-3.5.1.slim.min.js">
