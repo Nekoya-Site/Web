@@ -14,6 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/feather-icons"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 
     <style>
         body {
@@ -157,7 +158,7 @@
 
 <br>
 
-<div data-aos="fade-in" data-aos-delay="500" class="container">
+<div class="container" data-aos="fade-in" data-aos-delay="500">
     <div class="row">
         <div class="col">
             <div class="card text-white col-md-8 col-lg-6 col-xl-5">
@@ -186,17 +187,31 @@
                                    type="email">
                         </div>
                         <div class="form-group">
-                            <input class="form-control input-sm text-center" id="password" name="password"
-                                   placeholder="Password"
-                                   type="password">
+                            <div class="input-group">
+                                <input class="form-control input-sm text-center" id="password" name="password"
+                                       placeholder="Password"
+                                       type="password">
+                                <div class="input-group-append">
+                                <span class="input-group-text">
+                                      <i class="fa fa-eye" onclick="revealhidePassword()"></i>
+                                        </span>
+                                </div>
+                            </div>
                         </div>
                         <div class="form-group">
-                            <input class="form-control input-sm text-center" id="password_confirmation"
-                                   name="password_confirmation"
-                                   placeholder="Confirm Password" type="password">
+                            <div class="input-group">
+                                <input class="form-control input-sm text-center" id="password_confirmation"
+                                       name="password_confirmation"
+                                       placeholder="Confirm Password"
+                                       type="password">
+                                <div class="input-group-append">
+                                <span class="input-group-text">
+                                      <i class="fa fa-eye" onclick="revealhideConfirmationPassword()"></i>
+                                        </span>
+                                </div>
+                            </div>
                         </div>
                         <button class="btn btn-register btn-primary" type="submit">Register</button>
-
                         <div class="hoversingup-1 text-center">
                             <a href="login.html">Already have an account ?? Click here to Sign In !!</a>
                         </div>
@@ -207,6 +222,25 @@
     </div>
 </div>
 
+<script>
+    function revealhidePassword() {
+        var x = document.getElementById("password");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+    }
+
+    function revealhideConfirmationPassword() {
+        var x = document.getElementById("password_confirmation");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+    }
+</script>
 <script>
     feather.replace()
 </script>
