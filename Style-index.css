@@ -16,9 +16,15 @@ body {
 
 .carousel-inner{
     margin-top: -3%;
-    width: 1400px;
-    margin-left: 4%;
+    width: 1518px;
 }
+
+.carousel-item{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
 
 .banner{
     width: 100%;
@@ -90,7 +96,7 @@ body {
     border-radius: 3px;
     margin: 0;
     float: left;
-    margin-left: -1px;
+    justify-content: center;
 }
 
 .grid_sorting_button:first-child{
@@ -109,7 +115,7 @@ body {
 .product-grid{
     width: 100%;
     margin-top: 57px;
-}
+}  
 
 .product-item{
     width: 20%;
