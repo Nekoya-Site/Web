@@ -17,6 +17,17 @@
         *{
             font-family: 'Poppins', sans-serif;
         }
+        .btn-checkout {
+            width: 100%;
+            background-color: darkred;
+            border-color: darkred;
+            border-radius: 100px;
+        }
+
+        .btn-checkout:hover {
+            background-color: red;
+            border-color: red;
+        }
         .bg-color {
             background-color: #1b1c1e;
         }
@@ -28,11 +39,6 @@
         .nav-radius {
             border-bottom-left-radius: 20px;
             border-bottom-right-radius: 20px;
-        }
-        .button {
-            color: white;
-            background-color: green;
-            margin-top: 15px;
         }
 
         .container input {
@@ -182,6 +188,7 @@
                             <div class="row" style="border-bottom: 1px solid white;">
                                 <div class="col-lg-12">
                                     <h3 style="text-align: center;"><b>Order Summary</b></h3>
+                                    <br style="display: block;content: ' '; margin: 1.5vw 0; line-height: 1.5vw;">
                                 </div>
                             </div>
                             <div class="row justify-content-between">
@@ -196,9 +203,8 @@
                                 <p>Estimate</p>
                                 <p>1.999.999,00</p>
                             </div>
-                            <a href="checkout.html">
-                                <button class="button" style="width: 100%;">Checkout</button>
-                            </a> 
+                            <br style="display: block;content: ' '; margin: 1vw 0; line-height: 1vw;">
+                            <a class="btn btn-primary btn-checkout" type="submit" href="checkout.html">Checkout</a>
                         </div>
                     </div>
                 </div>
