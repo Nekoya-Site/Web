@@ -16,7 +16,6 @@ body {
 
 .carousel-inner{
     margin-top: -3%;
-    width: 1518px;
 }
 
 .carousel-item{
@@ -26,11 +25,15 @@ body {
     position: relative;
 }
 
-@media screen and (max-width: 398px) {
-    .carousel-inner {
-        image-resolution: 4vw;
-    }
+.carousel-img{
+    overflow:hidden;
+}
 
+.carousel-img figure{
+    position: relative;
+    width: 450%;
+    margin: 0;
+    left: 0;
 }
 
 .banner{
@@ -325,30 +328,37 @@ body {
 }
 
 .main_slider{
-    width: 1400px;
-    height: 500px;
+    height: 550px;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center ;
     margin-top: 3%;
-    margin-left: 4%;
+    position: relative;
+}
+
+.slider-img figure{
+    position: relative;
+    width: 350%;
+    margin: 0;
+    left: 0;
 }
 
 .main_slider_content{
     width: 60%;
 }
 
-.main_slider_content h6{
+.main_slider_content p{
+    font-size: 16pt;
     font-weight: 500;
     text-transform: uppercase;
     margin-bottom: 29px;
-    margin-top: 20%;
+    margin-top: 15%;
 }
 
-.main_slider_content h1{
+.main_slider_content a{
     font-weight: 400;
     line-height: 1;
-    font-size: 50pt;
+    font-size: 46pt;
 }
 
 .red_button{
