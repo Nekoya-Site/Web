@@ -66,6 +66,9 @@
         }
         .box{
             width: 100px;
+            text-align: center;
+            background-color: white;
+            color: black;
         }
 
         @media(max-width: 980px){
@@ -129,7 +132,7 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-sm-7 col-md-6 col-lg-4">
-                                <img alt="placeholder image" class="img-fluid" src="assets/sepatu.webp" width="180px" height="180px"/>
+                                <img alt="placeholder image" class="img-fluid" src="assets/Product_1.webp" width="180px" height="180px"/>
                             </div>
                             <div class="col-sm-5 col-md-6 col-lg-8">
                                 <p>Fashione Shoes</p>
@@ -145,7 +148,7 @@
                                     </span>
                                 </div><br>
                                 <p>Rp 1.999.999,00</p>
-                                <a href=""><u>REMOVE</u></a>
+                                <a href=""><i data-feather="trash"></i> <u>REMOVE</u></a></i>
                                 <br><br>
                             </div>
                         </div>
@@ -155,7 +158,7 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-sm-7 col-md-6 col-lg-4">
-                                <img alt="placeholder image" class="img-fluid" src="assets/sepatu.webp" width="180px" height="180px"/>
+                                <img alt="placeholder image" class="img-fluid" src="assets/Product_1.webp" width="180px" height="180px"/>
                             </div>
                             <div class="col-sm-5 col-md-6 col-lg-8">
                                 <p>Fashione Shoes</p>
@@ -163,15 +166,15 @@
                                 <p>Qty</p>
                                 <div style="display: flex;">
                                     <span class="input-group-btn">
-                                        <button type="button" class="btn btn-default btn-number" style="color: white;" onclick="minus('inputNum')"><i data-feather="minus-square"></i></button> 
+                                        <button type="button" class="btn btn-default btn-number" style="color: white;" onclick="minus('inputNum1')"><i data-feather="minus-square"></i></button> 
                                         </span>
-                                        <input class="box" type="text" disabled="disabled" value="1" class="form-control input-number" id="inputNum" />
+                                        <input class="box" type="text" disabled="disabled" value="1" class="form-control input-number" id="inputNum1" />
                                         <span class="input-group-btn">
-                                        <button type="button" class="btn btn-default btn-number" style="color: white;" onclick='add("inputNum")'><i data-feather="plus-square"></i></button>
+                                        <button type="button" class="btn btn-default btn-number" style="color: white;" onclick='add("inputNum1")'><i data-feather="plus-square"></i></button>
                                     </span>
                                 </div><br>
                                 <p>Rp 1.999.999,00</p>
-                                <a href=""><u>REMOVE</u></a>
+                                <a href=""><i data-feather="trash"></i> <u>REMOVE</u></a></i>
                                 <br><br>
                             </div>
                         </div>
@@ -181,7 +184,7 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-sm-7 col-md-6 col-lg-4">
-                                <img alt="placeholder image" class="img-fluid" src="assets/sepatu.webp" width="180px" height="180px"/>
+                                <img alt="placeholder image" class="img-fluid" src="assets/Product_1.webp" width="180px" height="180px"/>
                             </div>
                             <div class="col-sm-5 col-md-6 col-lg-8">
                                 <p>Fashione Shoes</p>
@@ -189,15 +192,15 @@
                                 <p>Qty</p>
                                 <div style="display: flex;">
                                     <span class="input-group-btn">
-                                        <button type="button" class="btn btn-default btn-number" style="color: white;" onclick="minus('inputNum')"><i data-feather="minus-square"></i></button> 
+                                        <button type="button" class="btn btn-default btn-number" style="color: white;" onclick="minus('inputNum2')"><i data-feather="minus-square"></i></button> 
                                         </span>
-                                        <input class="box" type="text" disabled="disabled" value="1" class="form-control input-number" id="inputNum" />
+                                        <input class="box" type="text" disabled="disabled" value="1" class="form-control input-number" id="inputNum2" />
                                         <span class="input-group-btn">
-                                        <button type="button" class="btn btn-default btn-number" style="color: white;" onclick='add("inputNum")'><i data-feather="plus-square"></i></button>
+                                        <button type="button" class="btn btn-default btn-number" style="color: white;" onclick='add("inputNum2")'><i data-feather="plus-square"></i></button>
                                     </span>
                                 </div><br>
                                 <p>Rp 1.999.999,00</p>
-                                <a href=""><u>REMOVE</u></a>
+                                <a href=""><i data-feather="trash"></i> <u>REMOVE</u></a></i>
                                 <br><br>
                             </div>
                         </div>
@@ -226,6 +229,9 @@
                                 <p>Estimate</p>
                                 <p>1.999.999,00</p>
                             </div>
+                            <a href="checkout.html">
+                                <button class="button" style="width: 100%;">Checkout</button>
+                            </a> 
                         </div>
                     </div>
                 </div>
@@ -234,9 +240,7 @@
     </div>
         
 
-    <a href="checkout.html" style="margin-left: 48px;">
-        <button class="button">Checkout</button>
-    </a>    
+       
 </div>
    
 <script crossorigin="anonymous"
