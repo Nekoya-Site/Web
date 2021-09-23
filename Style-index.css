@@ -24,7 +24,14 @@ body {
     justify-content: center;
     align-items: center;
     position: relative;
-  }
+}
+
+@media screen and (max-width: 398px) {
+    .carousel-inner {
+        image-resolution: 4vw;
+    }
+
+}
 
 .banner{
     width: 100%;
