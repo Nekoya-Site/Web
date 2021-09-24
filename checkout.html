@@ -63,11 +63,6 @@
             margin-right: 48px;
         }
 
-        .button {
-            color: white;
-            background-color: green;
-            margin-top: 15px;
-        }
 
         .full-body {
             display: flex;
@@ -239,6 +234,17 @@
                 width: 184px;
             }
         }
+        .btn-pay {
+            width: 100%;
+            background-color: darkred;
+            border-color: darkred;
+            border-radius: 100px;
+        }
+
+        .btn-pay:hover {
+            background-color: red;
+            border-color: red;
+        }
     </style>
 </head>
 
@@ -273,6 +279,8 @@
         </div>
     </nav>
 
+    <br>
+    <br>
 
     <div class="full-body justify-content-center">
         <div class="body-left">
@@ -452,15 +460,13 @@
                     </div>
                 </form>
                 <div style="display: flex; color: black;">
-                    <button class="button" id="myBtn" style="width: 100%;">Pay</button>
+                    <a class="btn btn-primary btn-pay" id="myBtn">Pay</a>
                     <div class="modal" id="myModal">
                         <div class="modal-content">
                             <span class="close">&times;</span>
                             <div class="konten">
-                                <h4><b>YOUR ORDER SUCCESSFULLY</b></h4>
-                                <a href="payment.html">
-                                    <button class="button" style="background-color: yellow; color: black;">How to Pay</button>
-                                </a>
+                                <h4><b>Your Order has been successfully added !!</b></h4>
+                                <a href="payment.html" class="btn btn-primary btn-pay">How to Pay</a>
                             </div>
                         </div>
                     </div>
