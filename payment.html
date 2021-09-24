@@ -104,6 +104,7 @@
                 height: 6vw;
             }
         }
+
         .btn {
             position: center;
             margin: auto;
@@ -114,11 +115,25 @@
             border-top-right-radius: 20px;
             background-color: #212226;
         }
-        .card-body{
+
+        .card-body {
             text-align: left;
         }
-        .border{
+
+        .border {
             text-align: center;
+        }
+
+        .btn-Transaction {
+            width: 50%;
+            background-color: darkred;
+            border-color: darkred;
+            border-radius: 100px;
+        }
+
+        .btn-Transaction:hover {
+            background-color: red;
+            border-color: red;
         }
     </style>
 </head>
@@ -144,11 +159,11 @@
                 </div>
                 <div>
                     <img alt="placeholder image" class="img-fluid" src="assets/bca.webp"
-                                                style="width: 100px; margin-right: 10px; margin: 20px;"/>
+                         style="width: 100px; margin-right: 10px; margin: 20px;"/>
                     <img alt="placeholder image" class="img-fluid" src="assets/bni.webp"
-                                                style="width: 100px; margin-right: 10px; margin: 20px;"/>
+                         style="width: 100px; margin-right: 10px; margin: 20px;"/>
                     <img alt="placeholder image" class="img-fluid " src="assets/bri.webp"
-                                                style="width: 100px; margin-right: 10px; margin: 20px;"/>
+                         style="width: 100px; margin-right: 10px; margin: 20px;"/>
                 </div>
                 <div class="card-body">
                     <div class="container-fluid mt-3">
@@ -160,19 +175,20 @@
                                                 aria-expanded="false"
                                                 class="btn btn-link btn-block text-left collapsed text-decoration-none text-white bg-dark"
                                                 data-target="#collapseOne" data-toggle="collapse" type="button">
-                                                How to Pay with BCA Transfer ?
+                                            How to Pay with BCA Transfer ?
                                         </button>
                                     </h2>
                                 </div>
-                    
+
                                 <div aria-labelledby="headingOne" class="collapse" data-parent="#accordionExample"
-                                    id="collapseOne">
+                                     id="collapseOne">
                                     <div class="card-body text-white">
                                         <p>1. Login pada alamat Internet Banking BCA (***)</p>
                                         <p>2. Pilih menu Pembayaran Tagihan > Pembayaran > Antar Rekening</p>
                                         <p>3. Pada Ke Rekening masukkan Rekening perusahaan</p>
                                         <p>4. Masukkan Jumlah Nominal yang akan ditransfer</p>
-                                        <p>5. Kemudian tekan send. Cetak/simpan stuck Transfer sebagai bukti pembayaran</p>
+                                        <p>5. Kemudian tekan send. Cetak/simpan stuck Transfer sebagai bukti
+                                            pembayaran</p>
                                     </div>
                                 </div>
                             </div>
@@ -180,19 +196,22 @@
                                 <div class="card-header" id="headingTwo">
                                     <h2 class="mb-0">
                                         <button aria-controls="collapseTwo"
-                                                aria-expanded="false" class="btn btn-link btn-block text-left collapsed text-decoration-none text-white bg-dark"
+                                                aria-expanded="false"
+                                                class="btn btn-link btn-block text-left collapsed text-decoration-none text-white bg-dark"
                                                 data-target="#collapseTwo" data-toggle="collapse" type="button">
                                             How to Pay with BNI Transfer ?
                                         </button>
                                     </h2>
                                 </div>
-                                <div aria-labelledby="headingTwo" class="collapse" data-parent="#accordionExample" id="collapseTwo">
+                                <div aria-labelledby="headingTwo" class="collapse" data-parent="#accordionExample"
+                                     id="collapseTwo">
                                     <div class="card-body text-white">
                                         <p>1. Login pada alamat Internet Banking BNI (***)</p>
                                         <p>2. Pilih menu Pembayaran Tagihan > Pembayaran > Antar Rekening</p>
                                         <p>3. Pada Ke Rekening masukkan Rekening perusahaan</p>
                                         <p>4. Masukkan Jumlah Nominal yang akan ditransfer</p>
-                                        <p>5. Kemudian tekan send. Cetak/simpan stuck Transfer sebagai bukti pembayaran</p>
+                                        <p>5. Kemudian tekan send. Cetak/simpan stuck Transfer sebagai bukti
+                                            pembayaran</p>
                                     </div>
                                 </div>
                             </div>
@@ -200,19 +219,22 @@
                                 <div class="card-header" id="headingThree">
                                     <h2 class="mb-0">
                                         <button aria-controls="collapseThree"
-                                                aria-expanded="false" class="btn btn-link btn-block text-left collapsed text-decoration-none text-white bg-dark"
+                                                aria-expanded="false"
+                                                class="btn btn-link btn-block text-left collapsed text-decoration-none text-white bg-dark"
                                                 data-target="#collapseThree" data-toggle="collapse" type="button">
-                                                How to Pay with BRI Transfer ?
+                                            How to Pay with BRI Transfer ?
                                         </button>
                                     </h2>
                                 </div>
-                                <div aria-labelledby="headingThree" class="collapse" data-parent="#accordionExample" id="collapseThree">
+                                <div aria-labelledby="headingThree" class="collapse" data-parent="#accordionExample"
+                                     id="collapseThree">
                                     <div class="card-body text-white">
                                         <p>1. Login pada alamat Internet Banking BRI (***)</p>
                                         <p>2. Pilih menu Pembayaran Tagihan > Pembayaran > Antar Rekening</p>
                                         <p>3. Pada Ke Rekening masukkan Rekening perusahaan</p>
                                         <p>4. Masukkan Jumlah Nominal yang akan ditransfer</p>
-                                        <p>5. Kemudian tekan send. Cetak/simpan stuck Transfer sebagai bukti pembayaran</p>
+                                        <p>5. Kemudian tekan send. Cetak/simpan stuck Transfer sebagai bukti
+                                            pembayaran</p>
                                     </div>
                                 </div>
                             </div>
@@ -220,17 +242,17 @@
                     </div>
                     <br>
                     <div class="border" style="color: white;">
-                        <h5 class="titlesummary"><b>Total Payments</b></h5>
+                        <h5 class="titlesummary"><h3>Total Payments</h3></h5>
                         <div class="container">
                             <div class="row justify-content-between" style="display: flex; margin: 10px">
-                                <p>Cost</p>
-                                <p>1.999.999,00</p>
+                                <h5>Cost</h5>
+                                <h5>1.999.999,00</h5>
                             </div>
                         </div>
                     </div>
                     <br>
                     <div style="display: flex; color: black;">
-                        <a class="btn btn-primary" href="transaction.html">Transaction</a>
+                        <a class="btn btn-primary btn-Transaction" href="transaction.html">Transaction</a>
                     </div>
                 </div>
             </div>
