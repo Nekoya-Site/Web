@@ -57,6 +57,10 @@
             border-radius: 16px;
         }
 
+        .modall{
+            display: flex;
+        }
+
         .modal {
             display: none;
             position: fixed;
@@ -264,9 +268,9 @@
             <div class="sizeSepatu">
                 <form>
                     <h4>Sizes</h4>
-                    <input name="size" type="radio"> 7 &emsp; 
-                    <input name="size" type="radio"> 8 &emsp; 
-                    <input name="size" type="radio"> 9 &emsp; 
+                    <input name="size" type="radio"> 43 &emsp; 
+                    <input name="size" type="radio"> 44 &emsp; 
+                    <input name="size" type="radio"> 45 &emsp; 
                 </form>
             </div>
 
@@ -294,9 +298,14 @@
                                  style="padding-left: 20px; border-left: 1px solid black; padding-right: 20px;">
                                 <h5 class="titlemodal"><b>Your Bag</b></h5>
                                 <br>
-                                <p class="modall" style="border-bottom: 1px solid black ;">Product Cost : Rp
-                                    1.999.999,00</p>
-                                <p class="modall">Total Product Cost : Rp 1.999.999,00</p>
+                                <div class="modall justify-content-between" style="border-bottom: 1px solid black ;">
+                                    <p>Product Cost :</p>
+                                    <p>Rp 1.999.999,00</p>
+                                </div>
+                                <div class="modall justify-content-between">
+                                    <p>Total Product Cost :</p>
+                                    <p>Rp 1.999.999,00</p>
+                                </div>
                             </div>
 
                             <div class="bodymodal" style="padding-left: 20px; border-left: 1px solid black;">
