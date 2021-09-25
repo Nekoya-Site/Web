@@ -31,7 +31,7 @@ body {
 
 .carousel-img figure{
     position: relative;
-    width: 450%;
+    width: 425%;
     margin: 0;
     left: 0;
 }
@@ -335,7 +335,7 @@ body {
 
 .slider-img figure{
     position: relative;
-    width: 350%;
+    width: 325%;
     margin: 0;
     left: 0;
 }
@@ -345,7 +345,7 @@ body {
 }
 
 .main_slider_content p{
-    font-size: 16pt;
+    font-size: 14pt;
     font-weight: 500;
     text-transform: uppercase;
     margin-bottom: 29px;
@@ -355,7 +355,7 @@ body {
 .main_slider_content a{
     font-weight: 400;
     line-height: 1;
-    font-size: 46pt;
+    font-size: 40pt;
 }
 
 .red_button{
