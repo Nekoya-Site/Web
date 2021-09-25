@@ -57,6 +57,42 @@
             border-radius: 16px;
         }
 
+        .button-bag{
+            color: white;
+            background-color: darkred;
+            border-color: darkred;
+            border-radius: 100px;
+        }
+
+        .button-bag:hover{
+            background-color: red;
+            border-color: red;
+        }
+
+        .button-checkout_1{
+            color: white;
+            background-color: darkred;
+            border-color: darkred;
+            border-radius: 100px;
+        }
+
+        .button-checkout_2{
+            color: white;
+            background-color: green;
+            border-color: green;
+            border-radius: 100px;
+        }
+
+        .button-checkout_1:hover{
+            background-color: red;
+            border-color: red;
+        }
+
+        .button-checkout_2:hover{
+            background-color: #0af211;
+            border-color: #0af211;
+        }
+
         .modall {
             display: flex;
         }
@@ -88,11 +124,12 @@
             float: right;
             font-size: 28px;
             font-weight: bold;
+            margin-left: 98%;
         }
 
         .close:hover,
         .close:focus {
-            color: #000;
+            color: #ffffff;
             text-decoration: none;
             cursor: pointer;
         }
@@ -277,12 +314,12 @@
             <br>
 
             <div style="display: flex; color: black;">
-                <button class="button" id="myBtn">Add to Bag</button>
+                <button class="button button-bag" id="myBtn">Add to Bag</button>
 
                 <div class="modal" id="myModal">
 
                     <div class="modal-content" style="background-color: #212226; border-color: #212226; color: white">
-                        <span class="close">&times;</span>
+                        <span class="close close-posisition">&times;</span>
                         <h2 class="title"><b>SUCCESSFULLY ADDED TO BAG</b></h2>
                         <div class="konten">
                             <img alt="placeholder image" class="img-fluid" height="200px" src="assets/Product_1.webp"
@@ -310,11 +347,10 @@
 
                             <div class="bodymodal" style="padding-left: 20px; border-left: 1px solid black;">
                                 <a href="bag.html">
-                                    <button class="button" style="background-color: aqua;">Bag</button>
+                                    <button class="button button-checkout_1">Bag</button>
                                 </a>
                                 <a href="checkout.html">
-                                    <button class="button" style="background-color: green; color: white">Checkout
-                                    </button>
+                                    <button class="button button-checkout_2">Checkout</button>
                                 </a>
                             </div>
 
