@@ -6,10 +6,10 @@
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta name="theme-color" content="#2f0001">
-    <link href="assets/favicon.webp" rel="shortcut icon" type="image/webp"/>
+    <link href="assets/favicon.webp" rel="shortcut icon" type="image/webp" />
     <title>Register</title>
     <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
-          integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" rel="stylesheet">
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" rel="stylesheet">
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
@@ -94,7 +94,9 @@
         }
 
         @media screen and (max-width: 426px) {
-            .card a, input {
+
+            .card a,
+            input {
                 font-size: 3vw;
             }
 
@@ -109,7 +111,9 @@
         }
 
         @media screen and (min-width: 427px) {
-            .card a, input {
+
+            .card a,
+            input {
                 font-size: 2vw;
             }
 
@@ -124,7 +128,9 @@
         }
 
         @media screen and (min-width: 767px) {
-            .card a, input {
+
+            .card a,
+            input {
                 font-size: 2vw;
             }
 
@@ -139,7 +145,9 @@
         }
 
         @media screen and (min-width: 993px) {
-            .card a, input {
+
+            .card a,
+            input {
                 font-size: 1vw;
             }
 
@@ -154,7 +162,9 @@
         }
 
         @media screen and (min-width: 1400px) {
-            .card a, input {
+
+            .card a,
+            input {
                 font-size: 1vw;
             }
 
@@ -177,118 +187,110 @@
 </head>
 
 <body>
-<nav class="navbar navbar-dark nav-color ml-5 mr-5 nav-radius">
-    <img alt="Banner" class="navbar-brand lazyload" src="assets/logo_transparent.webp" style="margin-top: 0%;">
-    <ul class="navbar-nav">
-        <li class="nav-item">
-            <a style="color: white; font-size: 16pt;">Register</a>
-        </li>
-    </ul>
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo01"></div>
-</nav>
+    <nav class="navbar navbar-dark nav-color ml-5 mr-5 nav-radius">
+        <img alt="Banner" class="navbar-brand lazyload" src="assets/logo_transparent.webp" style="margin-top: 0%;">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a style="color: white; font-size: 16pt;">Register</a>
+            </li>
+        </ul>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01"></div>
+    </nav>
 
-<br>
+    <br>
 
-<div class="container" data-aos="fade-in" data-aos-delay="500">
-    <div class="row">
-        <div class="col">
-            <div class="card text-white col-md-8 col-lg-6 col-xl-5">
-                <h1 class="card-header text-white">Register</h1>
-                <lottie-player autoplay background="transparent"
-                               class="icon"
-                               loop speed="1"
-                               src="https://assets10.lottiefiles.com/datafiles/JAmX1SNojoncImC/data.json"></lottie-player>
-                <div class="card-body">
-                    <form class="px-4 py-3">
-                        <div class="form-group">
-                            <input class="form-control input-sm text-center" id="first_name" name="first_name"
-                                   placeholder="First Name" type="text">
-                        </div>
-                        <div class="form-group">
-                            <input class="form-control input-sm text-center" id="last_name" name="last_name"
-                                   placeholder="Last Name"
-                                   type="text">
-                        </div>
-                        <div class="form-group">
-                            <input class="form-control text-center" id="birthDate" style="color: gray" type="date">
-                        </div>
-                        <div class="form-group">
-                            <input class="form-control input-sm text-center" id="email" name="email"
-                                   placeholder="Email Address"
-                                   type="email">
-                        </div>
-                        <div class="form-group">
-                            <div class="input-group">
-                                <input class="form-control input-sm text-center" id="password" name="password"
-                                       placeholder="Password"
-                                       type="password">
-                                <div class="input-group-append">
-                                <span class="input-group-text">
-                                      <i class="fa fa-eye" onclick="revealhidePassword()"></i>
+    <div class="container" data-aos="fade-in" data-aos-delay="500">
+        <div class="row">
+            <div class="col">
+                <div class="card text-white col-md-8 col-lg-6 col-xl-5">
+                    <h1 class="card-header text-white">Register</h1>
+                    <lottie-player autoplay background="transparent" class="icon" loop speed="1"
+                        src="https://assets10.lottiefiles.com/datafiles/JAmX1SNojoncImC/data.json"></lottie-player>
+                    <div class="card-body">
+                        <form class="px-4 py-3">
+                            <div class="form-group">
+                                <input class="form-control input-sm text-center" id="first_name" name="first_name"
+                                    placeholder="First Name" type="text">
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control input-sm text-center" id="last_name" name="last_name"
+                                    placeholder="Last Name" type="text">
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control text-center" id="birthDate" style="color: gray" type="date">
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control input-sm text-center" id="email" name="email"
+                                    placeholder="Email Address" type="email">
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input class="form-control input-sm text-center" id="password" name="password"
+                                        placeholder="Password" type="password">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">
+                                            <i class="fa fa-eye" onclick="revealhidePassword()"></i>
                                         </span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="input-group">
-                                <input class="form-control input-sm text-center" id="password_confirmation"
-                                       name="password_confirmation"
-                                       placeholder="Confirm Password"
-                                       type="password">
-                                <div class="input-group-append">
-                                <span class="input-group-text">
-                                      <i class="fa fa-eye" onclick="revealhideConfirmationPassword()"></i>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input class="form-control input-sm text-center" id="password_confirmation"
+                                        name="password_confirmation" placeholder="Confirm Password" type="password">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">
+                                            <i class="fa fa-eye" onclick="revealhideConfirmationPassword()"></i>
                                         </span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <a class="btn btn-register btn-primary" type="submit" href="register-verification-sent.html">Register</a>
-                        <br style="display: block;content: ' '; margin: 1vw 0; line-height: 1vw;">
-                        <div class="hoversignin-1 text-center">
-                            <a href="login.html">Already have an account ?? Click here to Sign In !!</a>
-                        </div>
-                    </form>
+                            <a class="btn btn-register btn-primary" type="submit"
+                                href="register-verification-sent.html">Register</a>
+                            <br style="display: block;content: ' '; margin: 1vw 0; line-height: 1vw;">
+                            <div class="hoversignin-1 text-center">
+                                <a href="login.html">Already have an account ?? Click here to Sign In !!</a>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-<script>
-    function revealhidePassword() {
-        const x = document.getElementById("password");
-        if (x.type === "password") {
-            x.type = "text";
-        } else {
-            x.type = "password";
+    <script>
+        function revealhidePassword() {
+            const x = document.getElementById("password");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
         }
-    }
 
-    function revealhideConfirmationPassword() {
-        const x = document.getElementById("password_confirmation");
-        if (x.type === "password") {
-            x.type = "text";
-        } else {
-            x.type = "password";
+        function revealhideConfirmationPassword() {
+            const x = document.getElementById("password_confirmation");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
         }
-    }
-</script>
-<script>
-    feather.replace()
-</script>
-<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script>
-    AOS.init();
-</script>
-<script crossorigin="anonymous"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    </script>
+    <script>
+        feather.replace()
+    </script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script crossorigin="anonymous" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         src="https://code.jquery.com/jquery-3.5.1.slim.min.js">
-</script>
-<script crossorigin="anonymous"
-        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+    </script>
+    <script crossorigin="anonymous" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
         src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js">
-</script>
-<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    </script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </body>
 
 </html>
