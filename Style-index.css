@@ -5,6 +5,18 @@ body {
     background-color: #1b1c1e;
 }
 
+@media screen and (max-width: 426px) {
+    .carousel-item img {
+        height: 60vw;
+    }
+}
+
+@media screen and (min-width: 427px) {
+    .carousel-item img {
+        height: 40vw;
+    }
+}
+
 .nav-color {
     background-color: #212226;
 }
