@@ -17,3 +17,9 @@
 - [✓] Register Verification (Sent / Completed)
 - [✓] OTP
 - [✓] Forgot Password
+
+## Contributors
+- Michael William Jonathan (535200030) / [@moepoi](https://github.com/moepoi)
+- Matthew Patrick (535200018) / [@Matthew-Patrick](https://github.com/Matthew-Patrick)
+- Kelvin Samuel (535200008) / [@Kelvin2212](https://github.com/Kelvin2212)
+- Donni Suharyanto (535200042) / [@DShrat](https://github.com/DShrat)
