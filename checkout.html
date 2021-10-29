@@ -286,7 +286,7 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="/">Home</a>
+                    <a class="nav-link" href="index.html">Home</a>
                 </li>
                 <li class="nav-item active">
                     <a aria-disabled="true" class="nav-link disabled" href="product-list.html">Products</a>
@@ -373,139 +373,69 @@
                 <h3>SHIPPING DETAILS</h3>
                 <p>Please enter your delivery address</p>
                 <form style="border-top: 1px solid white;">
-                    <div class="form-group">
-                        <label for="contactInformation"><b>CONTACT INFORMATION</b></label>
-                        <div style="display: flex;">
-                            <input aria-describedby="fnamehelp" class="form-control" id="exampleInputFName"
-                                placeholder="First Name" type="FName">
-                            <input aria-describedby="lnamehelp" class="form-control" id="exampleInputLName"
-                                placeholder="Last Name" type="Lname">
-                        </div>
-                        <input aria-describedby="PhoneNumber" class="form-control" id="exampleInputPhoneNum"
-                            placeholder="Phone Number" type="PhoneNum">
-                        <small class="form-text text-muted" id="phoneHelp">We'll never share your Phone Number with
-                            anyone
-                            else.</small>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="contactInformation"><b>ADDRESS</b></label>
-                        <input aria-describedby="Address1" class="form-control" id="exampleInputAddress1"
-                            placeholder="Street Address " type="Address1">
-                        <input aria-describedby="Address2" class="form-control" id="exampleInputAddress2"
-                            placeholder="Street Address 2 " type="Address2">
-                    </div>
-
-
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text" for="inputGroupSelect01">Region</label>
-                        </div>
-                        <select class="custom-select" id="inputGroupSelect01">
-                            <option selected>Choose...</option>
-                            <option value="1">Indonesia</option>
-                            <option value="2">Japan</option>
-                            <option value="3">United Kingdom</option>
-                        </select>
-                    </div>
-
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text" for="inputGroupSelect02">State/Province</label>
-                        </div>
-                        <select class="custom-select" id="inputGroupSelect02">
-                            <option selected>Choose...</option>
-                            <option value="1">DKI Jakarta</option>
-                            <option value="2">Kalimantan Barat</option>
-                            <option value="3">Jawab Barat</option>
-                        </select>
-                    </div>
-
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text" for="inputGroupSelect03">City</label>
-                        </div>
-                        <select class="custom-select" id="inputGroupSelect03">
-                            <option selected>Choose...</option>
-                            <option value="1">Jakarta</option>
-                            <option value="2">Singkawang</option>
-                            <option value="3">Bogor</option>
-                        </select>
-                    </div>
-
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text" for="inputGroupSelect04">District</label>
-                        </div>
-                        <select class="custom-select" id="inputGroupSelect04">
-                            <option selected>Choose...</option>
-                            <option value="1">Grogol</option>
-                            <option value="2">Sei-Wei</option>
-                            <option value="3">Puncak</option>
-                        </select>
-                    </div>
-
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text" for="inputGroupSelect05">Sub District</label>
-                        </div>
-                        <select class="custom-select" id="inputGroupSelect05">
-                            <option selected>Choose...</option>
-                            <option value="1">...</option>
-                            <option value="2">...</option>
-                            <option value="3">...</option>
-                        </select>
-                    </div>
-
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text" for="inputGroupSelect06">Portal Code</label>
-                        </div>
-                        <select class="custom-select" id="inputGroupSelect06">
-                            <option selected>Choose...</option>
-                            <option value="1">11450</option>
-                            <option value="2">79115</option>
-                            <option value="3">16111</option>
-                        </select>
-                    </div>
-
-                    <small class="form-text text-muted" id="phoneHelp">Email : budi45@gmail.com</small>
-                    <div class="form-check">
-                        <input class="form-check-input" id="defaultCheck1" type="checkbox" value="">
-                        <label class="form-check-label" for="defaultCheck1">
-                            My Billing and Shipping information are the same
-                        </label>
-                    </div>
-                </form>
-
-                <h3 style="margin-top: 20px;">SHIPPING METHODS</h3>
-
-                <form style="border-top: 1px solid white;">
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text" for="inputGroupSelect07">Shipping Methods</label>
-                        </div>
-                        <select class="custom-select" id="inputGroupSelect07">
-                            <option selected>Choose...</option>
-                            <option value="1">JNT</option>
-                            <option value="2">JNE</option>
-                            <option value="3">SICEPAT</option>
-                        </select>
-                    </div>
-                </form>
-                <div style="display: flex; color: black;">
-                    <a class="btn btn-primary btn-pay" id="myBtn">Pay</a>
-                    <div class="modal" id="myModal">
-                        <div class="modal-content" style="background-color: #212226; border-color: #212226">
-                            <span class="close">&times;</span>
-                            <div class="konten">
-                                <h3 style="text-align: center;color: white"><b>Your Order has been successfully added
-                                        !!</b>
-                                </h3>
-                                <br>
-                                <a href="payment.html" class="btn btn-primary btn-pay">How to Pay</a>
+                    <div>
+                        <div class="form-group">
+                            <label for="contactInformation"><b>CONTACT INFORMATION</b></label>
+                            <div style="display: flex;">
+                                <input aria-describedby="fnamehelp" class="form-control" id="exampleInputFName"
+                                    placeholder="First Name" type="FName" required>
+                                <input aria-describedby="lnamehelp" class="form-control" id="exampleInputLName"
+                                    placeholder="Last Name" type="Lname" required>
                             </div>
+                            <input aria-describedby="PhoneNumber" class="form-control" id="exampleInputPhoneNum"
+                                placeholder="Phone Number" type="PhoneNum" required>
+                            <small class="form-text text-muted" id="phoneHelp">We'll never share your Phone Number with
+                                anyone
+                                else.</small>
+    
                         </div>
+    
+                        <div class="form-group">
+                            <label for="contactInformation"><b>ADDRESS</b></label>
+                            <input aria-describedby="Address1" class="form-control" id="exampleInputAddress1"
+                                placeholder="Street Address " type="Address1" required>
+                            <input aria-describedby="Address2" class="form-control" id="exampleInputAddress2"
+                                placeholder="Street Address 2 " type="Address2" >
+                            <input aria-describedby="region" class="form-control" id="exampleInputregion"
+                                placeholder="Region" type="region" required>
+                            <input aria-describedby="province" class="form-control" id="exampleInputprovince"
+                                placeholder="Province" type="province" required>
+                            <input aria-describedby="city" class="form-control" id="exampleInputcity"
+                                placeholder="City" type="city" required>
+                            <input aria-describedby="district" class="form-control" id="exampleInputdistrict"
+                                placeholder="District" type="district" required>
+                            <input aria-describedby="subdistrict" class="form-control" id="exampleInputsubdistrict"
+                                placeholder="Subdistrict" type="subdistrict" required>
+                            <input aria-describedby="portalcode" class="form-control" id="exampleInputportalcode"
+                                placeholder="Portalcode" type="portalcode" required>
+                        </div>
+    
+                        <small class="form-text text-muted" id="phoneHelp">Email : budi45@gmail.com</small>
+                        <div class="form-check">
+                            <input class="form-check-input" id="defaultCheck1" type="checkbox" value="" required>
+                            <label class="form-check-label" for="defaultCheck1">
+                                My Billing and Shipping information are the same
+                            </label>
+                        </div>
+                    </form>
+    
+                    <h3 style="margin-top: 20px;">SHIPPING METHODS</h3>
+    
+                    <form style="border-top: 1px solid white;">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" for="inputGroupSelect07">Shipping Methods</label>
+                            </div>
+                            <select class="custom-select" id="inputGroupSelect07" required>
+                                <option selected>Choose...</option>
+                                <option value="1">JNT</option>
+                                <option value="2">JNE</option>
+                                <option value="3">SICEPAT</option>
+                            </select>
+                        </div>
+                    </form>
+                    <div style="display: flex; color: black;">
+                        <button class="btn btn-primary btn-pay" id="myBtn" type="submit"><a href="notifpayment.html">Pay</a></button>
                     </div>
                 </div>
             </div>
