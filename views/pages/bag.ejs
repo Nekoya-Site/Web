@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Bag</title>
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" rel="stylesheet">
+    <link href="assets/favicon.webp" rel="shortcut icon" type="image/png" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .box {
+            width: 100px;
+            text-align: center;
+            background-color: white;
+            color: black;
+        }
+
+        @media (max-width: 320px) {
+            .box {
+                width: 50px;
+            }
+        }
+
+        .btn-checkout {
+            width: 100%;
+            background-color: darkred;
+            border-color: darkred;
+            border-radius: 100px;
+        }
+
+        .btn-checkout:hover {
+            background-color: red;
+            border-color: red;
+        }
+
+        .bg-color {
+            background-color: #1b1c1e;
+        }
+
+        .comp-color {
+            background-color: #212226;
+        }
+
+        .nav-radius {
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+
+        .container input {
+            justify-content: left;
+        }
+
+        .card {
+            background-color: #212226;
+            color: white;
+            border-radius: 10px;
+            display: flex;
+        }
+
+        .bag {
+            color: white;
+            margin-left: 48px;
+            margin-right: 48px;
+        }
+
+        @media (max-width: 980px) {
+            .summary {
+                margin-top: 20px;
+            }
+
+            .bag {
+                word-break: normal;
+            }
+        }
+
+        :focus {
+            outline: 0 !important;
+            box-shadow: 0 0 0 0 rgba(0, 0, 0, 0) !important;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js"></script>
+</head>
+<body style="background-color: #1b1c1e;;">
+    <nav class="navbar navbar-expand-lg navbar-dark comp-color ml-5 mr-5 nav-radius">
+        <a class="navbar-brand" href="#">Shopping Bag</a>
+        <button aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation"
+            class="navbar-toggler" data-target="#navbarTogglerDemo01" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item active">
+                    <a aria-disabled="true" class="nav-link disabled" href="product-list.html">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about-us.html">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="faq.html">FAQ</a>
+                </li>
+            </ul>
+            <span class="navbar-nav my-2 my-lg-0 text-white">
+                <div class="my-4">
+                    <a href="login.html"><button class="btn btn-outline-success mt-auto mb-auto mr-3"
+                            type="button">Login</button></a>
+                </div>
+                <a href="bag.html" class="mt-auto mb-auto" style="color: inherit;"><i class="fas fa-shopping-cart"><span
+                            class="ml-2 mt-auto mb-auto">Rp 999.999</span></i></a>
+            </span>
+        </div>
+    </nav>
+    <br>
+    <div class="bag">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-7 col-md-6 col-lg-4">
+                                <img alt="placeholder image" class="img-fluid lazyload" src="img/Product_1.webp"
+                                    width="180px" height="180px" />
+                            </div>
+                            <div class="col-sm-5 col-md-6 col-lg-8">
+                                <h2>Fashione Shoes</h2>
+                                <h4>Size : 44</h4>
+                                <h6>Qty</h6>
+                                <div style="display: flex;">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-default btn-number" style="color: white;"
+                                            onclick="minus('inputNum')"><i data-feather="minus-square"></i></button>
+                                    </span>
+                                    <input class="box" type="text" disabled="disabled" value="1"
+                                        class="form-control input-number" id="inputNum" />
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-default btn-number" style="color: white;"
+                                            onclick='add("inputNum")'><i data-feather="plus-square"></i></button>
+                                    </span>
+                                </div>
+                                <br>
+                                <p>Rp 1.999.999,00</p>
+                                <a href="" style="color:red;"><i data-feather="trash" color="red"></i> <u>Remove</u></a>
+                                <br><br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-7 col-md-6 col-lg-4">
+                                <img alt="placeholder image" class="img-fluid lazyload" src="img/Product_1.webp"
+                                    width="180px" height="180px" />
+                            </div>
+                            <div class="col-sm-5 col-md-6 col-lg-8">
+                                <h2>Fashione Shoes</h2>
+                                <h4>Size : 44</h4>
+                                <h6>Qty</h6>
+                                <div style="display: flex;">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-default btn-number" style="color: white;"
+                                            onclick="minus('inputNum1')"><i data-feather="minus-square"></i></button>
+                                    </span>
+                                    <input class="box" type="text" disabled="disabled" value="1"
+                                        class="form-control input-number" id="inputNum1" />
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-default btn-number" style="color: white;"
+                                            onclick='add("inputNum1")'><i data-feather="plus-square"></i></button>
+                                    </span>
+                                </div>
+                                <br>
+                                <p>Rp 1.999.999,00</p>
+                                <a href="" style="color:red;"><i data-feather="trash" color="red"></i> <u>Remove</u></a>
+                                <br><br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-7 col-md-6 col-lg-4">
+                                <img alt="placeholder image" class="img-fluid lazyload" src="img/Product_1.webp"
+                                    width="180px" height="180px" />
+                            </div>
+                            <div class="col-sm-5 col-md-6 col-lg-8">
+                                <h2>Fashione Shoes</h2>
+                                <h4>Size : 44</h4>
+                                <h6>Qty</h6>
+                                <div style="display: flex;">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-default btn-number" style="color: white;"
+                                            onclick="minus('inputNum2')"><i data-feather="minus-square"></i></button>
+                                    </span>
+                                    <input class="box" type="text" disabled="disabled" value="1"
+                                        class="form-control input-number" id="inputNum2" />
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-default btn-number" style="color: white;"
+                                            onclick='add("inputNum2")'><i data-feather="plus-square"></i></button>
+                                    </span>
+                                </div>
+                                <br>
+                                <p>Rp 1.999.999,00</p>
+                                <a href="" style="color:red;"><i data-feather="trash" color="red"></i> <u>Remove</u></a>
+                                <br><br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="summary">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row" style="border-bottom: 1px solid white;">
+                                <div class="col-lg-12">
+                                    <h3 style="text-align: center;"><b>Order Summary</b></h3>
+                                    <br style="display: block;content: ' '; margin: 1.5vw 0; line-height: 1.5vw;">
+                                </div>
+                            </div>
+                            <div class="row justify-content-between">
+                                <p>Sub Total</p>
+                                <p>1.999.999,00</p>
+                            </div>
+                            <div class="row justify-content-between" style="border-bottom: 1px solid white;">
+                                <p>Shipping</p>
+                                <p>-</p>
+                            </div>
+                            <div class="row justify-content-between">
+                                <p>Estimate</p>
+                                <p>1.999.999,00</p>
+                            </div>
+                            <br style="display: block;content: ' '; margin: 1vw 0; line-height: 1vw;">
+                            <a class="btn btn-primary btn-checkout" type="submit" href="checkout">Checkout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    </div>
+
+    <script crossorigin="anonymous" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        function add(id) {
+            var inputCount = document.getElementById(id);
+            console.log("I got clicked");
+            if (inputCount.value < 9) {
+                inputCount.value++;
+            } else {
+                alert("MAX product reach");
+            }
+        }
+
+        function minus(id) {
+            var inputCount = document.getElementById(id);
+            console.log("Minus got clicked");
+            if (inputCount.value > 1) {
+                inputCount.value--;
+            } else {
+                alert("Remove this item");
+            }
+        }
+        feather.replace();
+    </script>
+</body>
+</html>

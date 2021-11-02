@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <style>
+        .bg-color {
+            background-color: #1b1c1e;
+        }
+
+        .comp-color {
+            background-color: #212226;
+        }
+
+        .nav-radius {
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+
+        .product {
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: left;
+            text-align: left;
+            word-break: normal;
+        }
+
+        .description {
+            color: #ffffff;
+            font-family: 'Poppins', sans-serif;
+            margin-top: 20px;
+            margin-left: 48px;
+            justify-content: center;
+            text-align: left;
+        }
+
+        .button {
+            background-color: #c2f706;
+            border: none;
+            color: black;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            margin: 4px 2px;
+            margin-left: 20px;
+            cursor: pointer;
+            border-radius: 16px;
+        }
+
+        .button-bag {
+            color: white;
+            background-color: darkred;
+            border-color: darkred;
+            border-radius: 100px;
+        }
+
+        .button-bag:hover {
+            background-color: red;
+            border-color: red;
+        }
+
+        .button-checkout_1 {
+            color: white;
+            background-color: darkred;
+            border-color: darkred;
+            border-radius: 100px;
+        }
+
+        .button-checkout_2 {
+            color: white;
+            background-color: green;
+            border-color: green;
+            border-radius: 100px;
+        }
+
+        .button-checkout_1:hover {
+            background-color: red;
+            border-color: red;
+        }
+
+        .button-checkout_2:hover {
+            background-color: #0af211;
+            border-color: #0af211;
+        }
+
+        .modall {
+            display: flex;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        .close {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            margin-left: 98%;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #ffffff;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .card {
+            background-color: #212226;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            margin-left: 48px;
+            margin-right: 48px;
+            justify-content: left;
+            text-align: left;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .sizeSepatu {
+            margin-left: 20px;
+        }
+
+        .konten {
+            display: flex;
+            padding-top: 10px;
+        }
+
+        @media only screen and (max-width: 1000px) {
+            .product {
+                display: grid;
+            }
+
+            .description {
+                margin-left: 0px;
+                word-break: normal;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .konten {
+                display: grid;
+            }
+
+            .bodymodal {
+                border-top: 1px solid black;
+                border-left: none !important;
+            }
+        }
+
+        @media (max-width: 601px) {
+            .konten {
+                display: grid;
+            }
+
+            .titledes {
+                font-size: 25px;
+            }
+
+            .card-body {
+                font-size: 12px;
+            }
+        }
+
+
+        @media (max-width: 361px) {
+            .konten {
+                display: grid;
+            }
+
+            .titledes {
+                font-size: 20px;
+            }
+
+            .card-body {
+                font-size: 10px;
+            }
+        }
+
+        @media (max-width: 321px) {
+            .konten {
+                display: grid;
+            }
+
+            .titledes {
+                font-size: 17px;
+            }
+
+            .card-body {
+                font-size: 8px;
+            }
+        }
+
+        @media (max-width: 376px) {
+            .konten {
+                display: grid;
+            }
+
+            .titledes {
+                font-size: 22px;
+            }
+
+            .card-body {
+                font-size: 11px;
+            }
+        }
+
+        @media (max-width: 511px) {
+            .titlemodal {
+                font-size: 15px;
+            }
+
+            .modall {
+                font-size: 10px;
+            }
+
+            .titlee {
+                font-size: 17px;
+            }
+        }
+
+        :focus {
+            outline: 0 !important;
+            box-shadow: 0 0 0 0 rgba(0, 0, 0, 0) !important;
+        }
+        .none{
+            text-decoration: none !important;
+            color: white;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js"></script>
+</head>
+
+<body style="background-color: #1b1c1e;">
+    <%- include('../layouts/navbar.ejs'); %>
+
+    <div class="card" style="background-color: #212226;">
+        <div class="product">
+            <img alt="placeholder image" class="img-fluid lazyload" src="/img/Product_1.webp"
+                style="width: 400px; height: auto;" />
+            <div class="description">
+                <div style="margin-left: 20px;">
+                    <h1 class="titledes">Fashione Shoes White</h1>
+                </div>
+                <div>
+                    <p class="card-body">
+                        Bahan MeshReady Size 39-43 Silahkan order Sesuai dengan variasi yang diinginkan! Tidak menerima
+                        perubahan Warna dan size
+                        lewat Chat!!! Toko Pandu Store menjual Berbagai Macam Perlengkapan dan Keperluan Anda
+                        sehari-hari!
+                        Silahkan Kunjungi Toko
+                        kami Pandu Store untuk mengetahui apa saja barang yang kami Jual. Kebanyakan Barang yang Kami
+                        jual
+                        adalah Barang hasil Produksi
+                        sendiri dengan mengutamakan Kualitas dan kenyamanan saat digunakan Pembeli! Kesesuaian Foto 90%
+                        Membeli = Sudah Membaca informasi
+                        ini Happy Shoping!!!
+                    </p>
+                </div>
+                <div class="sizeSepatu">
+                    <form>
+                        <div>
+                            <h4>Sizes</h4>
+                            <input name="size" type="radio"> 43 &emsp;
+                            <input name="size" type="radio" checked> 44 &emsp;
+                            <input name="size" type="radio"> 45 &emsp;
+                        </div>
+                        <br>
+                        <div style="display: flex; color: black;">
+                            <button class="button button-bag" id="myBtn" type="submit"><a href="successadd" class="none">Add to Bag</a></button>
+                        </div>
+                    </form>
+                </div>
+                <br>
+                <br>
+            </div>
+        </div>
+    </div>
+
+    <script crossorigin="anonymous" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    
+</body>
+</html>
