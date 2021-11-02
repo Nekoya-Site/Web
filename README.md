@@ -1,6 +1,6 @@
 # Nekoya (Frontend)
 
-[![pipeline status](https://gitlab.com/nekoya/frontend/badges/main/pipeline.svg)](https://gitlab.com/nekoya/frontend/-/commits/main)
+[![pipeline status](https://gitlab.com/nekoya/web/badges/old/pipeline.svg)](https://gitlab.com/nekoya/web/-/commits/old)
 
 ## Features
 - [✓] Home
@@ -25,4 +25,4 @@
 - Donni Suharyanto (535200042) / [@DShrat](https://github.com/DShrat)
 
 ## Deployed on
-[![Netlify Status](https://api.netlify.com/api/v1/badges/cd5707a6-c7ef-4246-8aba-ed3c94954e54/deploy-status)](https://nekoya.moe.team)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/cd5707a6-c7ef-4246-8aba-ed3c94954e54/deploy-status)](https://old.nekoya.moe.team)
