@@ -1,0 +1,55 @@
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+.box {
+    width: 100px;
+    text-align: center;
+    background-color: white;
+    color: black;
+}
+
+@media (max-width: 320px) {
+    .box {
+        width: 50px;
+    }
+}
+
+.btn-checkout {
+    width: 100%;
+    background-color: darkred;
+    border-color: darkred;
+    border-radius: 100px;
+}
+
+.btn-checkout:hover {
+    background-color: red;
+    border-color: red;
+}
+
+.container input {
+    justify-content: left;
+}
+
+.card {
+    background-color: #212226;
+    color: white;
+    border-radius: 10px;
+    display: flex;
+}
+
+.bag {
+    color: white;
+    margin-left: 48px;
+    margin-right: 48px;
+}
+
+@media (max-width: 980px) {
+    .summary {
+        margin-top: 20px;
+    }
+
+    .bag {
+        word-break: normal;
+    }
+}
