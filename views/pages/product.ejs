@@ -154,6 +154,17 @@
             padding-top: 10px;
         }
 
+        .navbar-brand {
+            width: 5%;
+        }
+
+        @media screen and (max-width: 500px) {
+            .navbar-brand {
+                width: 15vw;
+                height: 15vw;
+            }
+        }
+
         @media only screen and (max-width: 1000px) {
             .product {
                 display: grid;
@@ -260,7 +271,7 @@
 </head>
 
 <body style="background-color: #1b1c1e;">
-    <%- include('../layouts/navbar.ejs'); %>
+    <%- include('../layouts/navbar.ejs', {types: 'v1', state: 'product-list'}); %>
 
     <div class="card" style="background-color: #212226;">
         <div class="product">
