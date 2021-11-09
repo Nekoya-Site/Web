@@ -17,6 +17,17 @@ body {
     }
 }
 
+.navbar-brand {
+    width: 5%;
+}
+
+@media screen and (max-width: 500px) {
+    .navbar-brand {
+        width: 15vw;
+        height: 15vw;
+    }
+}
+
 .nav-color {
     background-color: #212226;
 }
