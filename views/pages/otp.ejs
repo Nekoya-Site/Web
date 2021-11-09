@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta name="theme-color" content="#2f0001">
+    <link href="assets/favicon.webp" rel="shortcut icon" type="image/png" />
+    <title>2-Factor Verification</title>
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" rel="stylesheet">
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #1b1c1e;
+        }
+
+        .form-control {
+            background-color: #212226;
+            color: white;
+        }
+
+        .form-control:valid {
+            background-color: #212226;
+            color: white;
+        }
+
+        .form-control:invalid {
+            background-color: #2f0001;
+            color: white;
+        }
+
+        .nav-color {
+            background-color: #212226;
+        }
+
+        .nav-radius {
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+
+        .card {
+            position: center;
+            margin: auto;
+            margin-top: 3%;
+            margin-bottom: 2%;
+            text-align: center;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            background-color: #212226;
+        }
+
+        .icon {
+            position: center;
+            margin-top: -5%;
+            margin-left: 10%;
+            width: 80%;
+            height: 80%;
+            padding-bottom: 0%;
+        }
+
+        .text {
+            margin-bottom: -6%;
+        }
+
+        .text-resend {
+            color: white;
+            text-align: center;
+        }
+
+        .text-resend a:hover {
+            color: white;
+        }
+
+        .btn-success:hover {
+            margin-left: 0%;
+        }
+
+        .input-container input {
+            width: 40px;
+            height: 40px;
+        }
+
+        .verify-btn {
+            width: 100%;
+            background-color: darkred;
+            border-color: darkred;
+            border-radius: 100px;
+        }
+
+        .verify-btn:hover {
+            background-color: red;
+            border-color: red;
+        }
+
+        :focus {
+            outline: 0 !important;
+            box-shadow: 0 0 0 0 rgba(0, 0, 0, 0) !important;
+        }
+
+        @media screen and (max-width: 426px) {
+
+            .card a,
+            input {
+                font-size: 3vw;
+            }
+
+            .card-header {
+                font-size: 6vw;
+            }
+
+            .navbar-brand {
+                width: 15vw;
+                height: 15vw;
+            }
+        }
+
+            @media screen and (min-width: 427px) {
+
+            .card a,
+            input {
+                font-size: 2vw;
+            }
+
+            .card-header {
+                font-size: 5vw;
+            }
+
+            .navbar-brand {
+                width: 11vw;
+                height: 11vw;
+            }
+        }
+
+            @media screen and (min-width: 767px) {
+
+            .card a,
+            input {
+                font-size: 2vw;
+            }
+
+            .card-header {
+                font-size: 4vw;
+            }
+
+            .navbar-brand {
+                width: 8vw;
+                height: 8vw;
+            }
+        }
+
+            @media screen and (min-width: 993px) {
+
+            .card a,
+            input {
+                font-size: 1vw;
+            }
+
+            .card-header {
+                font-size: 2.5vw;
+            }
+
+            .navbar-brand {
+                width: 6vw;
+                height: 6vw;
+            }
+        }
+
+            @media screen and (min-width: 1400px) {
+
+            .card a,
+            input {
+                font-size: 1vw;
+            }
+
+            .card-header {
+                font-size: 2.5vw;
+            }
+
+            .navbar-brand {
+                width: 6vw;
+                height: 6vw;
+            }
+
+            :focus {
+                outline: 0 !important;
+                box-shadow: 0 0 0 0 rgba(0, 0, 0, 0) !important;
+            }
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js"></script>
+</head>
+
+<body>
+    <%- include('../layouts/navbar-otp.ejs'); %>
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="card text-white col-md-9 col-lg-6 col-xl-5">
+                    <h1 class="card-header text-white">OTP VERIFICATION</h1>
+                    <lottie-player autoplay background="transparent" class="icon" loop speed="1"
+                        src="https://assets2.lottiefiles.com/packages/lf20_zztlhuue.json"></lottie-player>
+                    <div class="py-3 text" style="padding: 0% 5%; text-align: center;">
+                        <a>A String of OTP Code Has Been Sent to kel*****@gmail.com</a>
+                    </div>
+                    <br>
+                    <div class="input-container d-flex flex-row justify-content-center mt-2">
+                        <input class="m-1 text-center form-control rounded" id='ist' maxlength="1"
+                            onkeyup="clickEvent(this,'sec')" type="text">
+                        <input class="m-1 text-center form-control rounded" id="sec" maxlength="1"
+                            onkeyup="clickEvent(this,'third')" type="text">
+                        <input class="m-1 text-center form-control rounded" id="third" maxlength="1"
+                            onkeyup="clickEvent(this,'fourth')" type="text">
+                        <input class="m-1 text-center form-control rounded" id="fourth" maxlength="1"
+                            onkeyup="clickEvent(this,'fifth')" type="text">
+                        <input class="m-1 text-center form-control rounded" id="fifth" maxlength="1"
+                            onkeyup="clickEvent(this,'sixth')" type="text">
+                        <input class="m-1 text-center form-control rounded" id="sixth" maxlength="1" type="text">
+                    </div>
+                    <div class="text-resend">
+                        <small>
+                            Didn't Get An Email?? &nbsp;
+                            <a class="text-decoration-none" href="forgot-password.html">Resend Code</a>
+                        </small>
+                    </div>
+
+                    <div class="mt-3 mb-5">
+                        <button class="btn btn-success px-4 verify-btn" style="width: 65%;">Verify</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+
+    <script>
+        function clickEvent(first, last) {
+            if (first.value.length) {
+                document.getElementById(last).focus();
+            }
+        }
+    </script>
+    <script>
+        feather.replace()
+    </script>
+    <script crossorigin="anonymous" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        src="https://code.jquery.com/jquery-3.5.1.slim.min.js">
+    </script>
+    <script crossorigin="anonymous" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js">
+    </script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+</body>
+
+</html>
