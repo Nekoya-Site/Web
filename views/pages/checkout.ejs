@@ -133,6 +133,16 @@
             cursor: pointer;
         }
 
+        .navbar-brand {
+            width: 5%;
+        }
+
+        @media screen and (max-width: 500px) {
+            .navbar-brand {
+                width: 15vw;
+                height: 15vw;
+            }
+        }
 
         @media only screen and (max-width: 1000px) {
             .full-body {
@@ -279,7 +289,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js"></script>
 </head>
 <body style="background-color: #1b1c1e;">
-    <%- include('../layouts/navbar.ejs'); %>
+    <%- include('../layouts/navbar.ejs', {types: 'v1', state: 'product-list'}); %>
 
     <br>
     <br>
