@@ -1,8 +1,23 @@
 const express = require('express')
-
 const router = express.Router()
 
 router.get('/', (_req, res) => {
+    res.render('pages/index');
+})
+
+router.get('/login', (_req, res) => {
+    res.render('pages/login');
+})
+
+router.get('/forgot-password', (_req, res) => {
+    res.render('pages/forgot-password');
+})
+
+router.get('/otp', (_req, res) => {
+    res.render('pages/otp');
+})
+
+router.get('/product', (_req, res) => {
     res.render('pages/product')
 })
 

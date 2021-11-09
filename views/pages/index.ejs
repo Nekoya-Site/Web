@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#2f0001">
+    <title>Nekoya</title>
+    <link href="assets/favicon.webp" rel="shortcut icon" type="image/webp" />
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e48d166edc.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="Style-index.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js"></script>
+</head>
+
+<body class="bg-color">
+    <%- include('../layouts/navbar-index.ejs'); %>
+
+    <header>
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <div style="padding-top: 66px;">
+                <div class="col-13">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner" id="carousel-img">
+                        <div class="carousel-item active" data-interval="1">
+                            <img class="d-block w-100 lazyload" src="img/Carousel_1.webp" alt="First slide">
+                        </div>
+                        <div class="carousel-item" data-interval="1">
+                            <img class="d-block w-100 lazyload" src="img/Carousel_2.webp" alt="Second slide">
+                        </div>
+                        <div class="carousel-item" data-interval="1">
+                            <img class="d-block w-100 lazyload" src="img/Carousel_3.webp" alt="Third slide">
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="banner">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-4">
+                    <div class="banner_item align-item-center" style="background-image: url(img/banner_1.webp);">
+                        <div class="banner_category">
+                            <a href="#">Women's</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="banner_item align-item-center" style="background-image: url(img/banner_2.webp);">
+                        <div class="banner_category">
+                            <a href="#">Men's</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="new_arrivals">
+        <div class="container">
+            <div class="row">
+                <div class="col text-center">
+                    <div class="section-title new_arrivals_title" style="margin-top: 3%;">
+                        <h2>New Arrivals</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row align-items-center">
+                <div class="col text-center">
+                    <div class="new_arrivals_sorting" style="margin-top: 3%; justify-content: center ;">
+                        <ul class="arrivals_grid_sorting clearfix button-group filters-button-group">
+                            <li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center active is-checked"
+                                data-filter="*">All
+                            </li>
+                            <li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center"
+                                data-filter=".women">Women's
+                            </li>
+                            <li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center"
+                                data-filter=".men">Men's
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <div class="product-grid"
+                        data-isotope='{ "itemSelector": ".product-item", "layoutMode": "fitRows"}'>
+                        <div class="product-item men">
+                            <div class="product product_filter">
+                                <div class="product_image">
+                                    <img src="img/Product_1.webp" alt="product_1" class="lazyload">
+                                </div>
+                                <div class="favorite favorite_left"></div>
+                                <div
+                                    class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center">
+                                    <span>New</span>
+                                </div>
+                                <div class="product_info">
+                                    <h6 class="product_name"><a href="product.html">Adidas NMD_R1 (GX0997)</a></h6>
+                                    <div class="product_price">Rp. 2.200.000</div>
+                                </div>
+                                <div class="add_to_cart_button"><a href="bag.html">ADD TO CART</a></div>
+                            </div>
+                        </div>
+                        <div class="product-item women">
+                            <div class="product product_filter">
+                                <div class="product_image">
+                                    <img src="img/Product_2.webp" alt="product_2" class="lazyload">
+                                </div>
+                                <div class="favorite favorite_left"></div>
+                                <div
+                                    class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center">
+                                    <span>Sale</span>
+                                </div>
+                                <div class="product_info">
+                                    <h6 class="product_name"><a href="product.html">Adidas NMD_R1 (G55575)</a></h6>
+                                    <div class="product_price">Rp. 1.760.000</div>
+                                </div>
+                                <div class="add_to_cart_button"><a href="bag.html">ADD TO CART</a></div>
+                            </div>
+                        </div>
+                        <div class="product-item women">
+                            <div class="product product_filter">
+                                <div class="product_image">
+                                    <img src="img/Product_3.webp" alt="product_3" class="lazyload">
+                                </div>
+                                <div class="favorite favorite_left"></div>
+                                <div
+                                    class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center">
+                                    <span>Sale</span>
+                                </div>
+                                <div class="product_info">
+                                    <h6 class="product_name"><a href="product.html">Adidas NMD_R1 <br>(FV1740)</a></h6>
+                                    <div class="product_price">Rp. 1.100.000</div>
+                                </div>
+                                <div class="add_to_cart_button"><a href="bag.html">ADD TO CART</a></div>
+                            </div>
+                        </div>
+                        <div class="product-item women">
+                            <div class="product product_filter">
+                                <div class="product_image">
+                                    <img src="img/Product_4.webp" alt="product_4" class="lazyload">
+                                </div>
+                                <div class="favorite favorite_left"></div>
+                                <div class="product_info">
+                                    <h6 class="product_name"><a href="product.html">Adidas NMD_R1 PRIMBLUE (GZ9256)</a>
+                                    </h6>
+                                    <div class="product_price">Rp. 2.200.000</div>
+                                </div>
+                                <div class="add_to_cart_button"><a href="bag.html">ADD TO CART</a></div>
+                            </div>
+                        </div>
+                        <div class="product-item women men">
+                            <div class="product product_filter">
+                                <div class="product_image">
+                                    <img src="img/Product_5.webp" alt="product_5" class="lazyload">
+                                </div>
+                                <div class="favorite favorite_left"></div>
+                                <div class="product_info">
+                                    <h6 class="product_name"><a href="product.html">Adidas NMD_R1 (GZ7944)</a></h6>
+                                    <div class="product_price">Rp. 2.200.000</div>
+                                </div>
+                                <div class="add_to_cart_button"><a href="bag.html">ADD TO CART</a></div>
+                            </div>
+                        </div>
+                        <div class="product-item men">
+                            <div class="product discount product_filter">
+                                <div class="product_image">
+                                    <img src="img/Product_6.webp" alt="product_6" class="lazyload">
+                                </div>
+                                <div class="favorite favorite_left"></div>
+                                <div
+                                    class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center">
+                                    <span>New</span>
+                                </div>
+                                <div class="product_info">
+                                    <h6 class="product_name"><a href="product.html">Adidas NMD_R1 <br> (GZ7943)</a></h6>
+                                    <div class="product_price">Rp. 2.200.000</div>
+                                </div>
+                                <div class="add_to_cart_button"><a href="bag.html">ADD TO CART</a></div>
+                            </div>
+                        </div>
+                        <div class="product-item women">
+                            <div class="product product_filter">
+                                <div class="product_image">
+                                    <img src="img/Product_7.webp" alt="product_7" class="lazyload">
+                                </div>
+                                <div class="favorite favorite_left"></div>
+                                <div
+                                    class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center">
+                                    <span>Sale</span>
+                                </div>
+                                <div class="product_info">
+                                    <h6 class="product_name"><a href="product.html">Adidas NMD_R1 <br> (FY3566)</a></h6>
+                                    <div class="product_price">Rp. 1.540.000</div>
+                                </div>
+                                <div class="add_to_cart_button"><a href="bag.html">ADD TO CART</a></div>
+                            </div>
+                        </div>
+                        <div class="product-item women men">
+                            <div class="product product_filter">
+                                <div class="product_image">
+                                    <img src="img/Product_8.webp" alt="product_8" class="lazyload">
+                                </div>
+                                <div class="favorite favorite_left"></div>
+                                <div class="product_info">
+                                    <h6 class="product_name"><a href="product.html">Adidas NMD_R1 (GX0996)</a></h6>
+                                    <div class="product_price">Rp. 2.200.000</div>
+                                </div>
+                                <div class="add_to_cart_button"><a href="bag.html">ADD TO CART</a></div>
+                            </div>
+                        </div>
+                        <div class="product-item men">
+                            <div class="product product_filter">
+                                <div class="product_image">
+                                    <img src="img/Product_9.webp" alt="product_9" class="lazyload">
+                                </div>
+                                <div class="favorite favorite_left"></div>
+                                <div
+                                    class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center">
+                                    <span>Sale</span>
+                                </div>
+                                <div class="product_info">
+                                    <h6 class="product_name"><a href="product.html">Adidas NMD_R1 <br> (FY3565)</a></h6>
+                                    <div class="product_price">Rp. 1.540.000</div>
+                                </div>
+                                <div class="add_to_cart_button"><a href="bag.html">ADD TO CART</a></div>
+                            </div>
+                        </div>
+                        <div class="product-item men">
+                            <div class="product product_filter">
+                                <div class="product_image">
+                                    <img src="img/Product_10.webp" alt="product_1" class="lazyload">
+                                </div>
+                                <div class="favorite favorite_left"></div>
+                                <div class="product_info">
+                                    <h6 class="product_name"><a href="product.html">Adidas NMD_R1A (FX6794)</a></h6>
+                                    <div class="product_price">Rp. 2.200.000</div>
+                                </div>
+                                <div class="add_to_cart_button"><a href="bag.html">ADD TO CART</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main_slider" id="slider-img" style="background-image: url(img/slider_1.webp);">
+        <div class="container fill_hight">
+            <div class="row align-items-center fill_hight" style="margin-top: -4%;">
+                <div class="col">
+                    <div class="main_slider_content">
+                        <p>Spring / Summer Collection 2021</p>
+                        <a>Get up to 30% off <br> Now Arrivals</a>
+                        <br>
+                        <div class="red_button shop_now_button"><a href="product-list.html">Shop now</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="best_sellers">
+        <div class="container">
+            <div class="row">
+                <div class="col text-center">
+                    <div class="section_title new_arrivals_title" style="margin-top: 3%;">
+                        <h2>Best Sellers</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="product_slider_container" style="margin-top: 3%;">
+                        <div class="owl-carousel owl-theme product_slider">
+                            <div class="owl-item product_slider_item">
+                                <div class="product-item men">
+                                    <div class="product discount product_filter">
+                                        <div class="product_image">
+                                            <img src="img/Product_1.webp" alt="product_1" class="lazyload">
+                                        </div>
+                                        <div class="favorite favorite_left"></div>
+                                        <div
+                                            class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center">
+                                            <span>New</span>
+                                        </div>
+                                        <div class="product_info">
+                                            <h6 class="product_name"><a href="product.html">Adidas NMD_R1 (G55575)</a>
+                                            </h6>
+                                            <div class="product_price">Rp. 2.200.000</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="owl-item product_slider_item">
+                                <div class="product-item women">
+                                    <div class="product product_filter">
+                                        <div class="product_image">
+                                            <img src="img/Product_2.webp" alt="product_2" class="lazyload">
+                                        </div>
+                                        <div class="favorite favorite_left"></div>
+                                        <div
+                                            class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center">
+                                            <span>Sale</span>
+                                        </div>
+                                        <div class="product_info">
+                                            <h6 class="product_name"><a href="product.html">Adidas NMD_R1 (G55575)</a>
+                                            </h6>
+                                            <div class="product_price">Rp. 1.760.000</div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="owl-item product_slider_item">
+                                <div class="product-item women">
+                                    <div class="product product_filter">
+                                        <div class="product_image">
+                                            <img src="img/Product_3.webp" alt="product_3" class="lazyload">
+                                        </div>
+                                        <div class="favorite favorite_left"></div>
+                                        <div
+                                            class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center">
+                                            <span>Sale</span>
+                                        </div>
+                                        <div class="product_info">
+                                            <h6 class="product_name"><a href="product.html">Adidas NMD_R1 <br>
+                                                    (FV1740)</a>
+                                            </h6>
+                                            <div class="product_price">Rp. 1.100.000</div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="owl-item product_slider_item">
+                                <div class="product-item accessories">
+                                    <div class="product product_filter">
+                                        <div class="product_image">
+                                            <img src="img/Product_4.webp" alt="product_4" class="lazyload">
+                                        </div>
+                                        <div class="favorite favorite_left"></div>
+                                        <div class="product_info">
+                                            <h6 class="product_name"><a href="product.html">Adidas NMD_R1 PRIMBLUE
+                                                    (GZ9256)</a></h6>
+                                            <div class="product_price">Rp. 2.200.000</div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="owl-item product_slider_item">
+                                <div class="product-item women men">
+                                    <div class="product product_filter">
+                                        <div class="product_image">
+                                            <img src="img/Product_5.webp" alt="product_5" class="lazyload">
+                                        </div>
+                                        <div class="favorite favorite_left"></div>
+                                        <div class="product_info">
+                                            <h6 class="product_name"><a href="product.html">Adidas NMD_R1 (GZ7944)</a>
+                                            </h6>
+                                            <div class="product_price">Rp. 2.200.000</div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="owl-item product_slider_item">
+                                <div class="product-item accessories">
+                                    <div class="product discount product_filter">
+                                        <div class="product_image">
+                                            <img src="img/Product_6.webp" alt="product_6" class="lazyload">
+                                        </div>
+                                        <div class="favorite favorite_left"></div>
+                                        <div
+                                            class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center">
+                                            <span>New</span>
+                                        </div>
+                                        <div class="product_info">
+                                            <h6 class="product_name"><a href="product.html">Adidas NMD_R1 <br>
+                                                    (GZ7943)</a>
+                                            </h6>
+                                            <div class="product_price">Rp. 2.200.000</div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="owl-item product_slider_item">
+                                <div class="product-item women">
+                                    <div class="product product_filter">
+                                        <div class="product_image">
+                                            <img src="img/Product_7.webp" alt="product_7" class="lazyload">
+                                        </div>
+                                        <div class="favorite favorite_left"></div>
+                                        <div
+                                            class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center">
+                                            <span>Sale</span>
+                                        </div>
+                                        <div class="product_info">
+                                            <h6 class="product_name"><a href="product.html">Adidas NMD_R1 <br>
+                                                    (FY3566)</a>
+                                            </h6>
+                                            <div class="product_price">Rp. 1.540.000</div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="owl-item product_slider_item">
+                                <div class="product-item accessories">
+                                    <div class="product product_filter">
+                                        <div class="product_image">
+                                            <img src="img/Product_8.webp" alt="product_8" class="lazyload">
+                                        </div>
+                                        <div class="favorite favorite_left"></div>
+                                        <div class="product_info">
+                                            <h6 class="product_name"><a href="product.html">Adidas NMD_R1 (GX0996)</a>
+                                            </h6>
+                                            <div class="product_price">Rp. 2.200.000</div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="owl-item product_slider_item">
+                                <div class="product-item men">
+                                    <div class="product product_filter">
+                                        <div class="product_image">
+                                            <img src="img/Product_9.webp" alt="product_9" class="lazyload">
+                                        </div>
+                                        <div class="favorite favorite_left"></div>
+                                        <div
+                                            class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center">
+                                            <span>Sale</span>
+                                        </div>
+                                        <div class="product_info">
+                                            <h6 class="product_name"><a href="product.html">Adidas NMD_R1 <br>
+                                                    (FY3565)</a>
+                                            </h6>
+                                            <div class="product_price">Rp. 1.540.000</div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="owl-item product_slider_item">
+                                <div class="product-item men">
+                                    <div class="product product_filter">
+                                        <div class="product_image">
+                                            <img src="img/Product_10.webp" alt="product_1" class="lazyload">
+                                        </div>
+                                        <div class="favorite favorite_left"></div>
+                                        <div class="product_info">
+                                            <h6 class="product_name"><a href="product.html">Adidas NMD_R1A (FX6794)</a>
+                                            </h6>
+                                            <div class="product_price">Rp. 2.200.000</div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="product_slider_nav_left product_slider_nav d-flex align-items-center justify-content-center flex-column">
+                            <i class="fa fas-chevron-left" aria-hidden="true"><img
+                                    src="https://img.icons8.com/material-rounded/48/000000/back--v1.webp"
+                                    class="lazyload" /></i>
+                        </div>
+                        <div
+                            class="product_slider_nav_right product_slider_nav d-flex align-items-center justify-content-center flex-column">
+                            <i class="fa fas-chevron-right" aria-hidden="true"><img
+                                    src="https://img.icons8.com/ios-glyphs/30/000000/more-than" class="lazyload" /></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="benefit" style="margin-top: 2%;">
+        <div class="container">
+            <div class="row benefit_row" style="justify-content: center;">
+                <div class="col-lg-3 benefit_col">
+                    <div class="benefit_item d-flex flex-row align-items-center">
+                        <div class="benefit_icon">
+                            <i class="fa fa-truck" aria-hidden="true"></i>
+                        </div>
+                        <div class="benefit_content">
+                            <h6>Free Shipping</h6>
+                            <p>Suffered Alteration is Some Form</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 benefit_col">
+                    <div class="benefit_item d-flex flex-row align-items-center">
+                        <div class="benefit_icon">
+                            <i class="fa fa-undo" aria-hidden="true"></i>
+                        </div>
+                        <div class="benefit_content">
+                            <h6>14 days return</h6>
+                            <p>Making it Look like Readable</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 benefit_col">
+                    <div class="benefit_item d-flex flex-row align-items-center">
+                        <div class="benefit_icon">
+                            <i class="fa fa-clock-o" aria-hidden="true"></i>
+                        </div>
+                        <div class="benefit_content">
+                            <h6>Operation Hours</h6>
+                            <p>8AM - 9PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="newsletter" style="margin-top: 2%;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="newsletter_text d-flex flex-column justify-content-center
+                        align-items-lg-start align-items-md-center text-center">
+                        <h4>Newsletter</h4>
+                        <p>Subscribe to Our Newsletter and get 20% off your first purchase</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <form action="post">
+                        <div class="newsletter_form d-flex flex-md-row fex-column flex-xs-column
+                        align-items-center justify-content-lg-end justify-content-center">
+                            <input id="newsletter_email" type="email" placeholder="Input Your Email" required="required"
+                                data-error="valid email is required">
+                            <button id="newsletter_submit" type="submit" class="newsletter_submit_btn trans_300"
+                                value="submit">Subscribe
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+    <script>
+        feather.replace()
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
+        integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous">
+    </script>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="plugins/Isotope/isotope.pkgd.min.js"></script>
+    <script src="plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+    <script>
+        jQuery(document).ready(function ($) {
+            "user strict";
+
+            var mainSlider = $('.main.slider');
+            var hamburger = $('.hamburger_container');
+            var menu = $('.hamburger_menu');
+            var menuActive = false;
+            var hamburgerClose = $('.hamburger_close');
+            var fsOverlay = $('.fs_menu_overlay');
+
+            initMenu();
+            initFavorite();
+            initIsotopeFiltering();
+            initTimer();
+            initSlider();
+
+            function initMenu() {
+                if (hamburger.length) {
+                    hamburger.on('click', function () {
+                        if (!menuActive) {
+                            openMenu();
+                        }
+                    });
+                }
+                if (fsOverlay.length) {
+                    fsOverlay.on('click', function () {
+                        if (menuActive) {
+                            closeMenu();
+                        }
+                    });
+                }
+                if (hamburgerClose.length) {
+                    hamburgerClose.on('click', function () {
+                        if (menuActive) {
+                            closeMenu();
+                        }
+                    });
+                }
+                if ($('.menu_item'), length) {
+                    var items = document.getElementsByClassName('menu_item');
+                    var i;
+
+                    for (i = 0; i < items.length; i++) {
+                        if (items[i].classList.contains("has-children")) {
+                            items[i].onclick = function () {
+                                this.classList.toggle("active");
+                                var panel = this.children[1];
+                                if (panel.style.maxHeight) {
+                                    panel.style.maxHeight = null;
+                                } else {
+                                    panel.style.maxHeight = panel.scrollHeight + "px";
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            function openMenu() {
+                menu.addClass('active');
+                fsOverlay.css('pointer-events', "auto");
+                menuActive = true;
+            }
+
+            function closeMenu() {
+                menu.removeClass('active');
+                fsOverlay.css('pointer-events', "none");
+                menuActive = false;
+            }
+
+            function initTimer() {
+                if ($('.timer').length) {
+
+                    var target_date = new Date("August 31, 2021").getTime();
+                    var days, hours, minutes, seconds;
+                    var d = $('#day');
+                    var h = $('#hour');
+                    var m = $('#minute');
+                    var s = $('#second');
+
+                    setInterval(function () {
+                        var current_date = new Date().getTime();
+                        var seconds_left = (target_date - current_date) / 1000;
+
+                        days = parseInt(seconds_left / 86400);
+                        seconds_left = seconds_left % 86400;
+
+                        hours = parseInt(seconds_left / 3600);
+                        seconds_left = seconds_left % 3600;
+
+                        minutes = parseInt(seconds_left / 60);
+                        seconds = parseInt(seconds_left % 60);
+
+                        d.text(days);
+                        h.text(hours);
+                        m.text(minutes);
+                        s.text(seconds);
+                    }, 1000)
+                }
+            }
+
+            function initFavorite() {
+
+                if ($('.favorite').length) {
+                    var favs = $('.favorite');
+
+                    favs.each(function () {
+                        var fav = $(this);
+                        var active = false;
+                        if (fav.hasClass('active')) {
+                            active = true;
+                        }
+                        fav.on('click', function () {
+                            if (active) {
+                                fav.removeClass('active');
+                                active = false;
+                            } else {
+                                fav.addClass('active');
+                                active = true;
+                            }
+                        })
+                    });
+                }
+            }
+
+            function initIsotopeFiltering() {
+                if ($('.grid_sorting_button').length) {
+                    $('.grid_sorting_button').click(function () {
+                        $('.grid_sorting_button.active').removeClass('active');
+                        $(this).addClass('active');
+
+                        var selector = $(this).attr('data-filter');
+                        $('.product-grid').isotope({
+                            filter: selector,
+                            animationOptions: {
+                                duration: 750,
+                                easing: 'linear',
+                                queue: false,
+                            }
+                        });
+                        return false
+                    });
+                }
+            }
+
+            function initSlider() {
+                if ($('.product_slider').length) {
+                    var slider1 = $('.product_slider');
+
+                    slider1.owlCarousel({
+                        loop: false,
+                        dots: false,
+                        nav: false,
+                        responsive: {
+                            0: {
+                                items: 1
+                            },
+                            480: {
+                                items: 2
+                            },
+                            768: {
+                                items: 3
+                            },
+                            991: {
+                                items: 4
+                            },
+                            1280: {
+                                items: 5
+                            },
+                            1440: {
+                                items: 5
+                            },
+                        }
+
+                    });
+                    if ($('.product_slider_nav_left').length) {
+                        $('.product_slider_nav_left').on('click', function () {
+                            slider1.trigger('prev.owl.carousel');
+                        })
+                    }
+                    if ($('.product_slider_nav_right').length) {
+                        $('.product_slider_nav_right').on('click', function () {
+                            slider1.trigger('next.owl.carousel');
+                        })
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
