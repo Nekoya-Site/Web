@@ -1,0 +1,154 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #1b1c1e;
+}
+
+.input-group-text {
+    background-color: #212226;
+    color: white;
+}
+
+.form-control {
+    background-color: #212226;
+    color: white;
+}
+
+.form-control:valid {
+    background-color: #212226;
+    color: white;
+}
+
+.form-control:invalid {
+    background-color: #2f0001;
+    color: white;
+}
+
+.nav-color {
+    background-color: #212226;
+}
+
+.btn-register {
+    width: 100%;
+    background-color: darkred;
+    border-color: darkred;
+    border-radius: 100px;
+}
+
+.btn-register:hover {
+    background-color: red;
+    border-color: red;
+}
+
+.hoversignin-1 a {
+    color: white;
+    background-color: transparent;
+    position: center;
+    margin: auto;
+    text-align: center;
+}
+
+.hoversignin-1 a:hover {
+    background-color: transparent;
+    color: red;
+    text-decoration: underline;
+}
+
+.card {
+    position: center;
+    margin: auto;
+    text-align: center;
+    border-radius: 20px;
+    background-color: #212226;
+}
+
+.icon {
+    position: center;
+    margin: auto;
+    width: 80%;
+    height: 80%;
+}
+
+@media screen and (max-width: 426px) {
+
+    .card a,
+    input {
+        font-size: 3vw;
+    }
+
+    .card-header {
+        font-size: 6vw;
+    }
+
+    .navbar-brand {
+        width: 15vw;
+        height: 15vw;
+    }
+}
+
+@media screen and (min-width: 427px) {
+
+    .card a,
+    input {
+        font-size: 2vw;
+    }
+
+    .card-header {
+        font-size: 5vw;
+    }
+
+    .navbar-brand {
+        width: 11vw;
+        height: 11vw;
+    }
+}
+
+@media screen and (min-width: 767px) {
+
+    .card a,
+    input {
+        font-size: 2vw;
+    }
+
+    .card-header {
+        font-size: 4vw;
+    }
+
+    .navbar-brand {
+        width: 8vw;
+        height: 8vw;
+    }
+}
+
+@media screen and (min-width: 993px) {
+
+    .card a,
+    input {
+        font-size: 1vw;
+    }
+
+    .card-header {
+        font-size: 2.5vw;
+    }
+
+    .navbar-brand {
+        width: 6vw;
+        height: 6vw;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+
+    .card a,
+    input {
+        font-size: 1vw;
+    }
+
+    .card-header {
+        font-size: 2.5vw;
+    }
+
+    .navbar-brand {
+        width: 6vw;
+        height: 6vw;
+    }
+}
