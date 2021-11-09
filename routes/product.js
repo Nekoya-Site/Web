@@ -7,7 +7,7 @@ router.get('/', (req, res) => {
 })
 
 router.get(('/successadd'), (req, res) => {
-    res.render('pages/successadd')
+    res.render('pages/success-add')
 })
 
 router.get('/bag', (req, res) => {
@@ -19,7 +19,7 @@ router.get('/checkout', (req, res) => {
 })
 
 router.get('/notifpay', (req, res) => {
-    res.render('pages/notifpay')
+    res.render('pages/notif-pay')
 })
 
 router.get('/payment', (req, res) => {
