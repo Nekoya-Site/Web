@@ -1,0 +1,19 @@
+/* Navbar */
+
+.bg-color {
+    background-color: #1b1c1e;
+}
+
+.comp-color {
+    background-color: #212226;
+}
+
+.nav-radius {
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+:focus {
+    outline: 0 !important;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0) !important;
+}
