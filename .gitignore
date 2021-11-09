@@ -1,6 +1,9 @@
 # Node Modules Directory
 node_modules/
 
+# Package.json
+package.json
+
 # IDE Configuration
 .vscode/
 *.code-workspace
