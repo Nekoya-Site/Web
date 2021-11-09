@@ -2,27 +2,27 @@ const express = require('express')
 
 const router = express.Router()
 
-router.get('/', (req, res) => {
+router.get('/', (_req, res) => {
     res.render('pages/product')
 })
 
-router.get(('/successadd'), (req, res) => {
+router.get(('/successadd'), (_req, res) => {
     res.render('pages/success-add')
 })
 
-router.get('/bag', (req, res) => {
+router.get('/bag', (_req, res) => {
     res.render('pages/bag')
 })
 
-router.get('/checkout', (req, res) => {
+router.get('/checkout', (_req, res) => {
     res.render('pages/checkout')
 })
 
-router.get('/notifpay', (req, res) => {
+router.get('/notifpay', (_req, res) => {
     res.render('pages/notif-pay')
 })
 
-router.get('/payment', (req, res) => {
+router.get('/payment', (_req, res) => {
     res.render('pages/payment')
 })
 
