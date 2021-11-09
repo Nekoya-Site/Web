@@ -19,37 +19,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark comp-color ml-5 mr-5 nav-radius">
-        <img alt="Banner" class="navbar-brand lazyload" src="assets/logo_transparent.webp">
-        <button aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation"
-            class="navbar-toggler" data-target="#navbarTogglerDemo01" data-toggle="collapse" type="button">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-            <ul class="navbar-nav mx-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="/">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/product-list.html">Products</a>
-                </li>
-                <li class="nav-item active">
-                    <a aria-disabled="true" class="nav-link disabled" href="/about-us.html">About Us</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="faq.html">FAQ</a>
-                </li>
-            </ul>
-            <span class="navbar-nav my-2 my-lg-0 text-white">
-                <div class="my-4">
-                    <a href="login.html"><button class="btn btn-outline-success mt-auto mb-auto mr-3"
-                            type="button">Login</button></a>
-                </div>
-                <a href="bag.html" class="mt-auto mb-auto" style="color: inherit;"><i class="fas fa-shopping-cart"><span
-                            class="ml-2 mt-auto mb-auto">Rp 999.999</span></i></a>
-            </span>
-        </div>
-    </nav>
+    <%- include('../layouts/navbar.ejs', {types: 'v1', state: 'about-us'}); %>
 
     <br style="display: block;content: ' '; margin: 1vw 0; line-height: 1vw;">
 
