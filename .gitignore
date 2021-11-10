@@ -1,7 +1,7 @@
 # Node Modules Directory
 node_modules/
 
-# Package.json
+# Package Manager
 package-lock.json
 
 # IDE Configuration
