@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../layouts/header.ejs', {title: 'Shopping Bag', state: 'bag'}); %>
+
+<body style="background-color: #1b1c1e;;">
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-sm-7 col-md-6 col-lg-4">
+                    <img alt="placeholder image" class="img-fluid lazyload" src="img/Product_1.webp"
+                        width="180px" height="180px" />
+                </div>
+                <div class="col-sm-5 col-md-6 col-lg-8">
+                    <h2>Fashione Shoes</h2>
+                    <h4>Size : 44</h4>
+                    <h6>Qty</h6>
+                    <div style="display: flex;">
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default btn-number" style="color: white;"
+                                onclick="minus('inputNum')"><i data-feather="minus-square"></i></button>
+                        </span>
+                        <input class="box" type="text" disabled="disabled" value="1"
+                            class="form-control input-number" id="inputNum" />
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default btn-number" style="color: white;"
+                                onclick='add("inputNum")'><i data-feather="plus-square"></i></button>
+                        </span>
+                    </div>
+                    <br>
+                    <p>Rp 1.999.999,00</p>
+                    <a href="" style="color:red;"><i data-feather="trash" color="red"></i> <u>Remove</u></a>
+                    <br><br>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <%- include('../layouts/footer.ejs', {state: 'bag'}); %>
+</body>
+</html>
