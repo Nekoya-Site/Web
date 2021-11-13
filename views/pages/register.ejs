@@ -16,7 +16,7 @@
                     <lottie-player style="display: -webkit-box;-webkit-box-pack: center;" autoplay background="transparent" class="icon" loop speed="1"
                         src="https://assets10.lottiefiles.com/datafiles/JAmX1SNojoncImC/data.json"></lottie-player>
                     <div class="card-body">
-                        <form class="px-4 py-3">
+                        <form class="px-4 py-3" action="api/register" method="POST">
                             <div class="form-group">
                                 <input class="form-control input-sm text-center" id="first_name" name="first_name"
                                     placeholder="First Name" type="text">
@@ -24,9 +24,6 @@
                             <div class="form-group">
                                 <input class="form-control input-sm text-center" id="last_name" name="last_name"
                                     placeholder="Last Name" type="text">
-                            </div>
-                            <div class="form-group">
-                                <input class="form-control text-center" id="birthDate" style="color: gray" type="date">
                             </div>
                             <div class="form-group">
                                 <input class="form-control input-sm text-center" id="email" name="email"
@@ -43,19 +40,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <div class="input-group">
-                                    <input class="form-control input-sm text-center" id="password_confirmation"
-                                        name="password_confirmation" placeholder="Confirm Password" type="password">
-                                    <div class="input-group-append">
-                                        <span class="input-group-text">
-                                            <i class="fa fa-eye" onclick="revealhideConfirmationPassword()"></i>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <a class="btn btn-register btn-primary" type="submit"
-                                href="register-verification-sent.html">Register</a>
+                            <button class="btn btn-register btn-primary" type="submit" >Register</button>
                             <br style="display: block;content: ' '; margin: 1vw 0; line-height: 1vw;">
                             <div class="hoversignin-1 text-center">
                                 <a href="login.html">Already have an account ?? Click here to Sign In !!</a>
