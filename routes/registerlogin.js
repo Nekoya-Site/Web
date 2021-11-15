@@ -2,7 +2,8 @@ const bcrypt = require("bcrypt");
 const saltRounds = 10;
 var nodemailer = require("nodemailer");
 var randtoken = require("rand-token");
-var db_connect = require("../modules/db.js");
+const db = require("../modules/db");
+const db_connect = db.connect();
 
 //send email
 function sendEmail(email, token) {
