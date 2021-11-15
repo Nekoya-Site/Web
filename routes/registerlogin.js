@@ -173,8 +173,6 @@ exports.verifyemail = function (req, res, next) {
     'SELECT * FROM users WHERE token ="' + req.query.token + '"',
     function (err, result) {
       if (err) throw err;
-      var type;
-      var msg;
       console.log(result[0].verify);
       if (result[0].verify == 0) {
         if (result.length > 0) {
@@ -188,18 +186,12 @@ exports.verifyemail = function (req, res, next) {
               if (err) throw err;
             }
           );
-          type = "success";
-          msg = "Your email has been verified";
           res.render("pages/register-verification-completed");
         } else {
           console.log("2");
-          type = "success";
-          msg = "The email has already verified";
           res.render("pages/register-verification-completed");
         }
       } else {
-        type = "error";
-        msg = "The email has been already verified";
         res.render("pages/register-verification-completed");
       }
     }
