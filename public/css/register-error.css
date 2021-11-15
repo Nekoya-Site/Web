@@ -31,9 +31,10 @@ body {
     background-color: darkred;
     border-color: darkred;
     border-radius: 100px;
+    width: 50%;
 }
 
-    .btn:hover {
+.btn:hover {
     background-color: red;
     border-color: red;
 }
