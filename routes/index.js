@@ -2,6 +2,8 @@ const express = require('express')
 const router = express.Router()
 var registerlogin = require("./registerlogin");
 
+let product_controller = require("../controllers/productController");
+
 router.post("/register", registerlogin.register);
 router.post("/login", registerlogin.login);
 router.get("/verify-email", registerlogin.verifyemail);
@@ -23,11 +25,15 @@ router.get('/otp', (_req, res) => {
 })
 
 router.get('/products', (_req, res) => {
-    res.render('pages/products')
+    product_controller.getProducts().then(data => {
+        res.render('pages/products', {data: data});
+    })
 })
 
-router.get('/product', (_req, res) => {
-    res.render('pages/product')
+router.get('/product/:id', (req, res) => {
+    product_controller.getProduct(req.params.id).then(data => {
+        res.render('pages/product', {data: data});
+    })
 })
 
 router.get(('/successadd'), (_req, res) => {
