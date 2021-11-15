@@ -1,5 +1,10 @@
 const express = require('express')
 const router = express.Router()
+var registerlogin = require("./registerlogin");
+
+router.post("/register", registerlogin.register);
+router.post("/login", registerlogin.login);
+router.get("/verify-email", registerlogin.verifyemail);
 
 router.get('/', (_req, res) => {
     res.render('pages/index');
