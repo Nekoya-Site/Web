@@ -4,6 +4,9 @@ node_modules/
 # Package Manager
 package-lock.json
 
+# Config
+config.js
+
 # IDE Configuration
 .vscode/
 *.code-workspace
