@@ -13,22 +13,22 @@
             <div class="col">
                 <div class="card text-white col-md-8 col-lg-6 col-xl-5">
                     <h1 class="card-header text-white">Login</h1>
-                    <lottie-player autoplay background="transparent" class="icon" loop speed="1"
+                    <lottie-player style="display: -webkit-box;-webkit-box-pack: center;" autoplay background="transparent" class="icon" loop speed="1"
                         src="https://assets3.lottiefiles.com/packages/lf20_myor1trh.json"></lottie-player>
                     <div class="card-body">
-                        <form class="px-4 py-3">
+                        <form class="px-4 py-3" action="login" method="POST">
                             <div class="form-group" style="text-align: left;">
                                 <a data-feather="mail" href="" style="font-size: 40px;"></a>
-                                <label for="exampleDropdownFormEmail1">Email</label>
-                                <input class="form-control input-sm text-center" id="exampleDropdownFormEmail1"
-                                    placeholder="Email address" type="email">
+                                <label for="email">Email</label>
+                                <input class="form-control input-sm text-center"  id="email" name="email"
+                                placeholder="Email Address" type="email">
                             </div>
                             <div class="form-group" style="text-align: left;">
                                 <a data-feather="lock" href="" style="font-size: 40px;"></a>
-                                <label for="exampleDropdownFormPassword1">Password</label>
+                                <label for="password">Password</label>
                                 <div class="input-group">
-                                    <input class="form-control input-sm text-center" id="exampleDropdownFormPassword1"
-                                        name="password" placeholder="Password" type="password">
+                                    <input class="form-control input-sm text-center" id="password" name="password"
+                                    placeholder="Password" type="password">
                                     <div class="input-group-append">
                                         <span class="input-group-text">
                                             <i class="fa fa-eye" onclick="revealhidePassword()"></i>
@@ -39,7 +39,7 @@
                                 <div class="options-01 hoverlogin-1" style="word-break: keep-all;">
                                     <label class="remember-me text-left"><input name="" type="checkbox">Remember
                                         me</label>
-                                    <a href="forgot-password" style="margin-left: 15%; font-size: 10pt;">Forgot
+                                    <a href="forgot-password.html" style="margin-left: 15%; font-size: 10pt;">Forgot
                                         your
                                         password?</a>
                                 </div>
@@ -48,12 +48,12 @@
                                     <div class="links">
                                         <div class="google">
                                             <i><a href=""></a><img class="google-icon-svg lazyload"
-                                                    src="./img/google.webp"
+                                                    src="./assets/google.webp"
                                                     style="height: 30px; width: 30px; margin: 0 30px; padding-top: -3px"/><span></span></i>
                                         </div>
                                         <div class="facebook">
                                             <i><a href=""></a><img class="facebook-icon-svg lazyload"
-                                                    src="./img/facebook.webp"
+                                                    src="./assets/facebook.webp"
                                                     style="height: 30px; width: 30px; margin: 0 30px; padding-top: -3px"><span></span></i>
                                         </div>
                                     </div>
