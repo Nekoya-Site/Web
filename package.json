@@ -1,7 +1,7 @@
 {
-  "name": "nekoya",
+  "name": "Nekoya",
   "version": "1.0.0",
-  "description": "Web application for Nekoya ~",
+  "description": "Nekoya Website",
   "main": "index.js",
   "scripts": {
     "dev": "npm i && nodemon index.js",

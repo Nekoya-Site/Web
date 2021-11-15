@@ -1,5 +1,10 @@
 const express = require('express')
 const router = express.Router()
+var registerlogin = require("./registerlogin");
+
+router.post("/register", registerlogin.register);
+router.post("/login", registerlogin.login);
+router.get("/verify-email", registerlogin.verifyemail);
 
 router.get('/', (_req, res) => {
     res.render('pages/index');
@@ -49,13 +54,6 @@ router.get('/register', (_req, res) => {
     res.render('pages/register')
 })
 
-router.get('/register-verification-completed', (_req, res) => {
-    res.render('pages/register-verification-completed')
-})
-
-router.get('/register-verification-sent', (_req, res) => {
-    res.render('pages/register-verification-sent')
-})
 router.get('/about-us', (_req, res) => {
     res.render('pages/about-us')
 })
