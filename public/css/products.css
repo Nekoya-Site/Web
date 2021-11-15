@@ -1,0 +1,29 @@
+.card {
+    border-radius: 20px;
+    background-color: #212226;
+    color: white;
+}
+
+.btn-product-card {
+    width: 100%;
+    background-color: darkred;
+    border-color: darkred;
+    border-radius: 10px;
+}
+
+.btn-product-card:hover {
+    background-color: red;
+    border-color: red;
+}
+
+.form-control {
+    background-color: #212226;
+    border-color: #212226;
+    color: white;
+}
+
+.form-control:valid {
+    background-color: #212226;
+    border-color: #212226;
+    color: white;
+}
