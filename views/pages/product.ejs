@@ -8,24 +8,21 @@
 
     <div class="card" style="background-color: #212226;">
         <div class="product">
-            <img alt="placeholder image" class="img-fluid lazyload" src="/img/Product_1.webp"
+            <img alt="placeholder image" class="img-fluid lazyload" src="/img/<%= data[0].IMAGE %>"
                 style="width: 400px; height: auto;" />
             <div class="description">
                 <div style="margin-left: 20px;">
-                    <h1 class="titledes">Fashione Shoes White</h1>
+                    <h1 class="titledes"><%= data[0].TITLE %></h1>
                 </div>
                 <div>
                     <p class="card-body">
-                        Sepatu Nekoya menggunakan teknologi FlexKnit. yang lentur di bagian depan yang 
-                        memiliki banyak mobilitas namun tekstur meng-grip kuat di bagian ankle dan telah
-                        dilengkapi autofoam performance insole untuk meningkatkan kenyamanan
-                        dan durabilitas namun tetap berpenampilan stylish.
+                        <%= data[0].DESCRIPTION %>
 
                     </p>
                 </div>
                 <div style="margin-left: 20px; word-break: normal;">
-                    <p>Price : 1.999.999</p>
-                    <p>Stock : 99</p>
+                    <p>Price : <%= data[0].PRICE %></p>
+                    <p>Stock : <%= data[0].STOCK %></p>
                 </div>
                 <div class="sizeSepatu">
                     <form>
