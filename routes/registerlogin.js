@@ -47,80 +47,81 @@ exports.register = async function (req, res) {
   ) {
     // Empty Fields
     res.render("pages/register-error");
-  }
-  db_connect.query(
-    "SELECT * FROM users WHERE email = ?",
-    [req.body.email],
-    async function (error, response, fields) {
-      if (error) {
-        // Error
-        res.render("pages/register-error");
-      } else {
-        if (response.length > 0) {
-          // Email Exists
+  } else {
+    db_connect.query(
+      "SELECT * FROM users WHERE email = ?",
+      [req.body.email],
+      async function (error, response, fields) {
+        if (error) {
+          // Error
           res.render("pages/register-error");
         } else {
-          const encryptedPassword = await bcrypt.hash(
-            req.body.password,
-            saltRounds
-          );
-          var users = {
-            first_name: req.body.first_name,
-            last_name: req.body.last_name,
-            email: req.body.email,
-            password: encryptedPassword,
-          };
-          db_connect.query(
-            "INSERT INTO users SET ?",
-            users,
-            function (error, response, fields) {
-              if (error) {
-                console.log("An error has occured...", error);
-                // Error
-                res.render("pages/register-error");
-              } else {
-                var email = req.body.email;
-                db_connect.query(
-                  'SELECT * FROM users WHERE email ="' + email + '"',
-                  function (err, result) {
-                    if (err) throw err;
-                    console.log(result[0]);
-                    if (result.length > 0) {
-                      var token = randtoken.generate(20);
-                      if (result[0].verify == 0) {
-                        var sent = sendEmail(email, token);
-                        if (sent != "0") {
-                          var data = {
-                            token: token,
-                          };
-                          db_connect.query(
-                            'UPDATE users SET ? WHERE email ="' + email + '"',
-                            data,
-                            function (err, result) {
-                              if (err) throw err;
-                            }
-                          );
-                          // Success and has been sent
-                          res.render("pages/register-verification-sent");
-                        } else {
-                          // Error
-                          res.render("pages/register-error");
+          if (response.length > 0) {
+            // Email Exists
+            res.render("pages/register-error");
+          } else {
+            const encryptedPassword = await bcrypt.hash(
+              req.body.password,
+              saltRounds
+            );
+            var users = {
+              first_name: req.body.first_name,
+              last_name: req.body.last_name,
+              email: req.body.email,
+              password: encryptedPassword,
+            };
+            db_connect.query(
+              "INSERT INTO users SET ?",
+              users,
+              function (error, response, fields) {
+                if (error) {
+                  console.log("An error has occured...", error);
+                  // Error
+                  res.render("pages/register-error");
+                } else {
+                  var email = req.body.email;
+                  db_connect.query(
+                    'SELECT * FROM users WHERE email ="' + email + '"',
+                    function (err, result) {
+                      if (err) throw err;
+                      console.log(result[0]);
+                      if (result.length > 0) {
+                        var token = randtoken.generate(20);
+                        if (result[0].verify == 0) {
+                          var sent = sendEmail(email, token);
+                          if (sent != "0") {
+                            var data = {
+                              token: token,
+                            };
+                            db_connect.query(
+                              'UPDATE users SET ? WHERE email ="' + email + '"',
+                              data,
+                              function (err, result) {
+                                if (err) throw err;
+                              }
+                            );
+                            // Success and has been sent
+                            res.render("pages/register-verification-sent");
+                          } else {
+                            // Error
+                            res.render("pages/register-error");
+                          }
                         }
+                      } else {
+                        console.log("2");
+                        // Email isnt registered
+                        res.render("pages/register-error");
                       }
-                    } else {
-                      console.log("2");
-                      // Email isnt registered
-                      res.render("pages/register-error");
                     }
-                  }
-                );
+                  );
+                }
               }
-            }
-          );
+            );
+          }
         }
       }
-    }
-  );
+    );
+  }
 };
 
 exports.login = async function (req, res) {
