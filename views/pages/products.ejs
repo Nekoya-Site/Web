@@ -51,113 +51,20 @@
 
     <div class="container-fluid mt-3">
         <div class="row justify-content-around">
-            <div class="col-lg-3 col-md-6 p-3">
-                <div class="card">
-                    <img alt="Item Image" class="img-fluid lazyload" src="./img/Product_1.webp">
-                    <div class="card-body">
-                        <h5 class="card-title">Adidas NMD_R1 (GX0997)</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas porttitor
-                            tempus scelerisque. Nunc sed bibendum ante, eget imperdiet purus. Curabitur.</p>
-                        <a href="product.html">
-                            <button class="btn btn-info btn-product-card" type="button">View Detail</button>
-                        </a>
+            <% for(let i=0; i < data.length; i++) { %>
+                <div class="col-lg-3 col-md-6 p-3">
+                    <div class="card">
+                        <img alt="Item Image" class="img-fluid lazyload" src="./img/<%= data[i].IMAGE %>">
+                        <div class="card-body">
+                            <h5 class="card-title"><%= data[i].TITLE %></h5>
+                            <p class="card-text"><%= data[i].DESCRIPTION.substring(0, 150) + "..." %></p>
+                            <a href="product/<%= data[i].ID %>">
+                                <button class="btn btn-info btn-product-card" type="button">View Detail</button>
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-3 col-md-6 p-3">
-                <div class="card">
-                    <img alt="Item Image" class="img-fluid lazyload" src="./img/Product_2.webp">
-                    <div class="card-body">
-                        <h5 class="card-title">Adidas NMD_R1 (G55575)</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas porttitor
-                            tempus scelerisque. Nunc sed bibendum ante, eget imperdiet purus. Curabitur.</p>
-                        <a href="product.html">
-                            <button class="btn btn-info btn-product-card" type="button">View Detail</button>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 p-3">
-                <div class="card">
-                    <img alt="Item Image" class="img-fluid lazyload" src="./img/Product_3.webp">
-                    <div class="card-body">
-                        <h5 class="card-title">Adidas NMD_R1
-                            (FV1740)</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas porttitor
-                            tempus scelerisque. Nunc sed bibendum ante, eget imperdiet purus. Curabitur.</p>
-                        <a href="product.html">
-                            <button class="btn btn-info btn-product-card" type="button">View Detail</button>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 p-3">
-                <div class="card">
-                    <img alt="Item Image" class="img-fluid lazyload" src="./img/Product_10.webp">
-                    <div class="card-body">
-                        <h5 class="card-title">Adidas NMD_R1A (FX6794)</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas porttitor
-                            tempus scelerisque. Nunc sed bibendum ante, eget imperdiet purus. Curabitur.</p>
-                        <a href="product.html">
-                            <button class="btn btn-info btn-product-card" type="button">View Detail</button>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 p-3">
-                <div class="card">
-                    <img alt="Item Image" class="img-fluid lazyload" src="./img/Product_5.webp">
-                    <div class="card-body">
-                        <h5 class="card-title">Adidas NMD_R1 (GZ7944)</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas porttitor
-                            tempus scelerisque. Nunc sed bibendum ante, eget imperdiet purus. Curabitur.</p>
-                        <a href="product.html">
-                            <button class="btn btn-info btn-product-card" type="button">View Detail</button>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 p-3">
-                <div class="card">
-                    <img alt="Item Image" class="img-fluid lazyload" src="./img/Product_6.webp">
-                    <div class="card-body">
-                        <h5 class="card-title">Adidas NMD_R1
-                            (GZ7943)</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas porttitor
-                            tempus scelerisque. Nunc sed bibendum ante, eget imperdiet purus. Curabitur.</p>
-                        <a href="product.html">
-                            <button class="btn btn-info btn-product-card" type="button">View Detail</button>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 p-3">
-                <div class="card">
-                    <img alt="Item Image" class="img-fluid lazyload" src="./img/Product_7.webp">
-                    <div class="card-body">
-                        <h5 class="card-title">Adidas NMD_R1
-                            (FY3566)</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas porttitor
-                            tempus scelerisque. Nunc sed bibendum ante, eget imperdiet purus. Curabitur.</p>
-                        <a href="product.html">
-                            <button class="btn btn-info btn-product-card" type="button">View Detail</button>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 p-3">
-                <div class="card">
-                    <img alt="Item Image" class="img-fluid lazyload" src="./img/Product_8.webp">
-                    <div class="card-body">
-                        <h5 class="card-title">Adidas NMD_R1 (GX0996)</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas porttitor
-                            tempus scelerisque. Nunc sed bibendum ante, eget imperdiet purus. Curabitur.</p>
-                        <a href="product.html">
-                            <button class="btn btn-info btn-product-card" type="button">View Detail</button>
-                        </a>
-                    </div>
-                </div>
-            </div>
+            <% } %>
         </div>
     </div>
 
