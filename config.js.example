@@ -1,6 +1,7 @@
 const env = process.env;
 
 const config = {
+    host: env.HOST,
     db: {
         host: env.DB_HOST,
         user: env.DB_USER,
