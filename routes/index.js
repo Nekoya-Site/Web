@@ -17,6 +17,10 @@ router.get('/otp', (_req, res) => {
     res.render('pages/otp');
 })
 
+router.get('/products', (_req, res) => {
+    res.render('pages/products')
+})
+
 router.get('/product', (_req, res) => {
     res.render('pages/product')
 })
