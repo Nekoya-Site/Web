@@ -1,6 +1,6 @@
 <% if(types == "v1") { %>
     <nav class="navbar navbar-expand-lg navbar-dark comp-color ml-5 mr-5 nav-radius" style="background-color: #212226; ">
-        <img alt="Banner" class="navbar-brand lazyload" src="img/logo_transparent.webp">
+        <img alt="Banner" class="navbar-brand lazyload" height="80" src="img/logo_transparent.webp">
         <button aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation"
             class="navbar-toggler" data-target="#navbarTogglerDemo01" data-toggle="collapse" type="button">
             <span class="navbar-toggler-icon"></span>
@@ -11,7 +11,7 @@
                     <a <% if(state == "home") { %> aria-disabled="true" <% } %> class="nav-link" href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a <% if(state == "product-list") { %> aria-disabled="true" <% } %> class="nav-link" href="product-list">Products</a>
+                    <a <% if(state == "product-list") { %> aria-disabled="true" <% } %> class="nav-link" href="/products">Products</a>
                 </li>
                 <li class="nav-item">
                     <a <% if(state == "about-us") { %> aria-disabled="true" <% } %> class="nav-link" href="about-us">About Us</a>
