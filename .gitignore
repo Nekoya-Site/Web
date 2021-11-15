@@ -4,9 +4,6 @@ node_modules/
 # Package Manager
 package-lock.json
 
-# Config
-config.js
-
 # IDE Configuration
 .vscode/
 *.code-workspace
@@ -38,3 +35,6 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# Config
+config.js
