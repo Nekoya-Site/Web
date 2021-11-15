@@ -1,9 +1,11 @@
 var mysql = require('mysql2');
 
+let config;
 try {
-    const config = require('../config');
+    config = require('../config');
 } catch (e) {
     console.log('No config file found');
+    process.exit(0);
 }
 
 function connect() {
