@@ -1,5 +1,5 @@
 function revealhidePassword() {
-    const x = document.getElementById("exampleDropdownFormPassword1");
+    const x = document.getElementById("password");
     if (x.type === "password") {
         x.type = "text";
     } else {
