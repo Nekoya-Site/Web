@@ -37,6 +37,10 @@ router.get('/otp', (_req, res) => {
     res.render('pages/otp');
 })
 
+router.get('/change-password', (_req, res) => {
+    res.render('pages/change-password');
+})
+
 router.get('/products', (_req, res) => {
     controller.getProducts().then(data => {
         res.render('pages/products', {data: data});

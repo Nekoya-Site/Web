@@ -126,47 +126,52 @@ exports.register = async function (req, res) {
 };
 
 exports.login = async function (req, res) {
-  var email = req.body.email;
-  var password = req.body.password;
-  db_connect.query(
-    "SELECT * FROM users WHERE email = ?",
-    [email],
-    async function (error, response, fields) {
-      const passCheck = await bcrypt.compare(password, response[0].password);
-      if (error) {
-        res.send({
-          code: 400,
-          failed: "An error has occured...",
-        });
-      } else {
-        if (response.length > 0) {
-          if (passCheck) {
-            if (response[0].verify == 0) {
-              res.send({
-                code: 204,
-                success: "Sorry You havent verified your email",
-              });
+  if (!req.body.email || !req.body.password) {
+    // Empty fields
+    res.render("pages/login-error");
+  } else {
+    var email = req.body.email;
+    var password = req.body.password;
+    db_connect.query(
+      "SELECT * FROM users WHERE email = ?",
+      [email],
+      async function (error, response, fields) {
+        const passCheck = await bcrypt.compare(password, response[0].password);
+        if (error) {
+          res.send({
+            code: 400,
+            failed: "An error has occured...",
+          });
+        } else {
+          if (response.length > 0) {
+            if (passCheck) {
+              if (response[0].verify == 0) {
+                res.send({
+                  code: 204,
+                  success: "Sorry You havent verified your email",
+                });
+              } else {
+                res.send({
+                  code: 200,
+                  success: "Login Successful!!",
+                });
+              }
             } else {
               res.send({
-                code: 200,
-                success: "Login Successful!!",
+                code: 204,
+                success: "Sorry Email and password does not match",
               });
             }
           } else {
             res.send({
               code: 204,
-              success: "Sorry Email and password does not match",
+              success: "Sorry Email does not exits",
             });
           }
-        } else {
-          res.send({
-            code: 204,
-            success: "Sorry Email does not exits",
-          });
         }
       }
-    }
-  );
+    );
+  }
 };
 
 /* verification email link */
