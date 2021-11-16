@@ -150,20 +150,17 @@ exports.login = async function (req, res) {
                   code: 204,
                   success: "Sorry You havent verified your email",
                 });
-              } else {
+                } else {
                 res.render("pages/index");
               }
             } else {
-              res.send({
-                code: 204,
-                success: "Sorry Email and password does not match",
+              res.render('pages/login', {
+                companyName : 'SALAH',
+                error : 'Wrong Username or Password'
               });
             }
           } else {
-            res.send({
-              code: 204,
-              success: "Sorry Email does not exits",
-            });
+            res.render("pages/login-error");
           }
         }
       }

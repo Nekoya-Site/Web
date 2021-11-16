@@ -44,6 +44,12 @@
                                         password?</a>
                                 </div>
                                 <button class="btn btn-login btn-primary" type="submit">Login</button>
+                                <% if(locals.error) { %>
+                                    <span class="text-danger pl-2" style="font-size: 2.2vh; margin-left: 10%;" ><%= error %></span>
+                                    <% } %>
+                                <% if(locals.regisverify) { %>
+                                    <span class="text-danger pl-2" style="font-size: 2.2vh; margin-left: 10%;" ><%= error %></span>
+                                    <% } %>
                                 <div class="login-with">Or login with
                                     <div class="links">
                                         <div class="google">
