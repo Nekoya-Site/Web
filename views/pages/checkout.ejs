@@ -38,16 +38,16 @@
                 <p>Please enter your delivery address</p>
                 <form style="border-top: 1px solid white;">
                     
-                    <div>
+                    <form>
                         <div class="form-group">
                             <label for="contactInformation"><b>CONTACT INFORMATION</b></label>
                             <div style="display: flex;">
-                                <input aria-describedby="fnamehelp" class="form-control" id="exampleInputFName"
+                                <input aria-describedby="fnamehelp" class="form-control" id="fName"
                                     placeholder="First Name" type="FName" required>
-                                <input aria-describedby="lnamehelp" class="form-control" id="exampleInputLName"
+                                <input aria-describedby="lnamehelp" class="form-control" id="lName"
                                     placeholder="Last Name" type="Lname" required>
                             </div>
-                            <input aria-describedby="PhoneNumber" class="form-control" id="exampleInputPhoneNum"
+                            <input aria-describedby="PhoneNumber" class="form-control" id="phoneNum"
                                 placeholder="Phone Number" type="PhoneNum" required>
                             <small class="form-text text-muted" id="phoneHelp">We'll never share your Phone Number with
                                 anyone
@@ -57,25 +57,24 @@
     
                         <div class="form-group">
                             <label for="contactInformation"><b>ADDRESS</b></label>
-                            <input aria-describedby="Address1" class="form-control" id="exampleInputAddress1"
+                            <input aria-describedby="Address1" class="form-control" id="address1"
                                 placeholder="Street Address " type="Address1" required>
-                            <input aria-describedby="Address2" class="form-control" id="exampleInputAddress2"
-                                placeholder="Street Address 2 " type="Address2" >
-                            <input aria-describedby="region" class="form-control" id="exampleInputregion"
+                            <input aria-describedby="Address2" class="form-control" id="address2"
+                                placeholder="Street Address 2 " type="Address2" required>
+                            <input aria-describedby="region" class="form-control" id="region"
                                 placeholder="Region" type="region" required>
-                            <input aria-describedby="province" class="form-control" id="exampleInputprovince"
+                            <input aria-describedby="province" class="form-control" id="province"
                                 placeholder="Province" type="province" required>
-                            <input aria-describedby="city" class="form-control" id="exampleInputcity"
+                            <input aria-describedby="city" class="form-control" id="city"
                                 placeholder="City" type="city" required>
-                            <input aria-describedby="district" class="form-control" id="exampleInputdistrict"
+                            <input aria-describedby="district" class="form-control" id="district"
                                 placeholder="District" type="district" required>
-                            <input aria-describedby="subdistrict" class="form-control" id="exampleInputsubdistrict"
+                            <input aria-describedby="subdistrict" class="form-control" id="subDistrict"
                                 placeholder="Subdistrict" type="subdistrict" required>
-                            <input aria-describedby="portalcode" class="form-control" id="exampleInputportalcode"
+                            <input aria-describedby="portalcode" class="form-control" id="portalCode"
                                 placeholder="Portalcode" type="portalcode" required>
                         </div>
     
-                        <small class="form-text text-muted" id="phoneHelp">Email : budi45@gmail.com</small>
                         <div class="form-check">
                             <input class="form-check-input" id="defaultCheck1" type="checkbox" value="" required>
                             <label class="form-check-label" for="defaultCheck1">
@@ -89,9 +88,9 @@
                     <form style="border-top: 1px solid white;">
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
-                                <label class="input-group-text" for="inputGroupSelect07">Shipping Methods</label>
+                                <label class="input-group-text" for="shipping">Shipping Methods</label>
                             </div>
-                            <select class="custom-select" id="inputGroupSelect07">
+                            <select class="custom-select" id="shipping">
                                 <option selected>Choose...</option>
                                 <option value="1">JNT</option>
                                 <option value="2">JNE</option>
