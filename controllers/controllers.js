@@ -22,7 +22,25 @@ function getProduct(id) {
     .catch(error => console.log(error))
 }
 
+function register(email, password, first_name, last_name) {
+    let params = new URLSearchParams({
+        'email': email,
+        'password': password,
+        'first_name': first_name,
+        'last_name': last_name
+    })
+    const conf = {
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        }
+    }
+    return axios.post(HOST + '/register', params, conf)
+    .then(response => response.status)
+    .catch(error => console.log(error))
+}
+
 module.exports = {
     getProducts,
-    getProduct
+    getProduct,
+    register
 }

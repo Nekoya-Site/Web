@@ -2,15 +2,28 @@ const express = require('express')
 const router = express.Router()
 var registerlogin = require("./registerlogin");
 
-let product_controller = require("../controllers/productController");
+let controller = require("../controllers/controllers");
 
-router.post("/register", registerlogin.register);
 router.post("/login", registerlogin.login);
 router.get("/verify-email", registerlogin.verifyemail);
 
 router.get('/', (_req, res) => {
     res.render('pages/index');
 })
+
+router.route('/register')
+    .get((_req, res) => {
+        res.render('pages/register');
+    })
+    .post((req, res) => {
+        controller.register(req.body.email, req.body.password, req.body.first_name, req.body.last_name).then(data => {
+            if (data == 200) {
+                res.render("pages/register-verification-sent");
+            } else {
+                res.render("pages/register-error");
+            }
+        });
+    })
 
 router.get('/login', (_req, res) => {
     res.render('pages/login');
@@ -25,7 +38,7 @@ router.get('/otp', (_req, res) => {
 })
 
 router.get('/products', (_req, res) => {
-    product_controller.getProducts().then(data => {
+    controller.getProducts().then(data => {
         res.render('pages/products', {data: data});
     })
 })
@@ -54,10 +67,6 @@ router.get('/notifpay', (_req, res) => {
 
 router.get('/payment', (_req, res) => {
     res.render('pages/payment')
-})
-
-router.get('/register', (_req, res) => {
-    res.render('pages/register')
 })
 
 router.get('/about-us', (_req, res) => {
