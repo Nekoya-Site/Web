@@ -8,6 +8,12 @@ const config = {
         password: env.DB_PASSWORD,
         database: env.DB_NAME,
     },
+    mail: {
+        host: env.MAIL_HOST,
+        port: env.MAIL_PORT,
+        user: env.MAIL_USER,
+        password: env.MAIL_PASSWORD
+    },
 };
 
 module.exports = config;
