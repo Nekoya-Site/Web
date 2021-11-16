@@ -22,26 +22,21 @@ router.get('/getproduct', (req, res) => {
 })
 
 router.post('/register', async (req, res) => {
-    console.log(req.body.email);
     if (!req.body.email || !req.body.password || !req.body.first_name || !req.body.last_name) {
-        console.log('memek');
         res.status(400);
         res.json({
             'message': 'Bad Request'
         })
     } else {
         const conn = db.connect();
-        console.log('lel');
         conn.query("SELECT * FROM users WHERE email = ?", [req.body.email], async function (error, response, fields) {
             if (error) {
-                console.log('lol');
                 res.status(400);
                 res.json({
                     'message': 'Bad Request'
                 })
             } else {
                 if (response.length > 0) {
-                    console.log('lul');
                     res.status(400);
                     res.json({
                         'message': 'Bad Request'
@@ -56,7 +51,6 @@ router.post('/register', async (req, res) => {
                     };
                     conn.query("INSERT INTO users SET ?", users, function (error, response, fields) {
                         if (error) {
-                            console.log(error);
                             res.status(400);
                             res.json({
                                 'message': 'Bad Request'
@@ -65,7 +59,6 @@ router.post('/register', async (req, res) => {
                             var email = req.body.email;
                             conn.query('SELECT * FROM users WHERE email ="' + email + '"', function (err, result) {
                                 if (err) {
-                                    console.log(err);
                                     res.status(400);
                                     res.json({
                                         'message': 'Bad Request'
@@ -81,7 +74,6 @@ router.post('/register', async (req, res) => {
                                             };
                                             conn.query('UPDATE users SET ? WHERE email ="' + email + '"', data, function (err, result) {
                                                 if (err) {
-                                                    console.log(err);
                                                     res.status(400);
                                                     res.json({
                                                         'message': 'Bad Request'
@@ -93,7 +85,6 @@ router.post('/register', async (req, res) => {
                                                 'message': 'Register Verification Sent ~'
                                             })
                                         } else {
-                                            console.log('hmm');
                                             res.status(400);
                                             res.json({
                                                 'message': 'Bad Request'
@@ -101,14 +92,12 @@ router.post('/register', async (req, res) => {
                                         }
                                     }
                                 } else {
-                                    console.log('hmmx');
                                     res.status(400);
                                     res.json({
                                         'message': 'Bad Request'
                                     })
                                 }
-                                }
-                            );
+                            });
                         }
                     });
                 }
