@@ -126,31 +126,28 @@ exports.register = async function (req, res) {
 };
 
 exports.login = async function (req, res) {
-  var email = req.body.email;
-  var password = req.body.password;
+  if (
+    !req.body.email ||
+    !req.body.password 
+  ) {
+    // Empty Fields
+    res.render("pages/login-error");
+  } else {
   db_connect.query(
     "SELECT * FROM users WHERE email = ?",
     [email],
     async function (error, response, fields) {
       const passCheck = await bcrypt.compare(password, response[0].password);
       if (error) {
-        res.send({
-          code: 400,
-          failed: "An error has occured...",
-        });
+        // Error
+        res.render("pages/login-error");
       } else {
         if (response.length > 0) {
           if (passCheck) {
             if (response[0].verify == 0) {
-              res.send({
-                code: 204,
-                success: "Sorry You havent verified your email",
-              });
+              res.render("pages/login-error");
             } else {
-              res.send({
-                code: 200,
-                success: "Login Successful!!",
-              });
+              res.render("pages/index");
             }
           } else {
             res.send({
@@ -167,6 +164,7 @@ exports.login = async function (req, res) {
       }
     }
   );
+};
 };
 
 /* verification email link */
