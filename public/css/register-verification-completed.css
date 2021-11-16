@@ -92,15 +92,15 @@ body {
 
 @media screen and (min-width: 1400px) {
     .card h2 {
-        font-size: 4vw;
+        font-size: 3vw;
     }
 
     .card h6 {
-        font-size: 2vw;
+        font-size: 1.7vw;
     }
 
     .card a {
-        font-size: 3vw;
+        font-size: 2.5vw;
     }
 
     .navbar-brand {
