@@ -48,7 +48,7 @@ router.get('/products', (_req, res) => {
 })
 
 router.get('/product/:id', (req, res) => {
-    product_controller.getProduct(req.params.id).then(data => {
+    controller.getProduct(req.params.id).then(data => {
         res.render('pages/product', {data: data});
     })
 })
