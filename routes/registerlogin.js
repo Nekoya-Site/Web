@@ -151,10 +151,7 @@ exports.login = async function (req, res) {
                   success: "Sorry You havent verified your email",
                 });
               } else {
-                res.send({
-                  code: 200,
-                  success: "Login Successful!!",
-                });
+                res.render("pages/index");
               }
             } else {
               res.send({
