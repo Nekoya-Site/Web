@@ -88,12 +88,13 @@ router.post('/register', async (req, res) => {
                                                     res.json({
                                                         'message': 'Bad Request'
                                                     })
+                                                } else {
+                                                    res.status(200);
+                                                    res.json({
+                                                        'message': 'Register Verification Sent ~'
+                                                    })
                                                 }
                                             });
-                                            res.status(200);
-                                            res.json({
-                                                'message': 'Register Verification Sent ~'
-                                            })
                                         } else {
                                             res.status(400);
                                             res.json({
