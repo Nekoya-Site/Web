@@ -76,7 +76,7 @@ router.post('/register', async (req, res) => {
                                     var token = randtoken.generate(20);
                                     if (result[0].verify == 0) {
                                         let subject = "Account Verification - Nekoya";
-                                        let content = `<p>Hello!!! Please click this link <a href="${config.host}/verify-email?token=${token}">link</a> to verify your account!!! Thanks!!!</p>`;
+                                        let content = `<p>Hello!!! Please click this link <a href="${config.host}/verify-mail?token=${token}">link</a> to verify your account!!! Thanks!!!</p>`;
                                         var sent = mail.send(req.body.email, subject, content);
                                         if (sent != "0") {
                                             var data = {

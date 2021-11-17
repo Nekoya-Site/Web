@@ -4,8 +4,6 @@ var registerlogin = require("./registerlogin");
 
 let controller = require("../controllers/controllers");
 
-router.get("/verify-email", registerlogin.verifyemail);
-
 router.get('/', (_req, res) => {
     res.render('pages/index');
 })
@@ -47,6 +45,16 @@ router.route('/login')
             }
         });
     })
+
+router.get('/verify-mail', (req, res) => {
+    controller.verify_mail(req.params.token).then(data => {
+        if (data == 200) {
+            res.render("pages/register-verification-success");
+        } else {
+            res.render("pages/index");
+        }
+    })
+})
 
 router.get('/forgot-password', (_req, res) => {
     res.render('pages/forgot-password');

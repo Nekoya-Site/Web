@@ -56,9 +56,16 @@ function login(email, password, ua, ip) {
     .catch(error => [error.status, []])
 }
 
+function verify_mail(token) {
+    return axios.get(HOST + '/verify-mail', { params: { token: token } })
+    .then(response => response.status)
+    .catch(error => console.log(error))
+}
+
 module.exports = {
     getProducts,
     getProduct,
     register,
-    login
+    login,
+    verify_mail
 }
