@@ -150,7 +150,9 @@ router.post('/login', async (req, res) => {
                                     ip: req.body.ip || req.headers['x-forwarded-for'] || req.socket.remoteAddress,
                                     session: token,
                                 })
-                                conn.query('UPDATE users SET ? WHERE email ="' + req.body.email + '"', {session: JSON.stringify(session)}, function (err, result) {
+                                conn.query('UPDATE users SET ? WHERE email ="' + req.body.email + '"', {
+                                    session: JSON.stringify(session)
+                                }, function (err, result) {
                                     if (err) {
                                         res.status(400);
                                         res.json({
@@ -185,6 +187,55 @@ router.post('/login', async (req, res) => {
             }
         );
     }
+})
+
+router.get('/verify-mail', async (req, res) => {
+    const conn = db.connect();
+    conn.query(
+        'SELECT * FROM users WHERE token ="' + req.query.token + '"',
+        function (err, result) {
+            if (err) {
+                res.status(400);
+                res.json({
+                    'message': 'Bad Request'
+                })
+            }
+            if (result.length > 0) {
+                if (result[0].verify == 0) {
+                    var data = {
+                        verify: 1,
+                    };
+                    db_connect.query(
+                        'UPDATE users SET ? WHERE email ="' + result[0].email + '"',
+                        data,
+                        function (err, result) {
+                            if (err) {
+                                res.status(400);
+                                res.json({
+                                    'message': 'Bad Request'
+                                })
+                            } else {
+                                res.status(200);
+                                res.json({
+                                    'message': 'Verified ~'
+                                })
+                            }
+                        }
+                    );
+                } else {
+                    res.status(403);
+                    res.json({
+                        'message': 'Forbidden'
+                    })
+                }
+            } else {
+                res.status(400);
+                res.json({
+                    'message': 'Bad Request'
+                })
+            }
+        }
+    );
 })
 
 module.exports = router;
