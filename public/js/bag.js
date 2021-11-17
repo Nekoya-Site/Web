@@ -98,18 +98,18 @@ function view_bag() {
                             <div style="display: flex;">
                                 <span class="input-group-btn">
                                     <button type="button" class="btn btn-default btn-number" style="color: white;"
-                                        onclick="minus('${current_bag[0].product_id}', '${data[0].PRICE}')"><i data-feather="minus-square"></i></button>
+                                        onclick="minus('${current_bag[0].product_id}', '${data[0].PRICE}')"><i class="far fa-minus-square"></i></button>
                                 </span>
                                 <input class="box" type="text" disabled="disabled" value="${current_bag[0].quantity}"
                                     class="form-control input-number" id="${current_bag[0].product_id}" />
                                 <span class="input-group-btn">
                                     <button type="button" class="btn btn-default btn-number" style="color: white;"
-                                        onclick="add('${current_bag[0].product_id}', '${data[0].PRICE}')"><i data-feather="plus-square"></i></button>
+                                        onclick="add('${current_bag[0].product_id}', '${data[0].PRICE}')"><i class="far fa-plus-square"></i></button>
                                 </span>
                             </div>
                             <br>
                             <p id="${current_bag[0].product_id}-price" class="price">Rp ${data[0].PRICE * current_bag[0].quantity}</p>
-                            <a href="javascript:;" onclick='return remove("${current_bag[0].product_id}")' style="color:red;"><i data-feather="trash" color="red" onclick='return remove("${current_bag[0].product_id}")'></i> <u>Remove</u></a>
+                            <a href="javascript:;" onclick='return remove("${current_bag[0].product_id}")' style="color:red;"><i class="far fa-trash-alt" color="red"></i> <u>Remove</u></a>
                             <br><br>
                         </div>
                     </div>
