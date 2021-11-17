@@ -39,15 +39,10 @@ router.route('/login')
                     companyName : 'SALAH',
                     error : 'Please confirm your email'
                 });
-            } else if (data[0] == 401){
-                res.render('pages/login', {
-                    companyName : 'SALAH',
-                    error : 'Invalid Credential'
-                });
             } else {
                 res.render('pages/login', {
                     companyName : 'SALAH',
-                    error : 'Something went wrong !!!'
+                    error : 'Invalid Email or Password'
                 });
             }
         });
