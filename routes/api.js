@@ -7,6 +7,14 @@ const mail = require('../modules/mail');
 
 const saltRounds = 10;
 
+let config;
+try {
+    config = require('../config');
+} catch (e) {
+    console.log('No config file found');
+    process.exit(0);
+}
+
 router.get('/getproducts', (req, res) => {
     const conn = db.connect();
     conn.execute('SELECT * FROM `products`', [], function (err, results) {
@@ -57,8 +65,7 @@ router.post('/register', async (req, res) => {
                                 'message': 'Bad Request'
                             })
                         } else {
-                            var email = req.body.email;
-                            conn.query('SELECT * FROM users WHERE email ="' + email + '"', function (err, result) {
+                            conn.query('SELECT * FROM users WHERE email ="' + req.body.email + '"', function (err, result) {
                                 if (err) {
                                     res.status(400);
                                     res.json({
@@ -68,12 +75,14 @@ router.post('/register', async (req, res) => {
                                 if (result.length > 0) {
                                     var token = randtoken.generate(20);
                                     if (result[0].verify == 0) {
-                                        var sent = mail.send(email, token);
+                                        let subject = "Account Verification - Nekoya";
+                                        let content = `<p>Hello!!! Please click this link <a href="${config.host}/verify-email?token=${token}">link</a> to verify your account!!! Thanks!!!</p>`;
+                                        var sent = mail.send(req.body.email, subject, content);
                                         if (sent != "0") {
                                             var data = {
                                                 token: token,
                                             };
-                                            conn.query('UPDATE users SET ? WHERE email ="' + email + '"', data, function (err, result) {
+                                            conn.query('UPDATE users SET ? WHERE email ="' + req.body.email + '"', data, function (err, result) {
                                                 if (err) {
                                                     res.status(400);
                                                     res.json({

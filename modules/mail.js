@@ -8,7 +8,7 @@ try {
     process.exit(0);
 }
 
-function send(email, token) {
+function send(to, subject, content) {
     var email = email;
     var token = token;
     var mail = nodemailer.createTransport({
@@ -25,9 +25,9 @@ function send(email, token) {
     });
     var mailOptions = {
         from: config.mail.user,
-        to: email,
-        subject: "Account Verification - Nekoya",
-        html: `<p>Hello!!! Please click this link <a href="${config.host}/verify-email?token=${token}">link</a> to verify your account!!! Thanks!!!</p>`
+        to: to,
+        subject: subject,
+        html: content
     };
     mail.sendMail(mailOptions, function (error, info) {
         if (error) {
