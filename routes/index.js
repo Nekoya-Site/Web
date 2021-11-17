@@ -27,9 +27,7 @@ router.route('/login')
     })
     .post((req, res) => {
         controller.login(req.body.email, req.body.password, req.headers['user-agent'], req.headers['x-forwarded-for'] || req.socket.remoteAddress).then(data => {
-            console.log(data);
             if (data[0] == 200) {
-                console.log(data[1])
                 res.render("pages/index");
             } else if (data[0] == 204){
                 res.render('pages/login', {
