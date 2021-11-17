@@ -39,8 +39,26 @@ function register(email, password, first_name, last_name) {
     .catch(error => console.log(error))
 }
 
+function login(email, password, ua, ip) {
+    let params = new URLSearchParams({
+        'email': email,
+        'password': password,
+        'ua': ua,
+        'ip': ip
+    })
+    const conf = {
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        }
+    }
+    return axios.post(HOST + '/login', params, conf)
+    .then(response => [response.status, response.data])
+    .catch(error => console.log(error))
+}
+
 module.exports = {
     getProducts,
     getProduct,
-    register
+    register,
+    login
 }

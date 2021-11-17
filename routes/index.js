@@ -4,7 +4,6 @@ var registerlogin = require("./registerlogin");
 
 let controller = require("../controllers/controllers");
 
-router.post("/login", registerlogin.login);
 router.get("/verify-email", registerlogin.verifyemail);
 
 router.get('/', (_req, res) => {
@@ -25,9 +24,34 @@ router.route('/register')
         });
     })
 
-router.get('/login', (_req, res) => {
-    res.render('pages/login');
-})
+router.route('/login')
+    .get((_req, res) => {
+        res.render('pages/login');
+    })
+    .post((req, res) => {
+        controller.login(req.body.email, req.body.password, req.headers['user-agent'], req.headers['x-forwarded-for'] || req.socket.remoteAddress).then(data => {
+            console.log(data);
+            if (data[0] == 200) {
+                console.log(data[1])
+                res.render("pages/index");
+            } else if (data[0] == 204){
+                res.render('pages/login', {
+                    companyName : 'SALAH',
+                    error : 'Please confirm your email'
+                });
+            } else if (data[0] == 401){
+                res.render('pages/login', {
+                    companyName : 'SALAH',
+                    error : 'Invalid Credential'
+                });
+            } else {
+                res.render('pages/login', {
+                    companyName : 'SALAH',
+                    error : 'Something went wrong !!!'
+                });
+            }
+        });
+    })
 
 router.get('/forgot-password', (_req, res) => {
     res.render('pages/forgot-password');
