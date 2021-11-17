@@ -5,8 +5,7 @@
 </script>
 
 <!-- JQUERY -->
-<script crossorigin="anonymous" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-    src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK" crossorigin="anonymous"></script>
 
 <!-- Bootstrap -->
 <script crossorigin="anonymous" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
@@ -30,6 +29,8 @@
     <script src="js/plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
     <script type="text/javascript" src="/js/index.js"></script>
 <% } else if(state == "bag") { %>
+    <script type="text/javascript" src="/js/bag.js"></script>
+<% } else if(state == "product") { %>
     <script type="text/javascript" src="/js/bag.js"></script>
 <% } else if(state == "login") { %>
     <script type="text/javascript" src="/js/login.js"></script>

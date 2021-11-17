@@ -8,10 +8,7 @@
     <br>
     <div class="bag">
         <div class="row">
-            <div class="col-lg-8">
-                <%- include('../layouts/bagcard.ejs') %>
-                <%- include('../layouts/bagcard.ejs') %>
-                <%- include('../layouts/bagcard.ejs') %>
+            <div class="col-lg-8" id="view-bag">
             </div>
 
             <div class="col-lg-4">
@@ -26,7 +23,7 @@
                             </div>
                             <div class="row justify-content-between">
                                 <p>Estimate</p>
-                                <p>1.999.999,00</p>
+                                <p id='total-price'>-</p>
                             </div>
                             <br style="display: block;content: ' '; margin: 1vw 0; line-height: 1vw;">
                             <a class="btn btn-primary btn-checkout" type="submit" href="checkout">Checkout</a>
@@ -37,6 +34,7 @@
         </div>
     </div>
     </div>
+    
     <%- include('../layouts/footer.ejs', {state: 'bag'}); %>
 </body>
 </html>

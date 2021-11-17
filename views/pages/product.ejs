@@ -26,11 +26,9 @@
                     <p>Size  : <%= data[0].SIZE %></p>
                 </div>
                 <div class="sizeSepatu">
-                    <form>
-                        <div style="display: flex; color: black;">
-                            <button class="button button-bag" id="myBtn" type="submit"><a href="successadd" class="none">Add to Bag</a></button>
-                        </div>
-                    </form>
+                    <div style="display: flex; color: black;">
+                        <button class="button button-bag" id="myBtn" onclick="addToBag('<%= data[0].ID %>')">Add to Bag</button>
+                    </div>
                 </div>
                 <br>
                 <br>
