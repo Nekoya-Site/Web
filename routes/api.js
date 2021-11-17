@@ -48,6 +48,7 @@ router.post('/register', async (req, res) => {
                         last_name: req.body.last_name,
                         email: req.body.email,
                         password: encryptedPassword,
+                        session: [],
                     };
                     conn.query("INSERT INTO users SET ?", users, function (error, response, fields) {
                         if (error) {
@@ -104,6 +105,77 @@ router.post('/register', async (req, res) => {
             }
         });
     }
-});
+})
+
+router.post('/login', async (req, res) => {
+    if (!req.body.email || !req.body.password) {
+        res.status(400);
+        res.json({
+            'message': 'Bad Request'
+        })
+    } else {
+        const conn = db.connect();
+        conn.query(
+            "SELECT * FROM users WHERE email = ?",
+            [req.body.email],
+            async function (error, response, fields) {
+                const passCheck = await bcrypt.compare(req.body.password, response[0].password);
+                if (error) {
+                    res.status(400);
+                    res.json({
+                        'message': 'Bad Request'
+                    })
+                } else {
+                    if (response.length > 0) {
+                        if (passCheck) {
+                            if (response[0].verify == 0) {
+                                res.status(204);
+                                res.json({
+                                    'message': 'Sorry You havent verified your email'
+                                })
+                            } else {
+                                let token = randtoken.generate(256);
+                                let session = JSON.parse(response[0].session);
+                                session.push({
+                                    user_agent: req.body.ua || req.headers['user-agent'],
+                                    ip: req.body.ip || req.headers['x-forwarded-for'] || req.socket.remoteAddress,
+                                    session: token,
+                                })
+                                conn.query('UPDATE users SET ? WHERE email ="' + req.body.email + '"', {session: JSON.stringify(session)}, function (err, result) {
+                                    if (err) {
+                                        res.status(400);
+                                        res.json({
+                                            'message': 'Bad Request'
+                                        })
+                                    } else {
+                                        res.status(200);
+                                        res.json({
+                                            'id': response[0].id,
+                                            'first_name': response[0].first_name,
+                                            'last_name': response[0].last_name,
+                                            'email': response[0].email,
+                                            'verify': (response[0].verify == 1) ? true : false,
+                                            'session_token': token,
+                                        })
+                                    }
+                                });
+                            }
+                        } else {
+                            res.status(401);
+                            res.json({
+                                'message': 'Unauthorized'
+                            })
+                        }
+                    } else {
+                        res.status(400);
+                        res.json({
+                            'message': 'Bad Request'
+                        })
+                    }
+                }
+            }
+        );
+    }
+})
 
 module.exports = router;
