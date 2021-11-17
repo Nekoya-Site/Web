@@ -36,7 +36,7 @@ function register(email, password, first_name, last_name) {
     }
     return axios.post(HOST + '/register', params, conf)
     .then(response => response.status)
-    .catch(error => console.log(error))
+    .catch(error => [error.status, []])
 }
 
 function login(email, password, ua, ip) {
@@ -53,7 +53,7 @@ function login(email, password, ua, ip) {
     }
     return axios.post(HOST + '/login', params, conf)
     .then(response => [response.status, response.data])
-    .catch(error => console.log(error))
+    .catch(error => [error.status, []])
 }
 
 module.exports = {
