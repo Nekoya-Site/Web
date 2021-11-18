@@ -183,7 +183,7 @@ router.post("/login", async (req, res) => {
                 if (response[0].verify == 0) {
                   res.status(204);
                   res.json({
-                    message: "Sorry You havent verified your email",
+                    message: "Sorry You haven't verified your email",
                   });
                 } else {
                   let token = randtoken.generate(256);
