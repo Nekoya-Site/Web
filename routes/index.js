@@ -48,17 +48,17 @@ router
         } else if (data[0] == 204) {
           res.render("pages/login", {
             companyName: "SALAH",
-            error: "Please confirm your email",
+            error: "Please confim your account by checking your email",
           });
         } else if (data[0] == 205) {
           res.render("pages/login", {
             companyName: "SALAH",
-            error: "Sorry Your email is not registered in our system",
+            error: "The Email you provided is not registered in our website",
           });
         } else {
           res.render("pages/login", {
             companyName: "SALAH",
-            error: "Invalid Email or Password",
+            error: "Wrong Email or Password",
           });
         }
       });
