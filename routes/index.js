@@ -1,104 +1,125 @@
-const express = require('express')
-const router = express.Router()
+const express = require("express");
+const router = express.Router();
 
 let controller = require("../controllers/controllers");
 
-router.get('/', (_req, res) => {
-    res.render('pages/index');
-})
+router.get("/", (_req, res) => {
+  res.render("pages/index");
+});
 
-router.route('/register')
-    .get((_req, res) => {
-        res.render('pages/register');
-    })
-    .post((req, res) => {
-        controller.register(req.body.email, req.body.password, req.body.first_name, req.body.last_name).then(data => {
-            if (data == 200) {
-                res.render("pages/register-verification-sent");
-            } else {
-                res.render("pages/register-error");
-            }
-        });
-    })
-
-router.route('/login')
-    .get((_req, res) => {
-        res.render('pages/login');
-    })
-    .post((req, res) => {
-        controller.login(req.body.email, req.body.password, req.headers['user-agent'], req.headers['x-forwarded-for'] || req.socket.remoteAddress).then(data => {
-            if (data[0] == 200) {
-                res.render("pages/index");
-            } else if (data[0] == 204){
-                res.render('pages/login', {
-                    companyName : 'SALAH',
-                    error : 'Please confirm your email'
-                });
-            } else {
-                res.render('pages/login', {
-                    companyName : 'SALAH',
-                    error : 'Invalid Email or Password'
-                });
-            }
-        });
-    })
-
-router.get('/verify-mail', (req, res) => {
-    controller.verify_mail(req.params.token).then(data => {
+router
+  .route("/register")
+  .get((_req, res) => {
+    res.render("pages/register");
+  })
+  .post((req, res) => {
+    controller
+      .register(
+        req.body.email,
+        req.body.password,
+        req.body.first_name,
+        req.body.last_name
+      )
+      .then((data) => {
         if (data == 200) {
-            res.render("pages/register-verification-success");
+          res.render("pages/register-verification-sent");
         } else {
-            res.render("pages/index");
+          res.render("pages/register-error");
         }
-    })
-})
+      });
+  });
 
-router.get('/forgot-password', (_req, res) => {
-    res.render('pages/forgot-password');
-})
+router
+  .route("/login")
+  .get((_req, res) => {
+    res.render("pages/login");
+  })
+  .post((req, res) => {
+    controller
+      .login(
+        req.body.email,
+        req.body.password,
+        req.headers["user-agent"],
+        req.headers["x-forwarded-for"] || req.socket.remoteAddress
+      )
+      .then((data) => {
+        if (data[0] == 200) {
+          res.render("pages/index");
+        } else if (data[0] == 204) {
+          res.render("pages/login", {
+            companyName: "SALAH",
+            error: "Please confirm your email",
+          });
+        } else if (data[0] == 205) {
+          res.render("pages/login", {
+            companyName: "SALAH",
+            error: "Sorry Your email is not registered in our system",
+          });
+        } else {
+          res.render("pages/login", {
+            companyName: "SALAH",
+            error: "Invalid Email or Password",
+          });
+        }
+      });
+  });
 
-router.get('/otp', (_req, res) => {
-    res.render('pages/otp');
-})
+router.get("/verify-mail", (req, res) => {
+  controller.verify_mail(req.params.token).then((data) => {
+    if (data == 200) {
+      res.render("pages/register-verification-success");
+    } else {
+      res.render("pages/index");
+    }
+  });
+});
 
-router.get('/change-password', (_req, res) => {
-    res.render('pages/change-password');
-})
+router.get("/forgot-password", (_req, res) => {
+  res.render("pages/forgot-password");
+});
 
-router.get('/products', (_req, res) => {
-    controller.getProducts().then(data => {
-        res.render('pages/products', {data: data});
-    })
-})
+router.get("/otp", (_req, res) => {
+  res.render("pages/otp");
+});
 
-router.get('/product/:id', (req, res) => {
-    controller.getProduct(req.params.id).then(data => {
-        res.render('pages/product', {data: data});
-    })
-})
+router.get("/change-password", (_req, res) => {
+  res.render("pages/change-password");
+});
 
-router.get(('/successadd'), (_req, res) => {
-    res.render('pages/success-add')
-})
+router.get("/products", (_req, res) => {
+  controller.getProducts().then((data) => {
+    res.render("pages/products", { data: data });
+  });
+});
 
-router.get('/bag', (_req, res) => {
-    res.render('pages/bag')
-})
+router.get("/product/:id", (req, res) => {
+  controller.getProduct(req.params.id).then((data) => {
+    res.render("pages/product", { data: data });
+  });
+});
 
-router.get('/checkout', (_req, res) => {
-    res.render('pages/checkout')
-})
+router.get("/successadd", (_req, res) => {
+  res.render("pages/success-add");
+});
 
-router.get('/notifpay', (_req, res) => {
-    res.render('pages/notif-pay')
-})
+router.get("/bag", (_req, res) => {
+  res.render("pages/bag");
+});
 
-router.get('/payment', (_req, res) => {
-    res.render('pages/payment')
-})
+router.get("/checkout", (_req, res) => {
+  res.render("pages/checkout");
+});
 
-router.get('/about-us', (_req, res) => {
-    res.render('pages/about-us')
-})
+router.get("/notifpay", (_req, res) => {
+  res.render("pages/notif-pay");
+});
+
+router.get("/payment", (_req, res) => {
+  res.render("pages/payment");
+});
+
+router.get("/about-us", (_req, res) => {
+  res.render("pages/about-us");
+});
 
 module.exports = router;
