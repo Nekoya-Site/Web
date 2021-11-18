@@ -53,7 +53,7 @@ router
         } else if (data[0] == 205) {
           res.render("pages/login", {
             companyName: "SALAH",
-            error: "The Email you provided is not registered in our website",
+            error: "Wrong Email or Password",
           });
         } else {
           res.render("pages/login", {
