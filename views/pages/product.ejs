@@ -27,8 +27,34 @@
                 </div>
                 <div class="sizeSepatu">
                     <div style="display: flex; color: black;">
-                        <button class="button button-bag" id="myBtn" onclick="addToBag('<%= data[0].ID %>')">Add to Bag</button>
+                        <!--<button class="button button-bag"  >Add to Bag</button>-->
+
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn button-bag" id="myBtn" data-toggle="modal" data-target="#exampleModal" onclick="addToBag('<%= data[0].ID %>')">
+                            Add to Bag
+                        </button>
+                        
+                        <!-- Modal -->
+                        <div class="modal fade black" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content" style="background-color: #1b1c1e; color: white;">
+                                    <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    </div>
+                                    <div class="modal-body" style="text-align: center;">
+                                    Succefully added to Bag
+                                    </div>
+                                    <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <a href="/bag"><button type="button" class="btn button-bag">Bag</button></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                    
                 </div>
                 <br>
                 <br>
