@@ -2,6 +2,7 @@ function add(product_id, price) {
     var inputCount = document.getElementById(product_id);
     inputCount.value++;
     document.getElementById(product_id + '-price').innerHTML = 'Rp ' + price * inputCount.value;
+    set_total_price();
     addToBag(product_id);
 }
 
@@ -10,6 +11,7 @@ function minus(product_id, price) {
     if (inputCount.value > 0) {
         inputCount.value--;
         document.getElementById(product_id + '-price').innerHTML = 'Rp ' + price * inputCount.value;
+        set_total_price();
         removeFromBag(product_id);
     }
 }
@@ -76,13 +78,28 @@ function removeFromBag(product_id) {
     }
 }
 
+function set_total_price() {
+    let price = document.getElementsByClassName("price");
+    let total_price = 0;
+    for (let i = 0; i < price.length; i++) {
+        total_price += parseInt(price[i].innerHTML.substr(3));
+    }
+    document.getElementById("total-price").innerHTML = 'Rp ' + total_price;
+}
+
 function view_bag() {
     var bag = JSON.parse(localStorage.getItem("bag"));
+    let total_price = 0;
     var html = '';
 
     for (var i = 0; i < bag.length; i++) {
-        jQuery.get('api/getProduct', { id: bag[i].product_id }, (data) => {
-            let current_bag = bag.filter( x => x.product_id == data[0].ID);
+        let request = new XMLHttpRequest();
+        request.open('GET', `api/getProduct?id=${bag[i].product_id}`, false);
+        request.send(null);
+
+        if (request.status === 200) {
+            let data = JSON.parse(request.responseText);
+            total_price += parseInt(data[0].PRICE * bag[i].quantity);
             html += `
             <div class="card">
                 <div class="card-body">
@@ -98,28 +115,28 @@ function view_bag() {
                             <div style="display: flex;">
                                 <span class="input-group-btn">
                                     <button type="button" class="btn btn-default btn-number" style="color: white;"
-                                        onclick="minus('${current_bag[0].product_id}', '${data[0].PRICE}')"><i class="far fa-minus-square"></i></button>
+                                        onclick="minus('${bag[i].product_id}', '${data[0].PRICE}')"><i class="far fa-minus-square"></i></button>
                                 </span>
-                                <input class="box" type="text" disabled="disabled" value="${current_bag[0].quantity}"
-                                    class="form-control input-number" id="${current_bag[0].product_id}" />
+                                <input class="box" type="text" disabled="disabled" value="${bag[i].quantity}"
+                                    class="form-control input-number" id="${bag[i].product_id}" />
                                 <span class="input-group-btn">
                                     <button type="button" class="btn btn-default btn-number" style="color: white;"
-                                        onclick="add('${current_bag[0].product_id}', '${data[0].PRICE}')"><i class="far fa-plus-square"></i></button>
+                                        onclick="add('${bag[i].product_id}', '${data[0].PRICE}')"><i class="far fa-plus-square"></i></button>
                                 </span>
                             </div>
                             <br>
-                            <p id="${current_bag[0].product_id}-price" class="price">Rp ${data[0].PRICE * current_bag[0].quantity}</p>
-                            <a href="javascript:;" onclick='return remove("${current_bag[0].product_id}")' style="color:red;"><i class="far fa-trash-alt" color="red"></i> <u>Remove</u></a>
+                            <p id="${bag[i].product_id}-price" class="price">Rp ${data[0].PRICE * bag[i].quantity}</p>
+                            <a href="javascript:;" onclick='return remove("${bag[i].product_id}")' style="color:red;"><i class="far fa-trash-alt" color="red"></i> <u>Remove</u></a>
                             <br><br>
                         </div>
                     </div>
                 </div>
             </div>
             `;
-            document.getElementById("view-bag").innerHTML = html;
-        });
+        }
     }
-    document.getElementById("total-price").innerHTML = 'Rp -';
+    document.getElementById("view-bag").innerHTML = html;
+    document.getElementById("total-price").innerHTML = 'Rp ' + total_price;
 }
 
 view_bag();
