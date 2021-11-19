@@ -17,7 +17,7 @@ function view_checkout() {
                         height="80px" src="img/${data[0].IMAGE}" width="80px">
                     <div class="info">
                         <p>${data[0].TITLE}</p>
-                        <p>${data[0].SIZE}</p>
+                        <p>Size : ${data[0].SIZE}</p>
                         <p>Qty : ${bag[i].quantity}</p>
                     </div>
                 </th>
