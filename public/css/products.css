@@ -27,3 +27,10 @@
     border-color: #212226;
     color: white;
 }
+
+.product-image {
+    width: 500px;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+}
