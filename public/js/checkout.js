@@ -1,3 +1,7 @@
+function proceedCheckout() {
+    localStorage.removeItem("bag");
+}
+
 function view_checkout() {
     var bag = JSON.parse(localStorage.getItem("bag"));
     var html = '';
@@ -35,6 +39,7 @@ function view_checkout() {
     </tr>
     `
     document.getElementById("view-checkout").innerHTML = html;
+    document.getElementById("data").value = JSON.stringify(bag);
 }
 
 view_checkout();
