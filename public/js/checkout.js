@@ -3,6 +3,9 @@ function proceedCheckout() {
 }
 
 function view_checkout() {
+    if (localStorage.getItem("bag") === null) {
+        localStorage.setItem("bag", "[]");
+    }
     var bag = JSON.parse(localStorage.getItem("bag"));
     var html = '';
     var total_price = 0;
