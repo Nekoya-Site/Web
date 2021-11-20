@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
+const auth = require("../auth/auth");
 let controller = require("../controllers/controllers");
 
 router.get("/", (_req, res) => {
@@ -40,6 +41,7 @@ router.route("/login")
         )
         .then((data) => {
             if (data[0] == 200) {
+                res.cookie('session_token', Buffer.from(JSON.stringify({'user_id': data[1].id, 'session_token': data[1].session_token})).toString('base64'), { maxAge: 2592000000, httpOnly: true });
                 res.render("pages/index");
             } else if (data[0] == 204) {
                 res.render("pages/login", {
@@ -71,8 +73,14 @@ router.get("/verify-mail", (req, res) => {
 });
 
 router.route("/checkout")
-    .get((_req, res) => {
-        res.render("pages/checkout");
+    .get((req, res) => {
+        auth.session_converter(req.cookies.session_token).then((key) => {
+            if (key != null) {
+                res.render("pages/checkout");
+            } else {
+                res.render("pages/login");
+            }
+        });
     })
     .post((req, res) => {
         controller.checkout(
