@@ -28,19 +28,19 @@
             <div class="card" style="background-color: #212226 ; border-radius: 20px; padding: 20px;">
                 <h3>SHIPPING DETAILS</h3>
                 <p>Please enter your delivery address</p>
-                <form style="border-top: 1px solid white;">
+                <form style="border-top: 1px solid white;" action="checkout" method="POST">
                     
                     <form>
                         <div class="form-group">
                             <label for="contactInformation"><b>CONTACT INFORMATION</b></label>
                             <div style="display: flex;">
-                                <input aria-describedby="fnamehelp" class="form-control" id="fName"
-                                    placeholder="First Name" type="FName" required>
-                                <input aria-describedby="lnamehelp" class="form-control" id="lName"
-                                    placeholder="Last Name" type="Lname" required>
+                                <input aria-describedby="fnamehelp" class="form-control" id="firstName" name="firstName"
+                                    placeholder="First Name" type="firstName" required>
+                                <input aria-describedby="lnamehelp" class="form-control" id="lastName" name="lastName"
+                                    placeholder="Last Name" type="lastName" required>
                             </div>
-                            <input aria-describedby="PhoneNumber" class="form-control" id="phoneNum"
-                                placeholder="Phone Number" type="PhoneNum" required>
+                            <input aria-describedby="PhoneNumber" class="form-control" id="phoneNumber" name="phoneNumber"
+                                placeholder="Phone Number" type="phoneNumber" required>
                             <small class="form-text text-muted" id="phoneHelp">We'll never share your private information with
                                 anyone
                                 else.</small>
@@ -49,22 +49,22 @@
     
                         <div class="form-group">
                             <label for="contactInformation"><b>ADDRESS</b></label>
-                            <input aria-describedby="Address1" class="form-control" id="address1"
-                                placeholder="Street Address " type="Address1" required>
-                            <input aria-describedby="Address2" class="form-control" id="address2"
-                                placeholder="Street Address 2 " type="Address2" required>
-                            <input aria-describedby="region" class="form-control" id="region"
+                            <input aria-describedby="Address1" class="form-control" id="streetAddress1" name="streetAddress1"
+                                placeholder="Street Address " type="streetAddress1" required>
+                            <input aria-describedby="Address2" class="form-control" id="streetAddress2" name="streetAddress2"
+                                placeholder="Street Address 2 " type="streetAddress2" required>
+                            <input aria-describedby="region" class="form-control" id="region" name="region"
                                 placeholder="Region" type="region" required>
-                            <input aria-describedby="province" class="form-control" id="province"
+                            <input aria-describedby="province" class="form-control" id="province" name="province"
                                 placeholder="Province" type="province" required>
-                            <input aria-describedby="city" class="form-control" id="city"
+                            <input aria-describedby="city" class="form-control" id="city" name="city"
                                 placeholder="City" type="city" required>
-                            <input aria-describedby="district" class="form-control" id="district"
+                            <input aria-describedby="district" class="form-control" id="district" name="district"
                                 placeholder="District" type="district" required>
-                            <input aria-describedby="subdistrict" class="form-control" id="subDistrict"
-                                placeholder="Subdistrict" type="subdistrict" required>
-                            <input aria-describedby="portalcode" class="form-control" id="portalCode"
-                                placeholder="Portalcode" type="portalcode" required>
+                            <input aria-describedby="subdistrict" class="form-control" id="subDistrict" name="subDistrict"
+                                placeholder="Subdistrict" type="subDistrict" required>
+                            <input aria-describedby="postalcode" class="form-control" id="postalCode" name="postalCode"
+                                placeholder="Postalcode" type="postalcode" required>
                         </div>
     
                         <div class="form-check">
@@ -80,9 +80,9 @@
                     <form style="border-top: 1px solid white;">
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
-                                <label class="input-group-text" for="shipping">Shipping Methods</label>
+                                <label class="input-group-text" for="logistic" id="logistic" name="logistic">Shipping Methods</label>
                             </div>
-                            <select class="custom-select" id="shipping">
+                            <select class="custom-select" id="logistic" name="logistic">
                                 <option selected>Choose...</option>
                                 <option value="1">JNT</option>
                                 <option value="2">JNE</option>
@@ -91,7 +91,7 @@
                         </div>
                     </form>
                     <div style="display: flex; color: black;">
-                        <button class="btn btn-primary btn-pay" id="myBtn" type="submit"><a href="notifpay" class="none">Pay</a></button>
+                        <button class="btn btn-primary btn-pay" id="myBtn" type="submit">Pay</button>
                     </div>
                 </div>
             </div>
