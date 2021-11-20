@@ -30,68 +30,67 @@
                 <p>Please enter your delivery address</p>
                 <form style="border-top: 1px solid white;" action="checkout" method="POST">
                     
-                    <form>
-                        <div class="form-group">
-                            <label for="contactInformation"><b>CONTACT INFORMATION</b></label>
-                            <div style="display: flex;">
-                                <input aria-describedby="fnamehelp" class="form-control" id="firstName" name="firstName"
-                                    placeholder="First Name" type="firstName" required>
-                                <input aria-describedby="lnamehelp" class="form-control" id="lastName" name="lastName"
-                                    placeholder="Last Name" type="lastName" required>
-                            </div>
-                            <input aria-describedby="PhoneNumber" class="form-control" id="phoneNumber" name="phoneNumber"
-                                placeholder="Phone Number" type="phoneNumber" required>
-                            <small class="form-text text-muted" id="phoneHelp">We'll never share your private information with
-                                anyone
-                                else.</small>
-    
+                    <div class="form-group">
+                        <label for="contactInformation"><b>CONTACT INFORMATION</b></label>
+                        <div style="display: flex;">
+                            <input aria-describedby="firstName" class="form-control" id="firstName"
+                                name="firstName" placeholder="First Name" type="text" required>
+                            <input aria-describedby="lastName" class="form-control" id="lastName"
+                                name="lastName" placeholder="Last Name" type="text" required>
                         </div>
-    
-                        <div class="form-group">
-                            <label for="contactInformation"><b>ADDRESS</b></label>
-                            <input aria-describedby="Address1" class="form-control" id="streetAddress1" name="streetAddress1"
-                                placeholder="Street Address " type="streetAddress1" required>
-                            <input aria-describedby="Address2" class="form-control" id="streetAddress2" name="streetAddress2"
-                                placeholder="Street Address 2 " type="streetAddress2" required>
-                            <input aria-describedby="region" class="form-control" id="region" name="region"
-                                placeholder="Region" type="region" required>
-                            <input aria-describedby="province" class="form-control" id="province" name="province"
-                                placeholder="Province" type="province" required>
-                            <input aria-describedby="city" class="form-control" id="city" name="city"
-                                placeholder="City" type="city" required>
-                            <input aria-describedby="district" class="form-control" id="district" name="district"
-                                placeholder="District" type="district" required>
-                            <input aria-describedby="subdistrict" class="form-control" id="subDistrict" name="subDistrict"
-                                placeholder="Subdistrict" type="subDistrict" required>
-                            <input aria-describedby="postalcode" class="form-control" id="postalCode" name="postalCode"
-                                placeholder="Postalcode" type="postalcode" required>
-                        </div>
-    
-                        <div class="form-check">
-                            <input class="form-check-input" id="defaultCheck1" type="checkbox" value="" required>
-                            <label class="form-check-label" for="defaultCheck1">
-                                My Billing and Shipping information are the same
-                            </label>
-                        </div>
-                    </form>
+                        <input aria-describedby="PhoneNumber" class="form-control" id="phoneNum"
+                            name="phoneNumber" placeholder="Phone Number" type="text" required>
+                        <small class="form-text text-muted" id="phoneHelp">We'll never share your private information with
+                            anyone
+                            else.</small>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contactInformation"><b>ADDRESS</b></label>
+                        <input aria-describedby="streetAddress1" class="form-control" id="streetAddress1"
+                            name="streetAddress1" placeholder="Street Address " type="text" required>
+                        <input aria-describedby="streetAddress2" class="form-control" id="streetAddress2"
+                            name="streetAddress2" placeholder="Street Address 2 " type="text" required>
+                        <input aria-describedby="region" class="form-control" id="region"
+                            name="region" placeholder="Region" type="text" required>
+                        <input aria-describedby="province" class="form-control" id="province"
+                            name="province" placeholder="Province" type="text" required>
+                        <input aria-describedby="city" class="form-control" id="city"
+                            name="city" placeholder="City" type="text" required>
+                        <input aria-describedby="district" class="form-control" id="district"
+                            name="district" placeholder="District" type="text" required>
+                        <input aria-describedby="subdistrict" class="form-control" id="subDistrict"
+                            name="subDistrict" placeholder="Subdistrict" type="text" required>
+                        <input aria-describedby="postalCode" class="form-control" id="postalCode"
+                            name="postalCode" placeholder="Postalcode" type="text" required>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" id="defaultCheck1" type="checkbox" value="" required>
+                        <label class="form-check-label" for="defaultCheck1">
+                            My Billing and Shipping information are the same
+                        </label>
+                    </div>
     
                     <h3 style="margin-top: 20px;">SHIPPING METHODS</h3>
     
-                    <form style="border-top: 1px solid white;">
+                    <div style="border-top: 1px solid white;">
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
-                                <label class="input-group-text" for="logistic" id="logistic" name="logistic">Shipping Methods</label>
+                                <label class="input-group-text" for="logistic">Shipping Methods</label>
                             </div>
                             <select class="custom-select" id="logistic" name="logistic">
                                 <option selected>Choose...</option>
-                                <option value="1">JNT</option>
-                                <option value="2">JNE</option>
-                                <option value="3">SICEPAT</option>
+                                <option value="JNT">JNT</option>
+                                <option value="JNE">JNE</option>
+                                <option value="SICEPAT">SICEPAT</option>
                             </select>
+                            <input type="hidden" class="checkout_data" id="data" name="data" value="">
                         </div>
-                    </form>
+                    </div>
                     <div style="display: flex; color: black;">
-                        <button class="btn btn-primary btn-pay" id="myBtn" type="submit">Pay</button>
+                        <button class="btn btn-primary btn-pay" id="myBtn" type="submit" onclick="proceedCheckout()">Pay</button>
                     </div>
                 </div>
             </div>
