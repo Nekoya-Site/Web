@@ -448,4 +448,49 @@ router.post("/transaction", async (req, res) => {
     }
 });
 
+router.get("/subscribe", (req, res) => {
+    if (!req.query.email) {
+        res.status(400);
+        res.json({
+            message: "Bad Request",
+        });
+    } else {
+        const conn = db.connect();
+        conn.execute(
+            "SELECT * FROM `subscribe` WHERE `email` = ?",
+            [req.query.email],
+            function (err, results) {
+                if (!results[0]) {
+                    let data = {
+                        email: req.query.email,
+                        type: "email"
+                    };
+                    conn.query(
+                        "INSERT INTO subscribe SET ?",
+                        data,
+                        function (err, resp) {
+                            if (err) {
+                                res.status(400);
+                                res.json({
+                                    message: "Bad Request",
+                                });
+                            } else {
+                                res.status(201);
+                                res.json({
+                                    message: "Success",
+                                });
+                            }
+                        }
+                    );
+                } else {
+                    res.status(200);
+                    res.json({
+                        message: "Success",
+                    });
+                }
+            }
+        );
+    }
+});
+
 module.exports = router;
