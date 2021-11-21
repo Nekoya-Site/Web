@@ -33,10 +33,10 @@ function session_converter(session) {
                         res(null);
                     }
                 }
+                db.disconnect(conn);
             }
         );
     });
-    db.disconnect(conn);
     return key;
 }
 
@@ -66,13 +66,13 @@ function session_remove(key, session_token) {
                                 console.log('sukses');
                                 res(true)
                             }
+                            db.disconnect(conn);
                         }
                     );
                 }
             }
         );
     });
-    db.disconnect(conn);
     return status;
 }
 
@@ -92,10 +92,10 @@ function auth_checker(key) {
                         res(false);
                     }
                 }
+                db.disconnect(conn);
             }
         );
     });
-    db.disconnect(conn);
     return status;
 }
 
