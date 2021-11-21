@@ -81,6 +81,19 @@ router.route("/login")
         });
     });
 
+router.route("/logout")
+.get((req, res) => {
+    auth.session_converter(req.cookies.session_token).then((key) => {
+        if (key != null) {
+            res.clearCookie("session_token");
+            auth.session_remove(key, req.cookies.session_token);
+            res.redirect("/");
+        } else {
+            res.redirect("/login");
+        }
+    });
+})
+
 router.get("/verify-mail", (req, res) => {
     controller.verify_mail(req.query.token).then((data) => {
         if (data == 200) {
