@@ -186,3 +186,10 @@ jQuery(document).ready(function ($) {
         }
     }
 })
+
+function subscribe() {
+    let request = new XMLHttpRequest();
+    let email = document.getElementById("newsletter_email").value;
+    request.open('GET', `api/subscribe?email=${email}`, false);
+    request.send(null);
+}
