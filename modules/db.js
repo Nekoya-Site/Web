@@ -13,6 +13,11 @@ function connect() {
     return connection;
 }
 
+function disconnect(connection) {
+    connection.end();
+}
+
 module.exports = {
-    connect
+    connect,
+    disconnect
 }
