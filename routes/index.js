@@ -161,16 +161,49 @@ router.route("/checkout")
         });
     });
 
-router.get("/forgot-password", (_req, res) => {
-    res.render("pages/forgot-password");
-});
+
+router.route("/reset-password")
+    .get((req, res) => {
+        if (!req.query.token) {
+            res.redirect("/");
+        } else {
+            res.render("pages/reset-password", {
+                token: req.query.token
+            })
+        }
+    })
+    .post((req, res) => {
+        controller.reset_password(req.query.token, req.body.password).then((data) => {
+            if (data[0] == 200) {
+                res.render("pages/register-verification-completed");
+            } else {
+                res.redirect("/");
+            }
+        });
+    });
+
+router.route("/forgot-password")
+    .get((req, res) => {
+        auth.session_converter(req.cookies.session_token).then((key) => {
+            if (key != null) {
+                res.redirect("/");
+            } else {
+                res.render("pages/forgot-password");
+            }
+        });
+    })
+    .post((req, res) => {
+        controller.request_reset_password(req.body.email).then((data) => {
+            if (data[0] == 200) {
+                res.render("pages/register-verification-sent");
+            } else {
+                res.redirect("/forgot-password");
+            }
+        });
+    });
 
 router.get("/otp", (_req, res) => {
     res.render("pages/otp");
-});
-
-router.get("/change-password", (_req, res) => {
-    res.render("pages/change-password");
 });
 
 router.get("/products", (req, res) => {
