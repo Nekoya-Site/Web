@@ -79,6 +79,42 @@ function verify_mail(token) {
         .catch((error) => [error.status, []]);
 }
 
+function request_reset_password(email) {
+    let params = new URLSearchParams({
+        email: email,
+    });
+    const conf = {
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+        }
+    };
+    return axios
+        .post(HOST + "/request-reset-password", params, conf)
+        .then((response) => [response.status, response.data])
+        .catch((error) => [error.status, []]);
+}
+
+function reset_password(
+    token,
+    password
+) {
+    let params = new URLSearchParams({
+        password: password,
+    });
+    const conf = {
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+        },
+        params: {
+            token: token,
+        }
+    };
+    return axios
+        .post(HOST + "/reset-password", params, conf)
+        .then((response) => [response.status, response.data])
+        .catch((error) => [error.status, []]);
+}
+
 function checkout(
     firstName,
     lastName,
@@ -142,6 +178,8 @@ module.exports = {
     register,
     login,
     verify_mail,
+    request_reset_password,
+    reset_password,
     checkout,
     transaction
 };
