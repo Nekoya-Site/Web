@@ -1,9 +1,12 @@
 const express = require("express");
 const bcrypt = require("bcrypt");
 const randtoken = require("rand-token");
+
 const router = express.Router();
+
 const db = require("../modules/db");
 const mail = require("../modules/mail");
+const auth = require("../auth/auth");
 
 const saltRounds = 10;
 
