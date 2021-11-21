@@ -232,4 +232,18 @@ router.get("/about-us", (req, res) => {
     });
 });
 
+router.get("/faq", (req, res) => {
+    auth.session_converter(req.cookies.session_token).then((key) => {
+        if (key != null) {
+            res.render("pages/faq", {
+                loggedIn: 'true'
+            });
+        } else {
+            res.render("pages/faq", {
+                loggedIn: 'false'
+            });
+        }
+    });
+});
+
 module.exports = router;
