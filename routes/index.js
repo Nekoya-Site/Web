@@ -39,7 +39,7 @@ router.route("/register")
             if (data == 200) {
                 res.render("pages/register-verification-sent");
             } else {
-                res.render("pages/register-error");
+                res.redirect("/register");
             }
         });
     });
@@ -64,20 +64,17 @@ router.route("/login")
         .then((data) => {
             if (data[0] == 200) {
                 res.cookie('session_token', Buffer.from(JSON.stringify({'user_id': data[1].id, 'session_token': data[1].session_token})).toString('base64'), { maxAge: 2592000000, httpOnly: true });
-                res.render("pages/index");
+                res.redirect("/");
             } else if (data[0] == 204) {
                 res.render("pages/login", {
-                    companyName: "SALAH",
                     error: "Please confim your account by checking your email",
                 });
             } else if (data[0] == 205) {
                 res.render("pages/login", {
-                    companyName: "SALAH",
                     error: "Wrong Email or Password",
                 });
             } else {
                 res.render("pages/login", {
-                    companyName: "SALAH",
                     error: "Wrong Email or Password",
                 });
             }
