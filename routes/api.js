@@ -298,6 +298,118 @@ router.post("/verify-mail", async (req, res) => {
         }
 });
 
+router.post("/request-reset-password", async (req, res) => {
+    if (!req.body.email) {
+        res.status(400);
+        res.json({
+            message: "Bad Request",
+        });
+    } else {
+        const conn = db.connect();
+        conn.query(
+            "SELECT * FROM users WHERE email = ?",
+            [req.body.email],
+            async function (error, response, fields) {
+                if (!response[0]) {
+                    res.status(205);
+                    res.json({
+                        message: "Sorry Your email is not registered in our system",
+                    });
+                } else {
+                    let subject = "Reset Password - Nekoya";
+                    let content = `<p>Hello!!! Please click this link <a href="${config.host}/reset-password?token=${response[0].token}">link</a> to reset your account password!!! Thanks!!!</p>`;
+                    var sent = mail.send(
+                        req.body.email,
+                        subject,
+                        content
+                    );
+                    if (sent != "0") {
+                        res.status(200);
+                        res.json({
+                            message: "Reset Password Verification Sent ~",
+                        });
+                    } else {
+                        res.status(400);
+                        res.json({
+                            message: "Bad Request",
+                        });
+                    }
+                }
+            }
+        );
+    }
+});
+
+router.post("/reset-password", async (req, res) => {
+    if (!req.query.token) {
+        res.status(401);
+        res.json({
+            message: "Unauthorized",
+        });
+    } else {
+        auth.auth_checker(req.query.token).then((status) => {
+            if (status) {
+                if (!req.body.password) {
+                    res.status(400);
+                    res.json({
+                        message: "Bad Request",
+                    });
+                } else {
+                    const conn = db.connect();
+                    conn.query(
+                        'SELECT * FROM users WHERE token ="' + req.query.token + '"',
+                        async function (err, result) {
+                            if (err) {
+                                res.status(400);
+                                res.json({
+                                    message: "Bad Request",
+                                });
+                            }
+                            if (result.length > 0) {
+                                const encryptedPassword = await bcrypt.hash(
+                                    req.body.password,
+                                    saltRounds
+                                );
+                                var data = {
+                                    password: encryptedPassword,
+                                    token: randtoken.generate(64),
+                                };
+                                conn.query(
+                                    'UPDATE users SET ? WHERE email ="' + result[0].email + '"',
+                                    data,
+                                    function (err, result) {
+                                        if (err) {
+                                            res.status(400);
+                                            res.json({
+                                                message: "Bad Request",
+                                            });
+                                        } else {
+                                            res.status(200);
+                                            res.json({
+                                                message: "Success Reset Password ~",
+                                            });
+                                        }
+                                    }
+                                );
+                            } else {
+                                res.status(400);
+                                res.json({
+                                    message: "Bad Request",
+                                });
+                            }
+                        }
+                    );
+                }
+            } else {
+                res.status(401);
+                res.json({
+                    message: "Unauthorized",
+                });
+            }
+        });
+    }
+});
+
 router.post("/checkout", async (req, res) => {
     if (!req.query.key) {
         res.status(401);
