@@ -96,8 +96,8 @@ router.route("/logout")
 
 router.get("/verify-mail", (req, res) => {
     controller.verify_mail(req.query.token).then((data) => {
-        if (data == 200) {
-            res.render("pages/register-verification-success");
+        if (data[0] == 200) {
+            res.render("pages/register-verification-completed");
         } else {
             res.redirect("/");
         }

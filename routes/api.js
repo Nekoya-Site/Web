@@ -241,7 +241,7 @@ router.post("/login", async (req, res) => {
     }
 });
 
-router.get("/verify-mail", async (req, res) => {
+router.post("/verify-mail", async (req, res) => {
     if (!req.body.token) {
         res.status(400);
         res.json({
@@ -262,6 +262,7 @@ router.get("/verify-mail", async (req, res) => {
                     if (result[0].verify == 0) {
                         var data = {
                             verify: 1,
+                            token: randtoken.generate(64),
                         };
                         conn.query(
                             'UPDATE users SET ? WHERE email ="' + result[0].email + '"',
