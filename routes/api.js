@@ -1,12 +1,9 @@
 const express = require("express");
 const bcrypt = require("bcrypt");
 const randtoken = require("rand-token");
-
 const router = express.Router();
-
 const db = require("../modules/db");
 const mail = require("../modules/mail");
-const auth = require("../auth/auth");
 
 const saltRounds = 10;
 
@@ -241,251 +238,121 @@ router.post("/login", async (req, res) => {
     }
 });
 
-router.post("/verify-mail", async (req, res) => {
-    if (!req.body.token) {
-        res.status(400);
-        res.json({
-            message: "Bad Request",
-        });
-    } else {
-        const conn = db.connect();
-        conn.query(
-            'SELECT * FROM users WHERE token ="' + req.body.token + '"',
-            function (err, result) {
-                if (err) {
-                    res.status(400);
-                    res.json({
-                        message: "Bad Request",
-                    });
-                }
-                if (result.length > 0) {
-                    if (result[0].verify == 0) {
-                        var data = {
-                            verify: 1,
-                            token: randtoken.generate(64),
-                        };
-                        conn.query(
-                            'UPDATE users SET ? WHERE email ="' + result[0].email + '"',
-                            data,
-                            function (err, result) {
-                                if (err) {
-                                    res.status(400);
-                                    res.json({
-                                        message: "Bad Request",
-                                    });
-                                } else {
-                                    res.status(200);
-                                    res.json({
-                                        message: "Verified ~",
-                                    });
-                                }
-                            }
-                        );
-                    } else {
-                        res.status(403);
-                        res.json({
-                            message: "Forbidden",
-                        });
-                    }
-                } else {
-                    res.status(400);
-                    res.json({
-                        message: "Bad Request",
-                    });
-                }
-            }
-        );
-        }
-});
-
-router.post("/checkout", async (req, res) => {
-    if (!req.query.key) {
-        res.status(401);
-        res.json({
-            message: "Unauthorized",
-        });
-    } else {
-        auth.auth_checker(req.query.key).then((status) => {
-            if (status) {
-                if (
-                    !req.body.firstName ||
-                    !req.body.lastName ||
-                    !req.body.phoneNumber ||
-                    !req.body.streetAddress1 ||
-                    !req.body.streetAddress2 ||
-                    !req.body.region ||
-                    !req.body.province ||
-                    !req.body.city ||
-                    !req.body.district ||
-                    !req.body.subDistrict ||
-                    !req.body.postalCode ||
-                    !req.body.logistic ||
-                    !req.body.data
-                ) {
-                    res.status(400);
-                    res.json({
-                        message: "Bad Request",
-                    });
-                } else {
-                    const conn = db.connect();
-                    conn.query(
-                        "SELECT * FROM users WHERE token = ?",
-                        [req.query.key],
-                        async function (error, resp, fields) {
-                            if (error) {
-                                res.status(401);
-                                res.json({
-                                    message: "Unauthorized",
-                                });
-                            } else {
-                                var data = {
-                                    firstName: req.body.firstName,
-                                    lastName: req.body.lastName,
-                                    phoneNumber: req.body.phoneNumber,
-                                    streetAddress1: req.body.streetAddress1,
-                                    streetAddress2: req.body.streetAddress2,
-                                    region: req.body.region,
-                                    province: req.body.province,
-                                    city: req.body.city,
-                                    district: req.body.district,
-                                    subDistrict: req.body.subDistrict,
-                                    postalCode: req.body.postalCode,
-                                    logistic: req.body.logistic,
-                                    paymentMethod: '-',
-                                    data: req.body.data,
-                                    userId: resp[0].id,
-                                    paid: '0',
-                                    status: 'pending'
-                                };
-                                conn.query(
-                                    "INSERT INTO transactions SET ?",
-                                    data,
-                                    function (error, response, fields) {
-                                        if (error) {
-                                            res.status(400);
-                                            res.json({
-                                                message: "Bad Request",
-                                            });
-                                        } else {
-                                            conn.query(
-                                            'SELECT * FROM transactions WHERE id ="' + response.insertId + '"',
-                                            function (err, result) {
-                                                if (err) {
-                                                    res.status(400);
-                                                    res.json({
-                                                        message: "Bad Request",
-                                                    });
-                                                } else {
-                                                    res.status(201);
-                                                    res.json({
-                                                        'order_id': result[0].id,
-                                                        'data': result[0].data
-                                                    });
-                                                }
-                                            });
-                                        }
-                                    }
-                                );
-                            }
-                        }
-                    );
-                }
-            } else {
-                res.status(401);
+router.get("/verify-mail", async (req, res) => {
+    const conn = db.connect();
+    conn.query(
+        'SELECT * FROM users WHERE token ="' + req.query.token + '"',
+        function (err, result) {
+            if (err) {
+                res.status(400);
                 res.json({
-                    message: "Unauthorized",
+                    message: "Bad Request",
                 });
             }
-        });
-    }
-});
-
-router.post("/transaction", async (req, res) => {
-    if (!req.query.key) {
-        res.status(401);
-        res.json({
-            message: "Unauthorized",
-        });
-    } else {
-        auth.auth_checker(req.query.key).then((status) => {
-            if (status) {
-                const conn = db.connect();
-                conn.query(
-                    "SELECT * FROM users WHERE token = ?",
-                    [req.query.key],
-                    async function (error, response, fields) {
-                        if (error) {
-                            res.status(401);
-                            res.json({
-                                message: "Unauthorized",
-                            });
-                        } else {
-                            conn.query(
-                                "SELECT * FROM transactions WHERE userId = ?",
-                                [response[0].id],
-                                async function (error, resp, fields) {
-                                    if (error) {
-                                        res.status(400);
-                                        res.json({
-                                            message: "Bad Request",
-                                        });
-                                    } else {
-                                        res.status(200);
-                                        res.json(resp);
-                                    }
-                                }
-                            );
-                        }
-                    }
-                );
-            } else {
-                res.status(401);
-                res.json({
-                    message: "Unauthorized",
-                });
-            }
-        });
-    }
-});
-
-router.get("/subscribe", (req, res) => {
-    if (!req.query.email) {
-        res.status(400);
-        res.json({
-            message: "Bad Request",
-        });
-    } else {
-        const conn = db.connect();
-        conn.execute(
-            "SELECT * FROM `subscribe` WHERE `email` = ?",
-            [req.query.email],
-            function (err, results) {
-                if (!results[0]) {
-                    let data = {
-                        email: req.query.email,
-                        type: "email"
+            if (result.length > 0) {
+                if (result[0].verify == 0) {
+                    var data = {
+                        verify: 1,
                     };
-                    conn.query(
-                        "INSERT INTO subscribe SET ?",
+                    db_connect.query(
+                        'UPDATE users SET ? WHERE email ="' + result[0].email + '"',
                         data,
-                        function (err, resp) {
+                        function (err, result) {
                             if (err) {
                                 res.status(400);
                                 res.json({
                                     message: "Bad Request",
                                 });
                             } else {
-                                res.status(201);
+                                res.status(200);
                                 res.json({
-                                    message: "Success",
+                                    message: "Verified ~",
                                 });
                             }
                         }
                     );
                 } else {
-                    res.status(200);
+                    res.status(403);
                     res.json({
-                        message: "Success",
+                        message: "Forbidden",
+                    });
+                }
+            } else {
+                res.status(400);
+                res.json({
+                    message: "Bad Request",
+                });
+            }
+        }
+    );
+});
+
+router.post("/checkout", async (req, res) => {
+    if (
+        !req.body.firstName ||
+        !req.body.lastName ||
+        !req.body.phoneNumber ||
+        !req.body.streetAddress1 ||
+        !req.body.streetAddress2 ||
+        !req.body.region ||
+        !req.body.province ||
+        !req.body.city ||
+        !req.body.district ||
+        !req.body.subDistrict ||
+        !req.body.postalCode ||
+        !req.body.logistic ||
+        !req.body.data
+    ) {
+        res.status(400);
+        res.json({
+            message: "Bad Request",
+        });
+    } else {
+        const conn = db.connect();
+        var data = {
+            firstName: req.body.firstName,
+            lastName: req.body.lastName,
+            phoneNumber: req.body.phoneNumber,
+            streetAddress1: req.body.streetAddress1,
+            streetAddress2: req.body.streetAddress2,
+            region: req.body.region,
+            province: req.body.province,
+            city: req.body.city,
+            district: req.body.district,
+            subDistrict: req.body.subDistrict,
+            postalCode: req.body.postalCode,
+            logistic: req.body.logistic,
+            paymentMethod: '-',
+            data: req.body.data,
+            userId: 14,
+            paid: '0',
+            status: 'pending'
+        };
+        conn.query(
+            "INSERT INTO transactions SET ?",
+            data,
+            function (error, response, fields) {
+                if (error) {
+                    res.status(400);
+                    res.json({
+                        message: "Bad Request",
+                    });
+                } else {
+                    conn.query(
+                    'SELECT * FROM transactions WHERE id ="' + response.insertId + '"',
+                    function (err, result) {
+                        if (err) {
+                            res.status(400);
+                            res.json({
+                                message: "Bad Request",
+                            });
+                        } else {
+                            res.status(201);
+                            res.json({
+                                'order_id': result[0].id,
+                                'data': result[0].data
+                            });
+                        }
                     });
                 }
             }
