@@ -36,6 +36,7 @@ function session_converter(session) {
             }
         );
     });
+    db.disconnect(conn);
     return key;
 }
 
@@ -71,6 +72,7 @@ function session_remove(key, session_token) {
             }
         );
     });
+    db.disconnect(conn);
     return status;
 }
 
@@ -93,6 +95,7 @@ function auth_checker(key) {
             }
         );
     });
+    db.disconnect(conn);
     return status;
 }
 

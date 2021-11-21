@@ -23,6 +23,7 @@ router.get("/getproducts", (req, res) => {
     conn.execute("SELECT * FROM `products`", [], function (err, results) {
         res.json(results);
     });
+    db.disconnect(conn);
 });
 
 router.get("/getproduct", (req, res) => {
@@ -34,6 +35,7 @@ router.get("/getproduct", (req, res) => {
             res.json(results);
         }
     );
+    db.disconnect(conn);
 });
 
 router.post("/register", async (req, res) => {
@@ -150,6 +152,7 @@ router.post("/register", async (req, res) => {
                 }
             }
         );
+        db.disconnect(conn);
     }
 });
 
@@ -238,6 +241,7 @@ router.post("/login", async (req, res) => {
                 }
             }
         );
+        db.disconnect(conn);
     }
 });
 
@@ -289,6 +293,7 @@ router.post("/verify-mail", async (req, res) => {
             }
         }
     );
+    db.disconnect(conn);
 });
 
 router.post("/request-reset-password", async (req, res) => {
@@ -330,6 +335,7 @@ router.post("/request-reset-password", async (req, res) => {
                 }
             }
         );
+        db.disconnect(conn);
     }
 });
 
@@ -392,6 +398,7 @@ router.post("/reset-password", async (req, res) => {
                             }
                         }
                     );
+                    db.disconnect(conn);
                 }
             } else {
                 res.status(401);
@@ -494,6 +501,7 @@ router.post("/checkout", async (req, res) => {
                             }
                         }
                     );
+                    db.disconnect(conn);
                 }
             } else {
                 res.status(401);
@@ -543,6 +551,7 @@ router.post("/transaction", async (req, res) => {
                         }
                     }
                 );
+                db.disconnect(conn);
             } else {
                 res.status(401);
                 res.json({
@@ -595,6 +604,7 @@ router.get("/subscribe", (req, res) => {
                 }
             }
         );
+        db.disconnect(conn);
     }
 });
 
