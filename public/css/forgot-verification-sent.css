@@ -1,0 +1,86 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #1b1c1e;
+}
+
+.nav-color {
+    background-color: #212226;
+}
+
+.card {
+    position: center;
+    margin: auto;
+    text-align: center;
+    border-radius: 20px;
+    background-color: #212226;
+}
+
+.icon {
+    position: center;
+    margin: auto;
+    width: 70%;
+    height: 70%;
+}
+
+@media screen and (max-width: 766px) {
+    .card h2 {
+        font-size: 7vw;
+    }
+
+    .card h5 {
+        font-size: 5vw;
+    }
+
+    .navbar-brand {
+        width: 11vw;
+        height: 11vw;
+    }
+
+}
+
+@media screen and (min-width: 767px) {
+    .card h2 {
+        font-size: 4vw;
+    }
+
+    .card h5 {
+        font-size: 2vw;
+    }
+
+    .navbar-brand {
+        width: 8vw;
+        height: 8vw;
+    }
+
+}
+
+@media screen and (min-width: 993px) {
+    .card h2 {
+        font-size: 3vw;
+    }
+
+    .card h5 {
+        font-size: 1.3vw;
+    }
+
+    .navbar-brand {
+        width: 6vw;
+        height: 6vw;
+    }
+
+}
+
+@media screen and (min-width: 1400px) {
+    .card h2 {
+        font-size: 3vw;
+    }
+
+    .card h5 {
+        font-size: 1.5vw;
+    }
+
+    .navbar-brand {
+        width: 6vw;
+        height: 6vw;
+    }
+}

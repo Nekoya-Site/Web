@@ -175,7 +175,7 @@ router.route("/reset-password")
     .post((req, res) => {
         controller.reset_password(req.query.token, req.body.password).then((data) => {
             if (data[0] == 200) {
-                res.render("pages/register-verification-completed");
+                res.render("pages/reset-verification-completed");
             } else {
                 res.redirect("/");
             }
@@ -195,16 +195,12 @@ router.route("/forgot-password")
     .post((req, res) => {
         controller.request_reset_password(req.body.email).then((data) => {
             if (data[0] == 200) {
-                res.render("pages/register-verification-sent");
+                res.render("pages/forgot-verification-sent");
             } else {
                 res.redirect("/forgot-password");
             }
         });
     });
-
-router.get("/otp", (_req, res) => {
-    res.render("pages/otp");
-});
 
 router.get("/products", (req, res) => {
     auth.session_converter(req.cookies.session_token).then((key) => {
