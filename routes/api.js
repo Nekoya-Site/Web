@@ -263,7 +263,7 @@ router.get("/verify-mail", async (req, res) => {
                         var data = {
                             verify: 1,
                         };
-                        db_connect.query(
+                        conn.query(
                             'UPDATE users SET ? WHERE email ="' + result[0].email + '"',
                             data,
                             function (err, result) {
