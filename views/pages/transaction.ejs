@@ -1,0 +1,36 @@
+<html>
+
+<%- include('../layouts/header.ejs', {title: 'Transaction List', state: 'transaction'}); %>
+
+<body class="bg-color">
+
+    <%- include('../layouts/navbar.ejs', {types: 'v1', state: 'transaction'}); %>
+
+    <div class="container-fluid mt-3 comp-color">
+        <table class="table table-hover table-dark comp-color">
+            <thead>
+                <tr>
+                    <th scope="col">Order ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Logistic</th>
+                    <th scope="col">Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for(let i=0; i < data.length; i++) { %>
+                    <tr>
+                        <th scope="row"><%= data[i].id %></th>
+                        <td><%= data[i].firstName + ' ' + data[i].lastName %></td>
+                        <td><%= data[i].logistic %></td>
+                        <td><%= data[i].status %></td>
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+
+    <%- include('../layouts/footer.ejs', {state: 'transaction'}); %>
+
+</body>
+
+</html>

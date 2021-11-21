@@ -231,6 +231,25 @@ router.get("/payment", (_req, res) => {
     res.redirect("/");
 });
 
+router.get("/transaction", (req, res) => {
+    auth.session_converter(req.cookies.session_token).then((key) => {
+        if (key != null) {
+            controller.transaction(key).then((data) => {
+                if (data[0] == 200) {
+                    res.render("pages/transaction", {
+                        data: data[1],
+                        loggedIn: 'true'
+                    });
+                } else {
+                    res.redirect("/");
+                }
+            });
+        } else {
+            res.redirect("/login");
+        }
+    });
+});
+
 router.get("/about-us", (req, res) => {
     auth.session_converter(req.cookies.session_token).then((key) => {
         if (key != null) {
