@@ -124,11 +124,24 @@ function checkout(
         .catch((error) => [error.status, []]);
 }
 
+function transaction(key) {
+    const conf = {
+        params: {
+            key: key,
+        }
+    };
+    return axios
+        .post(HOST + "/transaction", null, conf)
+        .then((response) => [response.status, response.data])
+        .catch((error) => [error.status, []]);
+}
+
 module.exports = {
     getProducts,
     getProduct,
     register,
     login,
     verify_mail,
-    checkout
+    checkout,
+    transaction
 };
