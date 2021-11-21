@@ -4,13 +4,29 @@ const router = express.Router();
 const auth = require("../auth/auth");
 let controller = require("../controllers/controllers");
 
-router.get("/", (_req, res) => {
-    res.render("pages/index");
+router.get("/", (req, res) => {
+    auth.session_converter(req.cookies.session_token).then((key) => {
+        if (key != null) {
+            res.render("pages/index", {
+                loggedIn: 'true'
+            });
+        } else {
+            res.render("pages/index", {
+                loggedIn: 'false'
+            });
+        }
+    });
 });
 
 router.route("/register")
     .get((_req, res) => {
-        res.render("pages/register");
+        auth.session_converter(req.cookies.session_token).then((key) => {
+            if (key != null) {
+                res.redirect("/");
+            } else {
+                res.render("pages/register");
+            }
+        });
     })
     .post((req, res) => {
         controller.register(
@@ -30,7 +46,13 @@ router.route("/register")
 
 router.route("/login")
     .get((_req, res) => {
-        res.render("pages/login");
+        auth.session_converter(req.cookies.session_token).then((key) => {
+            if (key != null) {
+                res.redirect("/");
+            } else {
+                res.render("pages/login");
+            }
+        });
     })
     .post((req, res) => {
         controller.login(
@@ -76,9 +98,11 @@ router.route("/checkout")
     .get((req, res) => {
         auth.session_converter(req.cookies.session_token).then((key) => {
             if (key != null) {
-                res.render("pages/checkout");
+                res.render("pages/checkout", {
+                    loggedIn: 'true'
+                });
             } else {
-                res.render("pages/login");
+                res.redirect("/login");
             }
         });
     })
@@ -131,36 +155,76 @@ router.get("/change-password", (_req, res) => {
     res.render("pages/change-password");
 });
 
-router.get("/products", (_req, res) => {
-    controller.getProducts().then((data) => {
-        res.render("pages/products", {
-            data: data
-        });
+router.get("/products", (req, res) => {
+    auth.session_converter(req.cookies.session_token).then((key) => {
+        if (key != null) {
+            controller.getProducts().then((data) => {
+                res.render("pages/products", {
+                    data: data,
+                    loggedIn: 'true'
+                });
+            });
+        } else {
+            controller.getProducts().then((data) => {
+                res.render("pages/products", {
+                    data: data,
+                    loggedIn: 'false'
+                });
+            });
+        }
     });
 });
 
 router.get("/product/:id", (req, res) => {
-    controller.getProduct(req.params.id).then((data) => {
-        res.render("pages/product", {
-            data: data
-        });
+    auth.session_converter(req.cookies.session_token).then((key) => {
+        if (key != null) {
+            controller.getProduct(req.params.id).then((data) => {
+                res.render("pages/product", {
+                    data: data,
+                    loggedIn: 'true'
+                });
+            });
+        } else {
+            controller.getProduct(req.params.id).then((data) => {
+                res.render("pages/product", {
+                    data: data,
+                    loggedIn: 'false'
+                });
+            });
+        }
     });
 });
 
-router.get("/bag", (_req, res) => {
-    res.render("pages/bag");
-});
-
-router.get("/checkout", (_req, res) => {
-    res.render("pages/checkout");
+router.get("/bag", (req, res) => {
+    auth.session_converter(req.cookies.session_token).then((key) => {
+        if (key != null) {
+            res.render("pages/bag", {
+                loggedIn: 'true'
+            });
+        } else {
+            res.render("pages/bag", {
+                loggedIn: 'false'
+            });
+        }
+    });
 });
 
 router.get("/payment", (_req, res) => {
-    res.render("pages/login-error");
+    res.redirect("/");
 });
 
-router.get("/about-us", (_req, res) => {
-    res.render("pages/about-us");
+router.get("/about-us", (req, res) => {
+    auth.session_converter(req.cookies.session_token).then((key) => {
+        if (key != null) {
+            res.render("pages/about-us", {
+                loggedIn: 'true'
+            });
+        } else {
+            res.render("pages/about-us", {
+                loggedIn: 'false'
+            });
+        }
+    });
 });
 
 module.exports = router;
