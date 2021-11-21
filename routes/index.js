@@ -85,11 +85,11 @@ router.route("/login")
     });
 
 router.get("/verify-mail", (req, res) => {
-    controller.verify_mail(req.params.token).then((data) => {
+    controller.verify_mail(req.query.token).then((data) => {
         if (data == 200) {
             res.render("pages/register-verification-success");
         } else {
-            res.render("pages/index");
+            res.redirect("/");
         }
     });
 });

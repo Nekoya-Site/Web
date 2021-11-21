@@ -65,14 +65,18 @@ function login(email, password, ua, ip) {
 }
 
 function verify_mail(token) {
+    let params = new URLSearchParams({
+        token: token,
+    });
+    const conf = {
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+        },
+    };
     return axios
-        .get(HOST + "/verify-mail", {
-            params: {
-                token: token
-            }
-        })
-        .then((response) => response.status)
-        .catch((error) => console.log(error));
+        .post(HOST + "/verify-mail", params, conf)
+        .then((response) => [response.status, response.data])
+        .catch((error) => [error.status, []]);
 }
 
 function checkout(
