@@ -386,4 +386,52 @@ router.post("/checkout", async (req, res) => {
     }
 });
 
+router.post("/transaction", async (req, res) => {
+    if (!req.query.key) {
+        res.status(401);
+        res.json({
+            message: "Unauthorized",
+        });
+    } else {
+        auth.auth_checker(req.query.key).then((status) => {
+            if (status) {
+                const conn = db.connect();
+                conn.query(
+                    "SELECT * FROM users WHERE token = ?",
+                    [req.query.key],
+                    async function (error, response, fields) {
+                        if (error) {
+                            res.status(401);
+                            res.json({
+                                message: "Unauthorized",
+                            });
+                        } else {
+                            conn.query(
+                                "SELECT * FROM transactions WHERE userId = ?",
+                                [response[0].id],
+                                async function (error, resp, fields) {
+                                    if (error) {
+                                        res.status(400);
+                                        res.json({
+                                            message: "Bad Request",
+                                        });
+                                    } else {
+                                        res.status(200);
+                                        res.json(resp);
+                                    }
+                                }
+                            );
+                        }
+                    }
+                );
+            } else {
+                res.status(401);
+                res.json({
+                    message: "Unauthorized",
+                });
+            }
+        });
+    }
+});
+
 module.exports = router;
