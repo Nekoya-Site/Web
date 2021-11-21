@@ -244,7 +244,7 @@ router.post("/login", async (req, res) => {
 router.post("/verify-mail", async (req, res) => {
     const conn = db.connect();
     conn.query(
-        'SELECT * FROM users WHERE token ="' + req.query.token + '"',
+        'SELECT * FROM users WHERE token ="' + req.body.token + '"',
         function (err, result) {
             if (err) {
                 res.status(400);
@@ -258,7 +258,7 @@ router.post("/verify-mail", async (req, res) => {
                         verify: 1,
                         token: randtoken.generate(64),
                     };
-                    db_connect.query(
+                    conn.query(
                         'UPDATE users SET ? WHERE email ="' + result[0].email + '"',
                         data,
                         function (err, result) {
