@@ -124,27 +124,6 @@ button[type="submit"] {
     margin: 0 0 20px 0;
 }
 
-.google,
-.facebook {
-    width: 100%;
-    height: 42px;
-    line-height: 45px;
-    margin-top: 10px;
-}
-
-.google {
-    background: white;
-    border: 1px solid white;
-    color: #1b1c1e;
-    margin-right: 10px;
-}
-
-.facebook {
-    background: #3a5897;
-    border: 1px solid #3a5897;
-    margin-left: 10px;
-}
-
 .links i {
     font-size: 17px;
 
