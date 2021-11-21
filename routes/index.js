@@ -39,7 +39,7 @@ router.route("/register")
             if (data == 200) {
                 res.render("pages/register-verification-sent");
             } else {
-                res.redirect("/register");
+                res.render("pages/register-error")
             }
         });
     });
