@@ -194,31 +194,23 @@ router.get("/products", (req, res) => {
 });
 
 router.get(["/product", "/product/:id"], (req, res) => {
-    if (!req.params.id) {
-        auth.session_converter(req.cookies.session_token).then((key) => {
-            if (key != null) {
-                controller.getProduct(req.params.id).then((data) => {
-                    if (data != undefined) {
-                        res.render("pages/product", {
-                            data: data,
-                            loggedIn: 'true'
-                        });
-                    } else {
-                        res.redirect("/products");
-                    }
+    auth.session_converter(req.cookies.session_token).then((key) => {
+        if (key != null) {
+            controller.getProduct(req.params.id).then((data) => {
+                res.render("pages/product", {
+                    data: data,
+                    loggedIn: 'true'
                 });
-            } else {
-                controller.getProduct(req.params.id).then((data) => {
-                    res.render("pages/product", {
-                        data: data,
-                        loggedIn: 'false'
-                    });
+            });
+        } else {
+            controller.getProduct(req.params.id).then((data) => {
+                res.render("pages/product", {
+                    data: data,
+                    loggedIn: 'false'
                 });
-            }
-        });
-    } else {
-        res.redirect("/products")
-    }
+            });
+        }
+    });
 });
 
 router.get("/bag", (req, res) => {
