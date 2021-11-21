@@ -327,51 +327,64 @@ router.post("/checkout", async (req, res) => {
                     });
                 } else {
                     const conn = db.connect();
-                    var data = {
-                        firstName: req.body.firstName,
-                        lastName: req.body.lastName,
-                        phoneNumber: req.body.phoneNumber,
-                        streetAddress1: req.body.streetAddress1,
-                        streetAddress2: req.body.streetAddress2,
-                        region: req.body.region,
-                        province: req.body.province,
-                        city: req.body.city,
-                        district: req.body.district,
-                        subDistrict: req.body.subDistrict,
-                        postalCode: req.body.postalCode,
-                        logistic: req.body.logistic,
-                        paymentMethod: '-',
-                        data: req.body.data,
-                        userId: 14,
-                        paid: '0',
-                        status: 'pending'
-                    };
                     conn.query(
-                        "INSERT INTO transactions SET ?",
-                        data,
-                        function (error, response, fields) {
+                        "SELECT * FROM users WHERE token = ?",
+                        [req.query.key],
+                        async function (error, resp, fields) {
                             if (error) {
-                                res.status(400);
+                                res.status(401);
                                 res.json({
-                                    message: "Bad Request",
+                                    message: "Unauthorized",
                                 });
                             } else {
+                                var data = {
+                                    firstName: req.body.firstName,
+                                    lastName: req.body.lastName,
+                                    phoneNumber: req.body.phoneNumber,
+                                    streetAddress1: req.body.streetAddress1,
+                                    streetAddress2: req.body.streetAddress2,
+                                    region: req.body.region,
+                                    province: req.body.province,
+                                    city: req.body.city,
+                                    district: req.body.district,
+                                    subDistrict: req.body.subDistrict,
+                                    postalCode: req.body.postalCode,
+                                    logistic: req.body.logistic,
+                                    paymentMethod: '-',
+                                    data: req.body.data,
+                                    userId: resp[0].id,
+                                    paid: '0',
+                                    status: 'pending'
+                                };
                                 conn.query(
-                                'SELECT * FROM transactions WHERE id ="' + response.insertId + '"',
-                                function (err, result) {
-                                    if (err) {
-                                        res.status(400);
-                                        res.json({
-                                            message: "Bad Request",
-                                        });
-                                    } else {
-                                        res.status(201);
-                                        res.json({
-                                            'order_id': result[0].id,
-                                            'data': result[0].data
-                                        });
+                                    "INSERT INTO transactions SET ?",
+                                    data,
+                                    function (error, response, fields) {
+                                        if (error) {
+                                            res.status(400);
+                                            res.json({
+                                                message: "Bad Request",
+                                            });
+                                        } else {
+                                            conn.query(
+                                            'SELECT * FROM transactions WHERE id ="' + response.insertId + '"',
+                                            function (err, result) {
+                                                if (err) {
+                                                    res.status(400);
+                                                    res.json({
+                                                        message: "Bad Request",
+                                                    });
+                                                } else {
+                                                    res.status(201);
+                                                    res.json({
+                                                        'order_id': result[0].id,
+                                                        'data': result[0].data
+                                                    });
+                                                }
+                                            });
+                                        }
                                     }
-                                });
+                                );
                             }
                         }
                     );
