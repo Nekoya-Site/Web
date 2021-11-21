@@ -19,7 +19,7 @@ router.get("/", (req, res) => {
 });
 
 router.route("/register")
-    .get((_req, res) => {
+    .get((req, res) => {
         auth.session_converter(req.cookies.session_token).then((key) => {
             if (key != null) {
                 res.redirect("/");
@@ -45,7 +45,7 @@ router.route("/register")
     });
 
 router.route("/login")
-    .get((_req, res) => {
+    .get((req, res) => {
         auth.session_converter(req.cookies.session_token).then((key) => {
             if (key != null) {
                 res.redirect("/");
@@ -107,38 +107,46 @@ router.route("/checkout")
         });
     })
     .post((req, res) => {
-        controller.checkout(
-            req.body.firstName,
-            req.body.lastName,
-            req.body.phoneNumber,
-            req.body.streetAddress1,
-            req.body.streetAddress2,
-            req.body.region,
-            req.body.province,
-            req.body.city,
-            req.body.district,
-            req.body.subDistrict,
-            req.body.postalCode,
-            req.body.logistic,
-            req.body.data
-        )
-        .then((data) => {
-            if (data[0] == 201) {
-                let total_price = 0;
-                let state = 0;
-                let order_data = JSON.parse(data[1].data);
-                for (let i=0; i<order_data.length; i++) {
-                    controller.getProduct(order_data[i].product_id).then((resp) => {
-                        state++;
-                        total_price += parseInt(resp[0].PRICE * order_data[i].quantity);
-                        if (state == order_data.length) {
-                            res.render("pages/payment", {
-                                orderId: data[1].order_id, 
-                                totalPrice: total_price,
+        auth.session_converter(req.cookies.session_token).then((key) => {
+            console.log(key);
+            if (key != null) {
+                controller.checkout(
+                    req.body.firstName,
+                    req.body.lastName,
+                    req.body.phoneNumber,
+                    req.body.streetAddress1,
+                    req.body.streetAddress2,
+                    req.body.region,
+                    req.body.province,
+                    req.body.city,
+                    req.body.district,
+                    req.body.subDistrict,
+                    req.body.postalCode,
+                    req.body.logistic,
+                    req.body.data,
+                    key
+                )
+                .then((data) => {
+                    if (data[0] == 201) {
+                        let total_price = 0;
+                        let state = 0;
+                        let order_data = JSON.parse(data[1].data);
+                        for (let i=0; i<order_data.length; i++) {
+                            controller.getProduct(order_data[i].product_id).then((resp) => {
+                                state++;
+                                total_price += parseInt(resp[0].PRICE * order_data[i].quantity);
+                                if (state == order_data.length) {
+                                    res.render("pages/payment", {
+                                        orderId: data[1].order_id, 
+                                        totalPrice: total_price,
+                                    });
+                                }
                             });
                         }
-                    });
-                }
+                    }
+                });
+            } else {
+                res.redirect("/login");
             }
         });
     });

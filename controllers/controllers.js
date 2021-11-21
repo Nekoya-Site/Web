@@ -92,7 +92,8 @@ function checkout(
     subDistrict,
     postalCode,
     logistic,
-    data
+    data,
+    key
 ) {
     let params = new URLSearchParams({
         firstName: firstName,
@@ -113,6 +114,9 @@ function checkout(
         headers: {
             "Content-Type": "application/x-www-form-urlencoded",
         },
+        params: {
+            key: key,
+        }
     };
     return axios
         .post(HOST + "/checkout", params, conf)
