@@ -49,7 +49,7 @@ function auth_checker(key) {
                 if (error) {
                     rej(error);
                 } else {
-                    if (!response[0]) {
+                    if (response[0]) {
                         res(true);
                     } else {
                         res(false);
