@@ -21,6 +21,18 @@ body {
     width: 5%;
 }
 
+.button-close {
+    color: white;
+    background-color: darkred;
+    border-color: darkred;
+    border-radius: 100px;
+}
+
+.button-close:hover {
+    background-color: red;
+    border-color: red;
+}
+
 @media screen and (max-width: 500px) {
     .navbar-brand {
         width: 15vw;
