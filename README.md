@@ -2,7 +2,6 @@
 
 <center>
     <img src="https://telegra.ph/file/febddba4ad80ad96ff4cd.png" alt="Nekoya" />
-    <br><br>
 </center>
 
 ## API Docs
