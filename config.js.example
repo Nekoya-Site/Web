@@ -15,6 +15,7 @@ const config = {
         user: env.MAIL_USER,
         password: env.MAIL_PASSWORD
     },
+    telegram: env.TG_BOT_TOKEN,
 };
 
 module.exports = config;
