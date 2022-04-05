@@ -6,6 +6,7 @@ const router = express.Router();
 
 const db = require("../modules/db");
 const mail = require("../modules/mail");
+const telegram = require("../modules/telegram");
 const auth = require("../auth/auth");
 
 const saltRounds = 10;
@@ -77,6 +78,10 @@ router.post("/register", async (req, res) => {
                             email: req.body.email,
                             password: encryptedPassword,
                             session: "[]",
+                            otp: 0,
+                            otpcode: 0,
+                            otpto: 0,
+                            otpservice: "",
                         };
                         conn.query(
                             "INSERT INTO users SET ?",
@@ -192,39 +197,68 @@ router.post("/login", async (req, res) => {
                                         message: "Sorry You haven't verified your email",
                                     });
                                 } else {
-                                    let token = randtoken.generate(256);
-                                    let session = JSON.parse(response[0].session);
-                                    session.push({
-                                        user_agent: req.body.ua || req.headers["user-agent"],
-                                        ip: req.body.ip ||
-                                            req.headers["x-forwarded-for"] ||
-                                            req.socket.remoteAddress,
-                                        session: token,
-                                    });
-                                    conn.query(
-                                        'UPDATE users SET ? WHERE email ="' + req.body.email + '"', {
-                                            session: JSON.stringify(session),
-                                        },
-                                        function (err, result) {
-                                            if (err) {
-                                                res.status(400);
-                                                res.json({
-                                                    message: "Bad Request",
-                                                });
-                                            } else {
-                                                res.status(200);
-                                                res.json({
-                                                    id: response[0].id,
-                                                    first_name: response[0].first_name,
-                                                    last_name: response[0].last_name,
-                                                    email: response[0].email,
-                                                    verify: response[0].verify == 1 ? true : false,
-                                                    session_token: token,
-                                                });
+                                    if (response[0].otp == 1) {
+                                        let otpcode = Math.floor(100000 + Math.random() * 900000);
+                                        telegram.send(
+                                            response[0].otpto,
+                                            `<b>OTP CODE</b>\n\n<code>${otpcode}</code>`
+                                        );
+                                        conn.query(
+                                            'UPDATE users SET ? WHERE email ="' + req.body.email + '"', {
+                                                otpcode: otpcode,
+                                            },
+                                            function (err, result) {
+                                                if (err) {
+                                                    res.status(400);
+                                                    res.json({
+                                                        message: "Bad Request",
+                                                    });
+                                                } else {
+                                                    res.status(200);
+                                                    res.json({
+                                                        message: "OTP Verification Sent ~",
+                                                        otp: response[0].otp == 1 ? true : false,
+                                                        token: response[0].token
+                                                    });
+                                                }
+                                                db.disconnect(conn);
                                             }
-                                            db.disconnect(conn);
-                                        }
-                                    );
+                                        );
+                                    } else {
+                                        let token = randtoken.generate(256);
+                                        let session = JSON.parse(response[0].session);
+                                        session.push({
+                                            user_agent: req.body.ua || req.headers["user-agent"],
+                                            ip: req.body.ip ||
+                                                req.headers["x-forwarded-for"] ||
+                                                req.socket.remoteAddress,
+                                            session: token,
+                                        });
+                                        conn.query(
+                                            'UPDATE users SET ? WHERE email ="' + req.body.email + '"', {
+                                                session: JSON.stringify(session),
+                                            },
+                                            function (err, result) {
+                                                if (err) {
+                                                    res.status(400);
+                                                    res.json({
+                                                        message: "Bad Request",
+                                                    });
+                                                } else {
+                                                    res.status(200);
+                                                    res.json({
+                                                        id: response[0].id,
+                                                        first_name: response[0].first_name,
+                                                        last_name: response[0].last_name,
+                                                        email: response[0].email,
+                                                        verify: response[0].verify == 1 ? true : false,
+                                                        session_token: token,
+                                                    });
+                                                }
+                                                db.disconnect(conn);
+                                            }
+                                        );
+                                    }
                                 }
                             } else {
                                 res.status(401);
@@ -239,6 +273,79 @@ router.post("/login", async (req, res) => {
                             });
                         }
                     }
+                }
+            }
+        );
+    }
+});
+
+router.post("/otp-submit", async (req, res) => {
+    if (!req.body.code || !req.body.token) {
+        res.status(400);
+        res.json({
+            message: "Bad Request",
+        });
+    } else {
+        const conn = db.connect();
+        conn.query(
+            "SELECT * FROM users WHERE token = ?",
+            [req.body.token],
+            async function (error, response, fields) {
+                if (!response[0]) {
+                    res.status(401);
+                    res.json({
+                        message: "Unauthorized",
+                    });
+                } else {
+                    conn.query(
+                        "SELECT * FROM users WHERE otpcode = ?",
+                        [req.body.code],
+                        async function (error, response, fields) {
+                            if (!response[0]) {
+                                res.status(403);
+                                res.json({
+                                    message: "Invalid OTP Code",
+                                });
+                            } else {
+                                let token = randtoken.generate(256);
+                                let session = JSON.parse(response[0].session);
+                                session.push({
+                                    user_agent: req.headers["user-agent"],
+                                    ip: req.body.ip ||
+                                        req.headers["x-forwarded-for"] ||
+                                        req.socket.remoteAddress,
+                                    session: token,
+                                });
+                                conn.query(
+                                    'UPDATE users SET ? WHERE otpcode ="' + req.body.code + '"', {
+                                        session: JSON.stringify(session),
+                                        otpcode: 0,
+                                        token: randtoken.generate(64)
+                                    },
+                                    function (err, result) {
+                                        if (err) {
+                                            res.status(400);
+                                            res.json({
+                                                message: "Bad Request",
+                                            });
+                                        } else {
+                                            res.status(200);
+                                            res.json({
+                                                id: response[0].id,
+                                                first_name: response[0].first_name,
+                                                last_name: response[0].last_name,
+                                                email: response[0].email,
+                                                verify: response[0].verify == 1 ? true : false,
+                                                otp: response[0].otp == 1 ? true : false,
+                                                session_token: token,
+                                            });
+                                        }
+                                        db.disconnect(conn);
+                                    }
+                                );
+                            }
+                        }
+                    );
                 }
             }
         );
