@@ -1,7 +1,9 @@
 const env = process.env;
 
 const config = {
+    url: env.URL,
     host: env.HOST,
+    port: env.PORT,
     db: {
         host: env.DB_HOST,
         user: env.DB_USER,
