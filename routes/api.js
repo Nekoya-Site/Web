@@ -72,6 +72,7 @@ router.post("/register", async (req, res) => {
                             req.body.password,
                             saltRounds
                         );
+                        let otptoken = randtoken.generate(64);
                         var users = {
                             first_name: req.body.first_name,
                             last_name: req.body.last_name,
@@ -80,6 +81,7 @@ router.post("/register", async (req, res) => {
                             session: "[]",
                             otp: 0,
                             otpcode: 0,
+                            otptoken: otptoken,
                             otpto: 0,
                             otpservice: "",
                         };
@@ -198,6 +200,7 @@ router.post("/login", async (req, res) => {
                                     });
                                 } else {
                                     if (response[0].otp == 1) {
+                                        let otptoken = randtoken.generate(64);
                                         let otpcode = Math.floor(100000 + Math.random() * 900000);
                                         telegram.send(
                                             response[0].otpto,
@@ -206,6 +209,7 @@ router.post("/login", async (req, res) => {
                                         conn.query(
                                             'UPDATE users SET ? WHERE email ="' + req.body.email + '"', {
                                                 otpcode: otpcode,
+                                                otptoken: otptoken,
                                             },
                                             function (err, result) {
                                                 if (err) {
@@ -218,7 +222,7 @@ router.post("/login", async (req, res) => {
                                                     res.json({
                                                         message: "OTP Verification Sent ~",
                                                         otp: response[0].otp == 1 ? true : false,
-                                                        token: response[0].token
+                                                        token: otptoken,
                                                     });
                                                 }
                                                 db.disconnect(conn);
@@ -289,7 +293,7 @@ router.post("/otp-submit", async (req, res) => {
     } else {
         const conn = db.connect();
         conn.query(
-            "SELECT * FROM users WHERE token = ?",
+            "SELECT * FROM users WHERE otptoken = ?",
             [req.body.token],
             async function (error, response, fields) {
                 if (!response[0]) {
@@ -321,7 +325,7 @@ router.post("/otp-submit", async (req, res) => {
                                     'UPDATE users SET ? WHERE otpcode ="' + req.body.code + '"', {
                                         session: JSON.stringify(session),
                                         otpcode: 0,
-                                        token: randtoken.generate(64)
+                                        otptoken: randtoken.generate(64)
                                     },
                                     function (err, result) {
                                         if (err) {
@@ -393,6 +397,7 @@ router.post("/otp-toggle", async (req, res) => {
                                         res.status(200);
                                         res.json({
                                             message: `Success set OTP to ${otp}`,
+                                            otp: otp,
                                         });
                                     }
                                     db.disconnect(conn);
