@@ -252,6 +252,7 @@ router.post("/login", async (req, res) => {
                                                         last_name: response[0].last_name,
                                                         email: response[0].email,
                                                         verify: response[0].verify == 1 ? true : false,
+                                                        otp: response[0].otp == 1 ? true : false,
                                                         session_token: token,
                                                     });
                                                 }
