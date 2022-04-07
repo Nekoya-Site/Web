@@ -353,6 +353,59 @@ router.post("/otp-submit", async (req, res) => {
     }
 });
 
+router.post("/otp-toggle", async (req, res) => {
+    if (!req.query.key) {
+        res.status(401);
+        res.json({
+            message: "Unauthorized",
+        });
+    } else {
+        auth.auth_checker(req.query.key).then((status) => {
+            if (status) {
+                const conn = db.connect();
+                conn.query(
+                    "SELECT * FROM users WHERE token = ?",
+                    [req.query.key],
+                    async function (error, response, fields) {
+                        if (error) {
+                            res.status(401);
+                            res.json({
+                                message: "Unauthorized",
+                            });
+                        } else {
+                            let otp = response[0].otp == 1 ? true : false;
+                            if (otp) {
+                                otp = false;
+                            } else {
+                                otp = true;
+                            }
+                            conn.query(
+                                'UPDATE users SET ? WHERE token ="' + req.query.key + '"', {
+                                    otp: otp == true ? 1 : 0,
+                                },
+                                function (err, result) {
+                                    if (err) {
+                                        res.status(400);
+                                        res.json({
+                                            message: "Bad Request",
+                                        });
+                                    } else {
+                                        res.status(200);
+                                        res.json({
+                                            message: `Success set OTP to ${otp}`,
+                                        });
+                                    }
+                                    db.disconnect(conn);
+                                }
+                            );
+                        }
+                    }
+                );
+            }
+        });
+    }
+});
+
 router.post("/verify-mail", async (req, res) => {
     const conn = db.connect();
     conn.query(
