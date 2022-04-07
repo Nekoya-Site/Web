@@ -8,7 +8,7 @@ try {
     process.exit(0);
 }
 
-const HOST = config.host + "/api";
+const HOST = config.url + "/api";
 
 function getProducts() {
     return axios

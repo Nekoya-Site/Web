@@ -108,7 +108,7 @@ router.post("/register", async (req, res) => {
                                                 var token = randtoken.generate(20);
                                                 if (result[0].verify == 0) {
                                                     let subject = "Account Verification - Nekoya";
-                                                    let content = `<p>Hello!!! Please click this link <a href="${config.host}/verify-mail?token=${token}">link</a> to verify your account!!! Thanks!!!</p>`;
+                                                    let content = `<p>Hello!!! Please click this link <a href="${config.url}/verify-mail?token=${token}">link</a> to verify your account!!! Thanks!!!</p>`;
                                                     var sent = mail.send(
                                                         req.body.email,
                                                         subject,
@@ -481,7 +481,7 @@ router.post("/request-reset-password", async (req, res) => {
                     });
                 } else {
                     let subject = "Reset Password - Nekoya";
-                    let content = `<p>Hello!!! Please click this link <a href="${config.host}/reset-password?token=${response[0].token}">link</a> to reset your account password!!! Thanks!!!</p>`;
+                    let content = `<p>Hello!!! Please click this link <a href="${config.url}/reset-password?token=${response[0].token}">link</a> to reset your account password!!! Thanks!!!</p>`;
                     var sent = mail.send(
                         req.body.email,
                         subject,

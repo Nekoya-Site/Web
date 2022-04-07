@@ -8,6 +8,14 @@ const app = express();
 const indexRouter = require('./routes/index');
 const api = require('./routes/api');
 
+let config;
+try {
+    config = require("./config");
+} catch (e) {
+    console.log("No config file found");
+    process.exit(0);
+}
+
 app.use(express.static("public"));
 app.set("view engine", "ejs");
 
@@ -30,7 +38,7 @@ app.use(function (req, res, next) {
     next();
 });
 
-app.listen("9286", () => {
-    console.log("Server is running on port : 9286");
+app.listen(config.port, () => {
+    console.log(`Server is running on port : ${config.port}`);
 });
 module.exports = app;
