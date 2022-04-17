@@ -11,6 +11,9 @@ package-lock.json
 # Config
 config.js
 
+# Deploy
+deploy.py
+
 # General
 .DS_Store
 .AppleDouble
