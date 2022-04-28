@@ -358,18 +358,26 @@ router.post("/otp-submit", async (req, res) => {
 });
 
 router.post("/otp-toggle", async (req, res) => {
-    if (!req.query.key) {
+    if (!req.query.key && !req.query.session_token) {
         res.status(401);
         res.json({
             message: "Unauthorized",
         });
     } else {
-        auth.auth_checker(req.query.key).then((status) => {
+        let _key;
+        if (req.query.session_token) {
+            _key = await auth.session_converter(req.query.session_token).then((key) => {
+                return key;
+            });
+        } else if (req.query.key) {
+            _key = req.query.key;
+        }
+        auth.auth_checker(_key).then((status) => {
             if (status) {
                 const conn = db.connect();
                 conn.query(
                     "SELECT * FROM users WHERE token = ?",
-                    [req.query.key],
+                    [_key],
                     async function (error, response, fields) {
                         if (error) {
                             res.status(401);
@@ -384,7 +392,7 @@ router.post("/otp-toggle", async (req, res) => {
                                 otp = true;
                             }
                             conn.query(
-                                'UPDATE users SET ? WHERE token ="' + req.query.key + '"', {
+                                'UPDATE users SET ? WHERE token ="' + _key + '"', {
                                     otp: otp == true ? 1 : 0,
                                 },
                                 function (err, result) {
@@ -577,13 +585,21 @@ router.post("/reset-password", async (req, res) => {
 });
 
 router.post("/checkout", async (req, res) => {
-    if (!req.query.key) {
+    if (!req.query.key && !req.query.session_token) {
         res.status(401);
         res.json({
             message: "Unauthorized",
         });
     } else {
-        auth.auth_checker(req.query.key).then((status) => {
+        let _key;
+        if (req.query.session_token) {
+            _key = await auth.session_converter(req.query.session_token).then((key) => {
+                return key;
+            });
+        } else if (req.query.key) {
+            _key = req.query.key;
+        }
+        auth.auth_checker(_key).then((status) => {
             if (status) {
                 if (
                     !req.body.firstName ||
@@ -608,7 +624,7 @@ router.post("/checkout", async (req, res) => {
                     const conn = db.connect();
                     conn.query(
                         "SELECT * FROM users WHERE token = ?",
-                        [req.query.key],
+                        [_key],
                         async function (error, resp, fields) {
                             if (error) {
                                 res.status(401);
@@ -680,19 +696,28 @@ router.post("/checkout", async (req, res) => {
 });
 
 router.post("/transaction", async (req, res) => {
-    if (!req.query.key) {
+    if (!req.query.key && !req.query.session_token) {
         res.status(401);
         res.json({
             message: "Unauthorized",
         });
     } else {
-        auth.auth_checker(req.query.key).then((status) => {
+        let _key;
+        if (req.query.session_token) {
+            _key = await auth.session_converter(req.query.session_token).then((key) => {
+                return key;
+            });
+        } else if (req.query.key) {
+            _key = req.query.key;
+        }
+        auth.auth_checker(_key).then((status) => {
             if (status) {
                 const conn = db.connect();
                 conn.query(
                     "SELECT * FROM users WHERE token = ?",
-                    [req.query.key],
+                    [_key],
                     async function (error, response, fields) {
+                        console.log(response[0]);
                         if (error) {
                             res.status(401);
                             res.json({
