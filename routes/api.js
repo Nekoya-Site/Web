@@ -717,7 +717,6 @@ router.post("/transaction", async (req, res) => {
                     "SELECT * FROM users WHERE token = ?",
                     [_key],
                     async function (error, response, fields) {
-                        console.log(response[0]);
                         if (error) {
                             res.status(401);
                             res.json({
