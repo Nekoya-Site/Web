@@ -584,6 +584,44 @@ router.post("/reset-password", async (req, res) => {
     }
 });
 
+router.post("/sessions", async (req, res) => {
+    if (!req.query.key && !req.query.session_token) {
+        res.status(401);
+        res.json({
+            message: "Unauthorized",
+        });
+    } else {
+        let _key;
+        if (req.query.session_token) {
+            _key = await auth.session_converter(req.query.session_token).then((key) => {
+                return key;
+            });
+        } else if (req.query.key) {
+            _key = req.query.key;
+        }
+        auth.auth_checker(_key).then((status) => {
+            if (status) {
+                const conn = db.connect();
+                conn.query(
+                    "SELECT * FROM users WHERE token = ?",
+                    [_key],
+                    async function (error, response, fields) {
+                        if (error) {
+                            res.status(401);
+                            res.json({
+                                message: "Unauthorized",
+                            });
+                        } else {
+                            res.status(200);
+                            res.json(JSON.parse(response[0].session));
+                        }
+                    }
+                );
+            }
+        });
+    }
+});
+
 router.post("/checkout", async (req, res) => {
     if (!req.query.key && !req.query.session_token) {
         res.status(401);
