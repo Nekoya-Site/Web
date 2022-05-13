@@ -16,7 +16,6 @@ try {
     process.exit(0);
 }
 
-app.use(express.static("public"));
 app.set("view engine", "ejs");
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -36,6 +35,7 @@ app.use(function (req, res, next) {
     next();
 });
 
+app.use(express.static("public"));
 app.use('/', indexRouter);
 app.use('/api', api);
 
