@@ -31,10 +31,11 @@ app.use('/api', api);
 
 app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
-    res.header(
-        "Access-Control-Allow-Headers",
-        "Origin, X-Requested-With, Content-Type, Accept"
-    );
+    res.header("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE, HEAD");
+    res.header("Access-Control-Allow-Headers", "custId, appId, Origin, Content-Type, Cookie, X-CSRF-TOKEN, Accept, Authorization, X-XSRF-TOKEN, Access-Control-Allow-Origin, X-Requested-With");
+    res.header("Access-Control-Expose-Headers", "Authorization, authenticated");
+    res.header("Access-Control-Max-Age", "1728000");
+    res.header("Access-Control-Allow-Credentials", "true");
     next();
 });
 
