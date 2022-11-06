@@ -625,6 +625,41 @@ body {
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0) !important;
 }
 
+.floating_button {
+    position: fixed;
+    right: 80px;
+    bottom: 50px;
+    text-decoration: none;
+    color: white;
+    background-color: #fe4c50;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.floating_button i  {
+    font-size: 60px;
+    padding: 0 50px;
+    border-radius: 50%;
+    background-color: #fe4c50;
+    height: 90px;
+    width: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+
+.floating_button:hover {
+    color: #ffffff;
+}
+
+.floating_button i:hover {
+    background: #fe7c7f;
+}
+
+
 iframe {
     display: block;
     width: 100%;
