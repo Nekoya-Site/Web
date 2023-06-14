@@ -8,8 +8,8 @@ package-lock.json
 .vscode/
 *.code-workspace
 
-# Config
-config.js
+# Environment Variable
+.env
 
 # Deploy
 deploy.py
